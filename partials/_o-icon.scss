@@ -1,0 +1,46 @@
+
+// [ o-icon ]
+
+.o-icon .o-icon-link {
+  cursor: pointer;	
+  @include transition( all 0.3s );
+}
+
+// LINK
+
+.o-icon__link--white {
+  color: #fff;
+  fill: #fff
+}
+
+.o-icon__link--white:hover {
+  opacity: 0.80;
+}
+
+// MODIFIERS
+
+.o-icon-container {
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media all and #{$media-lap} {
+	.o-icon-container {	
+		width: 300px;
+	}
+}
+
+@media all and #{$media-palm} {
+	.o-icon-container {	
+		width: 200px;
+	}
+}
+
+// .o-icon-container--small
+
+.o-icon-container--small {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}

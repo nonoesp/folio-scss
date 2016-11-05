@@ -1,0 +1,44 @@
+
+
+.c-footer {
+	font-size: 10pt;
+	line-height: $typecsset-base-line-height * 0.85;
+	cursor: default;
+	@include user-select(none);	
+}
+
+@media all and #{$media-portable} {
+	.c-footer {
+		text-align: center;
+	}
+}
+
+// DETAIL
+
+.c-footer__detail {
+	color: $color-grey;
+}
+
+.c-footer__detail a,
+.c-footer__detail a:visited {
+	color: $color-grey;
+	text-decoration: none;
+}
+
+.c-footer__detail a:hover {
+	color: $color-black;
+	text-decoration: none;
+}
+
+@media all and #{$media-lap} {
+    .c-footer__detail-container {
+    	text-align: left;
+	    max-width: 280px + $gutters;
+	    margin-left: auto;
+	    margin-right: auto;
+    }
+
+    .c-footer__detail {
+    	font-size: 9pt;
+    }
+}

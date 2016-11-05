@@ -1,0 +1,53 @@
+
+/**
+ * Utilities: Visibility;
+ *
+ * v1.0 (Nono Martínez Alonso, 150531)
+ */
+
+/*
+.u-hidden
+.u-hidden-palm
+.u-hidden-lap
+.u-hidden-portable
+.u-hidden-desk
+
+.u-visible-palm
+.u-visible-lap
+.u-visible-portable
+.u-visible-desk
+*/
+
+.u-hidden {
+	display: none;
+}
+
+@media all and #{$media-palm} {
+	.u-hidden-palm,
+	.u-visible-lap {
+		display: none;
+	}
+}
+
+@media all and #{$media-lap} {
+	.u-hidden-lap,
+	.u-visible-palm {
+		display: none;
+	}	
+}
+
+@media all and #{$media-portable} {
+	.u-visible-desk,
+	.u-hidden-portable {
+		display: none;
+	}
+}
+
+@media all and #{$media-desk} {
+	.u-hidden-desk,
+	.u-visible-portable,
+	.u-visible-palm,
+	.u-visible-lap {
+		display: none;
+	}
+}

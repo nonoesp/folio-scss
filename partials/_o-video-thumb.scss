@@ -1,0 +1,33 @@
+
+// [ c-video-thumb ]
+
+$padding-vertical: 27px !default;
+
+.video-thumb {
+  overflow:hidden;
+  width:100%;
+  position:relative;
+  margin-bottom: $padding-vertical;
+  cursor: pointer;
+}
+
+.video-thumb__mask {
+  position:absolute;
+  z-index:1;
+  width:100%;
+  bottom:0;
+}
+
+.video-thumb__image {
+  width:100%;
+}
+
+/*YouTube*/
+.video-thumb__image--youtube {
+  margin:-18% -0px -18% -0px;
+}
+
+/*Vimeo*/
+.video-thumb__image--vimeo {
+  margin:-8% -0px -8% -0px;
+}

@@ -1,0 +1,32 @@
+
+/*--------------------------------
+   Type
+   Custom Type Setting
+--------------------------------*/
+
+// DEFAULTS
+
+// Font Variables
+$type-font-family: sans-serif !default;
+$type-font-color: #222 !default;
+
+// Link Variables
+$type-link-color: auto !default;
+$type-link-text-decoration: none !default;
+
+html, :root {
+	font-family: $type-font-family;
+    color: $type-font-color;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+	color: $type-link-color;
+    text-decoration: $type-link-text-decoration;
+    /*@include transition( all 0.2s );*/
+}
+
+a:active {
+    outline: none;
+}

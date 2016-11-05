@@ -1,0 +1,39 @@
+@mixin u-font-size-range ($tag, $min-size, $max-size, $steps) {
+
+  $division: $steps - 1;
+  $step: ($max-size - $min-size)/$division;
+
+  .u-font-#{$tag}--size-min {
+    font-size: $min-size;
+    line-height: $min-size * 1.5;
+  }
+
+  .u-font-#{$tag}--size-max {
+    font-size: $max-size;
+    line-height: $max-size * 1.5;
+  }
+
+  @for $i from 1 through $steps {
+
+    $index: $i - 1;
+    $size: $min-size + $step * $index;
+
+    .u-font-#{$tag}--size-#{$i} {
+      font-size: $size;
+      line-height: $size * 1.5;
+    }
+  }
+}
+
+@mixin u-font-size ($name, $description, $size) {
+  .u-font-#{$name}--size-#{$description} {
+    font-size: $size;
+    line-height: $size * 1.5;
+  }
+}
+
+// @include u-font-size ("landing", "small", 12px);
+// @include u-font-size ("landing", "description", 10px);
+// @include u-font-size ("landing", "title", 25px);
+//
+// @include u-font-size-range ("cover", 12px, 30px, 4);

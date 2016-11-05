@@ -1,0 +1,212 @@
+
+// DEFAULT SETTINGS
+
+  $input-outline-color: #737373 !default;
+  $input-outline-color-focus: #bababa !default;
+  $input-font-family: sans-serif !default;
+  $input-font-size: 16px !default;
+  $button-font-size: $input-font-size !default;
+
+label, input, select, textarea {
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $regular;
+  @include appearance(none);
+}
+
+label {
+  @include user-select(none);
+  display: inline-block;
+  margin: 0 5px 1em 0;
+  vertical-align: middle;
+}
+
+input, textarea {
+  min-width:100%;
+  max-width:100%;
+  height: 36px;
+  padding: 7px;
+  margin-bottom: 6px;
+  border-radius: 2px;
+  border: solid 2px;
+  border-color: #dbdbdb;
+}
+
+textarea {
+  min-height: 250px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline-width: 0;
+  border: 2px solid $input-outline-color-focus;
+}
+
+/*
+input, textarea, keygen, select, button, isindex {
+  margin: 0em;
+  font: -webkit-small-control;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+}
+*/
+
+/*
+input[type=email], input[type=text], input[type=checkbox], select {
+  font-family: $input-font-family;
+  font-size:16px;
+  border-radius: 8px;
+  border-width:3px;
+  display: inline-block;
+  padding: .45em .55em;
+
+  min-height: 36px;
+  background-color: #fff;
+  border: 2px solid $input-outline-color;
+  margin: 0 5px 1em 0; 
+
+  vertical-align: middle;
+  border-radius: 3px;
+}
+*/
+
+
+// button
+
+
+button:focus {
+  outline-width: 0;
+}
+
+button:disabled {
+  background-color: #dbdbdb;
+}
+
+button {
+  font-family: $input-font-family;
+  font-weight: $bold;
+  font-size: $button-font-size;
+  padding: 0 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  vertical-align: middle;
+  letter-spacing: 0.037em;
+  text-transform: uppercase;
+  margin-right: 8px;
+  border: 2px solid #a8a8a8;  
+  color: #a8a8a8;
+  background-color: #fafafa;
+  height:36px;
+
+  @include user-select(none);  
+  @include transition( all 0.2s );  
+}
+
+.button--round {
+  border-radius: 36px;
+}
+
+// BOOKS SPECIFIC
+
+// green
+
+.button--border-green {
+  border-color: $color-green;
+}
+
+.button--background-green {
+  background-color: $color-green;
+  border: none;
+  color: #fff;
+}
+
+.button--background-green:hover,
+.button--background-green:focus {
+  background-color: $color-green-dark;
+}
+
+.button--twitter {
+  background-color: #55acee;
+  min-width: 100%;
+  font-weight: $regular;  
+  color: #fff;
+  text-transform: none;
+  border: none;
+}
+
+.button--twitter-hero {
+  border-radius: 30px;
+  color: #55acee;
+  background-color:transparent;
+  font-weight: $regular;  
+  text-transform: none;
+  border-color: #55acee;
+}
+
+// grey
+
+.button--border-grey {
+  border-color: $color-grey;
+}
+
+.button--background-grey {
+  background-color: $color-grey;
+  border: none;
+  color: #fff;
+}
+
+.button--background-grey:hover,
+.button--background-grey:focus {
+  background-color: $color-grey-dark;
+}
+
+// white
+
+.button--background-white {
+  background-color: #fff;
+  opacity: 0.85;
+  border: none;
+}
+
+.button--background-white:hover,
+.button--background-white:focus {
+  opacity: 1.00;
+}
+
+// INPUT SPECIFIC
+
+[type=submit] {
+  background-color: #333;
+  color: #fff;
+  font-weight: $bold;
+  border: 0;
+}
+
+input[name=title] {
+  padding-left: 0;
+  font-weight: $bold;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6em;
+}
+
+input[name=title]:focus {
+  outline-width: 0;
+  border: 0;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: checkbox;
+  -moz-appearance: checkbox;
+  -ms-appearance: checkbox;
+  -o-appearance: checkbox;
+  appearance: checkbox;
+  height: auto;
+}

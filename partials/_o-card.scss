@@ -1,0 +1,56 @@
+
+
+
+.o-card {
+	position: relative;
+}
+
+.o-card__title {
+	font-size: 34pt;
+	font-weight: $light;
+}
+
+.o-card__copy {
+	font-size: 21pt;
+	font-weight: $light;
+	opacity: 0.8;
+}
+
+.o-card__copy--detail {
+	font-size: 12pt;
+	font-weight: $light;
+	opacity: 0.7;
+}
+
+@media all and #{$media-portable} {
+	.o-card {
+		text-align: center !important;
+	}
+}
+
+@media all and #{$media-palm} {
+	.o-card__copy {
+		font-size: 18.5pt;
+	}
+
+	.o-card__copy--detail {
+		font-size: 14pt;
+	}
+}
+
+.o-card img {
+	width:100%;
+}
+
+// IMAGE
+
+.o-card__image-container {
+	position: relative;
+	height: 100%;
+}
+
+.o-card__image {
+	max-width: 550px;
+	margin-top: 10px;
+	opacity: 0.60;
+}

@@ -1,0 +1,77 @@
+
+/**
+ * Utilities: Color;
+ *
+ * 1. Background Color
+ * 2. Font Color
+ *
+ */
+
+// [ 1. Background Color ]
+
+.u-background-red {
+	background-color: $color-red;
+}
+
+.u-background-blue {
+	background-color: rgba(0,0,255,0.15);
+}
+
+.u-background-grey-light {
+	background-color: $color-grey-light;
+}
+
+.u-background-grey {
+	background-color: $color-grey;
+}
+
+.u-background-grey-opacity {
+	background-color: $color-grey-opacity;
+}
+
+.u-background-grey-dark {
+	background-color: $color-grey-dark;
+}
+
+.u-background-green {
+	background-color: $color-green;
+}
+
+.u-background-green-dark {
+	background-color: $color-green-dark;
+}
+
+.u-background-white-broken { // Used by Apple when using white backgrounds
+	background-color: $color-white-broken;
+}
+
+.u-background-white-bluish {
+	background-color: $color-white-bluish;
+}
+
+// [ 2. Font Color ]
+
+.u-color-green {
+	color: $color-green;
+}
+
+.u-color-white {
+	color: #fff;
+}
+
+.u-color-white a:link,
+.u-color-white a:visited {
+	color: #fff;
+}
+
+.u-color-grey-light {
+	color: $color-grey-light;
+}
+
+.u-color-grey {
+	color: $color-grey;
+}
+
+.u-color-grey-dark {
+	color: $color-grey-dark;
+}

@@ -1,0 +1,39 @@
+
+
+// [ 12. Special Tags ]
+
+	// .c-article--case-study
+
+	.c-article--case-study .c-article__body ul > li {
+		@include typecsset-font-size(13px);
+		margin-bottom: 0px;
+	}
+
+	.c-article--case-study .c-article__body {
+	  //color: $color-black;
+	  //color: $color-grey-light;
+	  @include typecsset-font-size(15px);
+	}
+
+	.c-article--case-study .c-article__body a {
+
+	}
+
+	.c-article--case-study .c-article__body h1,
+	.c-article--case-study .c-article__body h2,
+	.c-article--case-study .c-article__body h3,
+	.c-article--case-study .c-article__body h4,
+	.c-article--case-study .c-article__body h5,
+	.c-article--case-study .c-article__body h6 {
+		//@include typecsset-font-size(13px);
+		@include typecsset-font-size(15px);
+		//margin-bottom: 14px;
+	}
+
+	.c-article--case-study figcaption {
+		@include typecsset-font-size(13px);
+	}
+
+	.c-article--case-study .c-article__body > a:hover {
+	  color: $color-green-dark;
+	}

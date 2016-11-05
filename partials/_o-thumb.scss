@@ -1,0 +1,99 @@
+
+// represent a proportioned image thumbnail
+
+.o-thumb {
+  overflow:hidden;
+  margin-bottom: 14px;
+}
+
+.o-thumb__image-container {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
+  z-index: $zIndex-1;
+}
+.o-thumb__image-container:after {
+  padding-top: 56.25%; /* 16:9 ratio */
+  padding-top: 64.29%; /* 1.5:1 ratio */
+  padding-top: 100%;
+  display: block;
+  content: '';
+}
+
+@media all and #{$media-lap} {
+  .o-thumb__image-container--palm-16-9:after {
+    padding-top: 56.25%; /* 16:9 ratio */
+  }
+}
+
+.o-thumb__image-container--wide:after {
+  padding-top: 33.33%; /* 16:9 ratio */
+}
+
+.o-thumb__image-canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: #222;
+  background-color:rgba(1,1,1,0.05);
+  background-size: cover;
+  background-position: center;
+  z-index: $zIndex-1;
+}
+
+.o-thumb__image {
+  /*Not used*/
+  position:relative;
+  max-width:100%;
+  width:100%;
+  height:auto;
+  opacity:0;
+  z-index: $zIndex-4;
+}
+
+.o-thumb__veil {
+  position: absolute;
+  display:block;
+  width: 100%;
+  height: 100%;
+  z-index: $zIndex-2;
+  /*background-color: rgba(0,0,0,0.05);*/
+  @include user-select(none);
+}
+
+.o-thumb__link:hover .o-thumb__veil {
+  @include transition(all 0.25s ease-in-out);
+  background-color: rgba(255,255,255,0.75);
+}
+
+.o-thumb__link:hover .o-thumb__label {
+  @include transition(all 0.25s ease-in-out);
+  opacity: 0.95;
+}
+
+.o-thumb__link {
+  @include user-select(none);
+}
+
+.o-thumb__label {
+    opacity: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width:100%;
+    padding: 8px 0;
+    line-height: 50px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+    color: #222;
+    text-transform:uppercase;
+    font-weight:600;
+  @include user-select(none);
+}

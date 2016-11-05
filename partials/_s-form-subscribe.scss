@@ -1,0 +1,37 @@
+
+$button-background-color: $color-grey;
+$button-background-color-hover: $color-grey-dark;
+
+.s-form-subscribe {
+	[type=submit] {
+		background-color: $button-background-color;
+		cursor: pointer;
+		@include transition( all 0.2s );
+	}
+
+	[type=submit]:focus,
+	[type=submit]:hover {
+		border: 0;
+		background-color: $button-background-color-hover;
+	}
+}
+
+@media all and #{$media-portable} {
+	.s-form-subscribe {
+		input {
+			width: 300px;
+			min-width:0;
+			max-width: none;
+		}
+	}	
+}
+
+@media all and (max-width: 330px) {
+	.s-form-subscribe {
+		input {
+			width: 280px;
+			min-width:0;
+			max-width: none;
+		}
+	}
+}

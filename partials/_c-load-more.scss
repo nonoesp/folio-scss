@@ -1,0 +1,53 @@
+
+/* [ c-load-more ]
+
+— 1. Defaults     (type)
+— 2. Block    (c-load-more)
+— 3. Element     (loading-wheel, load-more)
+*/
+
+// [ 1. Defaults ]
+
+$c-load-more-font-load-more: $type-font-family !default;
+
+// [ 2. Component ]
+
+.c-load-more {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #f2f2f0;
+    padding-top: $padding-vertical * 2;
+    padding-bottom: $padding-vertical * 3;
+    height: 42px;
+}
+
+// [ 3. Elements ]
+
+.c-load-more__item {
+    opacity: 0.55;
+    font-weight: $bold;
+    font-family: $c-load-more-font-load-more, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.17em;  
+    @include transition( all 0.25s );
+}
+
+.c-load-more__item:hover {
+    opacity: 1;
+}
+
+.c-load-more__item--loading-wheel {
+    display:none;
+}
+
+
+
+// States
+
+.c-load-more.is-loading > .c-load-more__item--load-more {
+    display:none;
+}
+
+.c-load-more.is-loading > .c-load-more__item--loading-wheel {
+    display:block;
+}

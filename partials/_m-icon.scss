@@ -1,0 +1,41 @@
+
+/* m-icon */
+
+.m-icon {
+  width:20px;height:20px;
+  animation-fill-mode: both;
+  transition:1s;
+  -webkit-transition:1s;
+  -moz-transition:1s;
+  -o-transition:1s;
+}
+
+.m-icon-logo {
+  width:46px;height:46px;
+}
+
+/* link--icon */
+
+a.link--icon {
+  color:#000;
+  text-decoration:none;
+}
+
+a.link--icon:hover {
+  color:#000;
+  text-decoration:none;
+}
+
+.link--icon { cursor:pointer;}
+
+.m-icon-wrapper--white .m-icon {
+  fill: #fff;
+}
+
+.m-icon-wrapper--black .m-icon {
+  fill: #222;
+}
+
+.m-icon-wrapper--green .m-icon {
+  fill: seagreen;
+}

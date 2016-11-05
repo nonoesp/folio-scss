@@ -1,0 +1,109 @@
+
+// [ o-hero-list ]
+
+// Defaults
+
+$hero-list-column-palm-width: 290px !default;
+$hero-list-title-font-size: 2.50rem !default;
+$hero-list-subtitle-font-size: 1.75rem !default;
+$hero-list-li-font-size: 1.05rem !default;
+
+.o-hero-list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media all and #{$media-lap} {
+    .o-hero-list {
+        max-width: $hero-list-column-palm-width * 2;
+    }
+}
+
+@media all and #{$media-palm} {
+    .o-hero-list {
+        max-width: $hero-list-column-palm-width;
+    }
+}
+
+// TITLES
+
+.o-hero-list__title {
+	color: $color-grey;
+	font-weight: $regular;
+	font-size: $hero-list-title-font-size;
+
+	text-align: center;
+	margin-bottom: $typecsset-base-line-height * 2.5;
+}
+
+@media all and #{$media-lap} {
+	.o-hero-list__title {
+        //text-align: left;
+        margin-bottom: $typecsset-base-line-height * 2;
+	}
+}
+
+@media all and #{$media-palm} {
+    .o-hero-list__title {
+    	font-size: $hero-list-title-font-size * 0.8;
+    	text-align: center;
+    	margin-bottom: $typecsset-base-line-height * 1;
+    }
+}
+
+.o-hero-list__subtitle {
+	font-size: $hero-list-subtitle-font-size;
+	color: $color-grey-dark;
+	margin-bottom: $typecsset-base-line-height * 1;
+	font-weight: $regular;
+}
+
+@media all and #{$media-palm} {
+    .o-hero-list__subtitle {
+    	font-size: $hero-list-subtitle-font-size * 0.7;
+    }
+}
+
+// LIST
+
+.o-hero-list ul {
+	list-style-type: none;
+	font-weight: $regular;
+	margin-left: 0;
+}
+
+.o-hero-list li {
+	font-size: $hero-list-li-font-size;
+	margin-bottom: $typecsset-base-line-height * 0.5;
+	color: $color-grey;
+}
+
+.o-hero-list--narrow li {
+  margin-bottom: $typecsset-base-line-height * 0.2;
+}
+
+@media all and #{$media-portable} {
+    .o-hero-list li {
+    	font-size: $hero-list-li-font-size  * 0.85;
+    }
+}
+
+// LINK
+
+.o-hero-list a:link,
+.o-hero-list a:visited {
+	text-decoration: none;
+	color: $color-grey;
+}
+
+.o-hero-list a:hover {
+	color: $color-grey-dark;
+}
+
+// BUTTON
+
+@media all and #{$media-palm} {
+    .o-hero-list__button-view {
+	    text-align: center;
+    }
+}

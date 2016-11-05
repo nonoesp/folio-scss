@@ -1,0 +1,211 @@
+
+/**
+ * Utilities: Base;
+ *
+ * — General: miscelaneous;
+ * — General: opacity
+ * — General: padding
+ * — General: Margin
+ * — Text: case;
+ * — Text: text-align;
+ * — Text: revert;
+ * — Text: font-size;
+ * — Text: font-weight;
+ *
+ */
+
+// General: miscelaneous
+
+.u-bold {
+	font-weight: 500;
+}
+
+.u-border-bottom {
+	border-bottom:1px solid #e3e3e3;
+}
+
+.u-no-border-bottom {
+	border-bottom: none;
+}
+
+.u-border {
+	border:1px solid #e3e3e3;
+}
+
+.u-cursor-pointer {
+	cursor: pointer;
+}
+
+.u-animatable {
+	@include transition(all 0.5s ease-in-out);
+}
+
+.u-link--block {
+	display: inline-block;
+}
+
+// General: opacity
+
+.u-opacity--none {
+	opacity: 0;
+}
+
+.u-opacity--low {
+	opacity: 0.25;
+}
+
+.u-opacity--half {
+	opacity: 0.50;
+}
+
+.u-opacity--high {
+	opacity: 0.75;
+}
+
+// General: padding
+
+.u-no-padding-bottom {
+	padding-bottom: 0;
+}
+
+// General: margin
+
+.u-no-margin-bottom {
+	margin-bottom: 0;
+}
+
+
+// Text: case
+
+.u-case-upper {
+	text-transform: uppercase;
+}
+
+.u-case-lower {
+	text-transform: lowercase;
+}
+
+.u-case-capitalize {
+	text-transform: capitalize;
+}
+
+.u-case-input-lower {
+	text-transform: lowercase;
+	@include placeholder { text-transform: none; }
+}
+
+// Text: text-align
+
+.u-text-align--center {
+	text-align: center;
+}
+
+.u-text-align--justify {
+	text-align: justify;
+}
+
+.u-text-align--right {
+	text-align: right;
+}
+
+@media all and #{$media-palm} {
+	.u-text-align--center\@palm {
+		text-align: center;
+	}
+}
+
+
+@media all and #{$media-desk} {
+	.u-text-align--desk-right {
+		text-align: right;
+	}
+}
+
+
+// Text: revert
+
+.u-text--revert {
+	unicode-bidi:bidi-override;
+	direction:rtl;
+	@include user-select(none);
+	cursor: default;
+}
+
+// Type: font-size
+
+$font-size-a: 0.75rem !default;
+$font-size-b: 0.85rem !default;
+$font-size-c: 1.00rem !default;
+$font-size-d: 1.10rem !default;
+$font-size-e: 1.15rem !default;
+$font-size-f: 1.25rem !default;
+
+.u-font-size--a {
+	font-size: $font-size-a;
+}
+
+.u-font-size--b {
+	font-size: $font-size-b;
+}
+
+.u-font-size--c {
+	font-size: $font-size-c;
+}
+
+.u-font-size--d {
+	font-size: $font-size-d;
+}
+
+.u-font-size--e {
+	font-size: $font-size-e;
+}
+
+.u-font-size--f {
+	font-size: $font-size-f;
+}
+
+// Type: font-size media queries
+
+@media all and #{$media-palm} {
+	.palm-font--size-a {
+		font-size: $font-size-a;
+	}
+}
+
+// Type: font-weight
+
+.u-font-weight--thin {
+	font-weight: $thin;
+}
+
+.u-font-weight--light {
+	font-weight: $light;
+}
+
+.u-font-weight--regular {
+	font-weight: $regular;
+}
+
+.u-font-weight--bold {
+	font-weight: $bold;
+}
+
+.u-font-weight--extra-bold {
+	font-weight: $extra-bold;
+}
+
+
+// New
+
+.u-a--box-shadow-reset {
+	box-shadow: none !important;
+}
+
+// Padding
+
+$u-padding-vertical: 27px !default;
+
+@for $i from 1 through 8 {
+  .u-padding-top--#{$i}x { padding-top: $u-padding-vertical * $i; }
+	.u-padding-bottom--#{$i}x { padding-bottom: $u-padding-vertical * $i; }
+}

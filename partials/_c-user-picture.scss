@@ -1,0 +1,22 @@
+
+
+$c-user-picture-size: 50px !default;
+$c-user-picture-image: url('http://fmsquare.org/sites/default/files/user_profile.png') !default;
+
+.c-user-picture {
+	background-color: transparent;
+	background-position: center;
+	background-size: cover;
+	background-image: $c-user-picture-image;
+
+	width: $c-user-picture-size;
+	height: $c-user-picture-size;
+
+	margin-right: 5px;
+
+	border-radius: 100%;
+	border: 1px solid $color-grey-light;
+	display: inline-block;
+
+	vertical-align: middle;
+}
