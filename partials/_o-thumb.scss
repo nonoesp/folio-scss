@@ -6,7 +6,7 @@
   margin-bottom: 14px;
 }
 
-.o-thumb__image-container {
+.o-thumb {
   width: 100%;
   /* whatever width you want */
   display: inline-block;
@@ -16,33 +16,73 @@
 
 // Container proportions
 
-.o-thumb__image-container:after {
+.o-thumb:after {
   padding-top: 100%;
   display: block;
   content: '';
 }
 
-@media all and #{$media-lap} {
-  .o-thumb__image-container--palm-16-9:after {
-    padding-top: 56.25%; /* 16:9 ratio */
+// Parametric proportions =)
+// For instance,
+// o-thumb-10-10 for a 1:1 proportion
+// o-thumb-20-10 for a 2:1 proportion
+// o-thumb-10-20 for a 1:2 proportion
+// o-thumb-17-10 for a 17:10 proportion (kinda like 16:9)
+
+@for $i from 10 through 40 {
+  $proportion-vertical: $i/10;
+  $proportion-horizontal: 10/$i;
+
+  .o-thumb--10-#{$i}:after {
+    padding-top: $proportion-vertical * 100%;
+  }
+  .o-thumb--#{$i}-10:after {
+    padding-top: $proportion-horizontal * 100%;
+  }
+
+  @media all and #{$media-desk} {
+    .o-thumb--desk-10-#{$i}:after {
+      padding-top: $proportion-vertical * 100%;
+    }
+    .o-thumb--desk-#{$i}-10:after {
+      padding-top: $proportion-horizontal * 100% !important;
+    }
+  }
+
+  @media all and #{$media-portable} {
+    .o-thumb--portable-10-#{$i}:after {
+      padding-top: $proportion-vertical * 100%;
+    }
+    .o-thumb--portable-#{$i}-10:after {
+      padding-top: $proportion-horizontal * 100% !important;
+    }
+  }
+
+  @media all and #{$media-palm} {
+    .o-thumb--palm-10-#{$i}:after {
+      padding-top: $proportion-vertical * 100%;
+    }
+    .o-thumb--palm-#{$i}-10:after {
+      padding-top: $proportion-horizontal * 100% !important;
+    }
+  }
+
+
+  @media all and #{$media-lap} {
+    .o-thumb--lap-10-#{$i}:after {
+      padding-top: $proportion-vertical * 100%;
+      background-color:red;
+    }
+    .o-thumb--lap-#{$i}-10:after {
+      padding-top: $proportion-horizontal * 100% !important;
+      background-color:red;
+    }
   }
 }
 
-.o-thumb__image-container--15-10:after {
-  padding-top: 64.29%; /* 1.5:1 ratio */
-}
+// Elements
 
-.o-thumb__image-container--wide:after {
-  padding-top: 33.33%; /* 16:9 ratio */
-}
-
-.o-thumb__image-container--square:after {
-  padding-top: 100%;
-}
-
-//
-
-.o-thumb__image-canvas {
+.o-thumb__canvas {
   position: absolute;
   top: 0;
   bottom: 0;
