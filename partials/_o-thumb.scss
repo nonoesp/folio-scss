@@ -13,9 +13,10 @@
   position: relative;
   z-index: $zIndex-1;
 }
+
+// Container proportions
+
 .o-thumb__image-container:after {
-  padding-top: 56.25%; /* 16:9 ratio */
-  padding-top: 64.29%; /* 1.5:1 ratio */
   padding-top: 100%;
   display: block;
   content: '';
@@ -27,9 +28,19 @@
   }
 }
 
+.o-thumb__image-container--15-10:after {
+  padding-top: 64.29%; /* 1.5:1 ratio */
+}
+
 .o-thumb__image-container--wide:after {
   padding-top: 33.33%; /* 16:9 ratio */
 }
+
+.o-thumb__image-container--square:after {
+  padding-top: 100%;
+}
+
+//
 
 .o-thumb__image-canvas {
   position: absolute;
