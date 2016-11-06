@@ -10,3 +10,14 @@
     padding-bottom: $i * 1px !important;
   }
 }
+
+@for $i from 0 through 20 {
+  $j: 12 + $i * 2;
+  .grid--gutter-#{$j}x .grid__item {
+    padding-left: $j * 1px !important;
+  }
+  .grid--gutter-h-#{$j}x .grid__item {
+    line-height: 0;
+    padding-bottom: $j * 1px !important;
+  }
+}
