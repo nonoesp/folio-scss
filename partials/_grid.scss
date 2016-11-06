@@ -1,0 +1,24 @@
+
+// grid modifiers for csswizardry-grids
+
+@for $i from 0 through 10 {
+  .grid--gutter-#{$i}x .grid__item {
+    background-color:red;padding-left: $i px;
+  }
+  .grid--padding-bottom-#{$i}x .grid__item {
+    line-height:0;
+  }
+}
+
+.grid__item--padding-5 {
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  line-height:0;
+}
+
+.grid__item--team {
+  padding-left: 1px!important;
+  padding-bottom: 1px;
+  line-height:0;
+}
