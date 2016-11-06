@@ -3,7 +3,6 @@
 
 @for $i from 0 through 10 {
   .grid--gutter-#{$i}x .grid__item {
-    background-color:red;
     padding-left: $i * 1px !important;
   }
   .grid--gutter-h-#{$i}x .grid__item {
