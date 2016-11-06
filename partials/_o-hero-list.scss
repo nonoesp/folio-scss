@@ -1,34 +1,26 @@
-
 // [ o-hero-list ]
 
 // Defaults
 
-$hero-list-column-palm-width: 290px !default;
+$hero-list-column-palm-width: 250px !default;
 $hero-list-title-font-size: 2.50rem !default;
 $hero-list-subtitle-font-size: 1.75rem !default;
 $hero-list-li-font-size: 1.05rem !default;
+$hero-list-title-color: $color-grey !default;
+$hero-list-subtitle-color: $color-grey-dark !default;
+$hero-list-li-color: $color-grey !default;
+$hero-list-link-color: $color-grey !default;
+$hero-list-link-color-hover: $color-grey-dark !default;
 
 .o-hero-list {
     margin-left: auto;
     margin-right: auto;
 }
 
-@media all and #{$media-lap} {
-    .o-hero-list {
-        max-width: $hero-list-column-palm-width * 2;
-    }
-}
-
-@media all and #{$media-palm} {
-    .o-hero-list {
-        max-width: $hero-list-column-palm-width;
-    }
-}
-
 // TITLES
 
 .o-hero-list__title {
-	color: $color-grey;
+	color: $hero-list-title-color;
 	font-weight: $regular;
 	font-size: $hero-list-title-font-size;
 
@@ -53,7 +45,7 @@ $hero-list-li-font-size: 1.05rem !default;
 
 .o-hero-list__subtitle {
 	font-size: $hero-list-subtitle-font-size;
-	color: $color-grey-dark;
+	color: $hero-list-subtitle-color;
 	margin-bottom: $typecsset-base-line-height * 1;
 	font-weight: $regular;
 }
@@ -75,7 +67,7 @@ $hero-list-li-font-size: 1.05rem !default;
 .o-hero-list li {
 	font-size: $hero-list-li-font-size;
 	margin-bottom: $typecsset-base-line-height * 0.5;
-	color: $color-grey;
+	color: $hero-list-li-color;
 }
 
 .o-hero-list--narrow li {
@@ -93,11 +85,11 @@ $hero-list-li-font-size: 1.05rem !default;
 .o-hero-list a:link,
 .o-hero-list a:visited {
 	text-decoration: none;
-	color: $color-grey;
+	color: $hero-list-link-color;
 }
 
 .o-hero-list a:hover {
-	color: $color-grey-dark;
+	color: $hero-list-link-color-hover;
 }
 
 // BUTTON
