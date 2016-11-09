@@ -2,7 +2,8 @@
 /**
  * Utilities: Visibility;
  *
- * v1.0 (Nono Martínez Alonso, 150531)
+ * v1.0.1 (Nono Martínez Alonso, 150531)
+ * 161109 - added !important to override
  */
 
 /*
@@ -19,27 +20,27 @@
 */
 
 .u-hidden {
-	display: none;
+	display: none !important;
 }
 
 @media all and #{$media-palm} {
 	.u-hidden-palm,
 	.u-visible-lap {
-		display: none;
+		display: none !important;
 	}
 }
 
 @media all and #{$media-lap} {
 	.u-hidden-lap,
 	.u-visible-palm {
-		display: none;
-	}	
+		display: none !important;
+	}
 }
 
 @media all and #{$media-portable} {
 	.u-visible-desk,
 	.u-hidden-portable {
-		display: none;
+		display: none !important;
 	}
 }
 
@@ -48,6 +49,6 @@
 	.u-visible-portable,
 	.u-visible-palm,
 	.u-visible-lap {
-		display: none;
+		display: none !important;
 	}
 }
