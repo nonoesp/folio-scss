@@ -109,8 +109,11 @@
 }
 
 @media all and #{$media-palm} {
-	.u-text-align--center {
+	.u-text-align--palm-center {
 		text-align: center;
+	}
+	.u-text-align--palm-right {
+		text-align: right;
 	}
 }
 

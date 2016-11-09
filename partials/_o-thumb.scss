@@ -70,11 +70,9 @@
   @media all and #{$media-lap} {
     .o-thumb--lap-10-#{$i}:after {
       padding-top: $proportion-vertical * 100%;
-      background-color:red;
     }
     .o-thumb--lap-#{$i}-10:after {
       padding-top: $proportion-horizontal * 100% !important;
-      background-color:red;
     }
   }
 }
