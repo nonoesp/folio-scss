@@ -42,20 +42,20 @@ $o-band-padding-vertical: 27px !default;
   .#{$o-band-slug}--padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
   .#{$o-band-slug}--padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
 	@media all and #{$media-palm} {
-	  .#{$o-band-slug}--palm-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
-		.#{$o-band-slug}--palm-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
+	  .#{$o-band-slug}--palm-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
+		.#{$o-band-slug}--palm-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
 	}
 	@media all and #{$media-lap} {
-	  .#{$o-band-slug}--lap-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
-		.#{$o-band-slug}--lap-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
+	  .#{$o-band-slug}--lap-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
+		.#{$o-band-slug}--lap-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
 	}
 	@media all and #{$media-portable} {
-	  .#{$o-band-slug}--portable-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
-		.#{$o-band-slug}--portable-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
+	  .#{$o-band-slug}--portable-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
+		.#{$o-band-slug}--portable-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
 	}
 	@media all and #{$media-desk} {
-	  .#{$o-band-slug}--desk-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
-		.#{$o-band-slug}--desk-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
+	  .#{$o-band-slug}--desk-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
+		.#{$o-band-slug}--desk-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
 	}
 }
 
