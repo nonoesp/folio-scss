@@ -89,6 +89,39 @@ $gutters: $gutter * 2;
 	}
 }
 
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+$o-wrap-slug: 'o-wrap';
+$o-wrap-width-module: 50px;
+
+$o-wrap-sizes: (
+  'minuscule' 240px,
+	'tiny' 320px,
+	'mini' 440px,
+	'small' 520px,
+	'standard' 640px,
+	'medium' 780px,
+	'big' 1000px,
+	'huge' 1200px,
+	'full' 100%,
+) !default;
+
+@each $wrap-size in $o-wrap-sizes {
+    //$i: index($colors-list, $current-color);
+		$size: nth($wrap-size, 2);
+		$name: nth($wrap-size, 1);
+    .#{$o-wrap-slug}--size-#{$name} {
+        max-width: $size;
+    }
+}
+
+@for $i from 1 through 20 {
+	$size: $o-wrap-width-module * $i;
+  .#{$o-wrap-slug}--size-#{strip-units($size)} { max-width:: $o-wrap-width-module * $i; }
+}
+
 // Modifiers: margin
 
 .o-wrap--margin-bottom {
