@@ -92,15 +92,15 @@
   z-index: $zIndex-1;
 }
 
-.o-thumb__image {
-  /*Not used*/
-  position:relative;
-  max-width:100%;
-  width:100%;
-  height:auto;
-  opacity:0;
-  z-index: $zIndex-4;
-}
+// .o-thumb__image {
+//   /*Not used*/
+//   position:relative;
+//   max-width:100%;
+//   width:100%;
+//   height:auto;
+//   opacity:0;
+//   z-index: $zIndex-4;
+// }
 
 .o-thumb__veil {
   position: absolute;
@@ -109,20 +109,6 @@
   height: 100%;
   z-index: $zIndex-2;
   /*background-color: rgba(0,0,0,0.05);*/
-  @include user-select(none);
-}
-
-.o-thumb__link:hover .o-thumb__veil {
-  @include transition(all 0.25s ease-in-out);
-  background-color: rgba(255,255,255,0.75);
-}
-
-.o-thumb__link:hover .o-thumb__label {
-  @include transition(all 0.25s ease-in-out);
-  opacity: 0.95;
-}
-
-.o-thumb__link {
   @include user-select(none);
 }
 
@@ -136,12 +122,50 @@
     right: 0;
     width:100%;
     padding: 8px 0;
-    line-height: 50px;
+    //
     height: 50px;
-    font-size: 25px;
     text-align: center;
-    color: #222;
-    text-transform:uppercase;
-    font-weight:600;
   @include user-select(none);
+}
+
+.o-thumb__link {
+  @include user-select(none);
+}
+
+.o-thumb__link:hover .o-thumb__veil {
+  background-color: rgba(255,255,255,1.0);
+  @include transition(all 0.25s ease-in-out);
+}
+
+.o-thumb__link:hover .o-thumb__label {
+  opacity: 1.0;
+  @include transition(all 0.25s ease-in-out);
+}
+
+// sample modifier (as a children of .c-project-view)
+
+.c-project-view .o-thumb__label {
+  line-height: 18px;
+  height: 50px;
+  font-size: 21px;
+  text-align: center;
+  color: #222;
+  text-transform:uppercase;
+  //font-weight:600;
+}
+
+.c-project-view .o-thumb__link:hover .o-thumb__label {
+  @include transition(all 0.25s ease-in-out);
+  color:#000;
+  opacity: 1.0;
+}
+
+@media #{$media-portable} {
+  .c-project-view .o-thumb__label {
+    color:#fff;
+    opacity: 1;
+  }
+  .o-thumb__veil {
+    background-color: rgba(0,0,0,0.7);
+  }
 }
