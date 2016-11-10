@@ -116,6 +116,7 @@
     opacity: 0;
     margin: auto;
     position: absolute;
+    display:block;
     top: 0;
     left: 0;
     bottom: 0;
@@ -142,7 +143,7 @@
   @include transition(all 0.25s ease-in-out);
 }
 
-// sample modifier (as a children of .c-project-view)
+// MODIFIER: c-project-view
 
 .c-project-view .o-thumb__label {
   line-height: 18px;
@@ -165,7 +166,33 @@
     color:#fff;
     opacity: 1;
   }
-  .o-thumb__veil {
+  .c-project-view .o-thumb__veil {
+    background-color: rgba(0,0,0,0.7);
+  }
+}
+
+// MODIFIER: c-approach__team
+
+.c-approach__team .o-thumb__label {
+  height: 50px;
+  font-size: 21px;
+  text-align: center;
+  color: #222;
+  //font-weight:600;
+}
+
+.c-approach__team  .o-thumb__link:hover .o-thumb__label {
+  @include transition(all 0.25s ease-in-out);
+  color:#000;
+  opacity: 1.0;
+}
+
+@media #{$media-portable} {
+  .c-approach__team  .o-thumb__label {
+    color:#fff;
+    opacity: 1;
+  }
+  .c-approach__team .o-thumb__veil {
     background-color: rgba(0,0,0,0.7);
   }
 }
