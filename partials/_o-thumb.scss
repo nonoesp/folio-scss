@@ -143,8 +143,9 @@
   @include transition(all 0.25s ease-in-out);
 }
 
-// MODIFIER: c-project-view
+// SAMPLE MODIFIER: c-project-view
 
+/*
 .c-project-view .o-thumb__label {
   line-height: 18px;
   height: 50px;
@@ -169,30 +170,4 @@
   .c-project-view .o-thumb__veil {
     background-color: rgba(0,0,0,0.7);
   }
-}
-
-// MODIFIER: c-approach__team
-
-.c-approach__team .o-thumb__label {
-  height: 50px;
-  font-size: 21px;
-  text-align: center;
-  color: #222;
-  //font-weight:600;
-}
-
-.c-approach__team  .o-thumb__link:hover .o-thumb__label {
-  @include transition(all 0.25s ease-in-out);
-  color:#000;
-  opacity: 1.0;
-}
-
-@media #{$media-portable} {
-  .c-approach__team  .o-thumb__label {
-    color:#fff;
-    opacity: 1;
-  }
-  .c-approach__team .o-thumb__veil {
-    background-color: rgba(0,0,0,0.7);
-  }
-}
+} */

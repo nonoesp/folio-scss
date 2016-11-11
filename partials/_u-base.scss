@@ -212,7 +212,7 @@ $u-padding-vertical: 10px !default;
 	.u-padding-top--#{$i}x { padding-top: $u-padding-vertical * $i; }
 	.u-padding-bottom--#{$i}x { padding-bottom: $u-padding-vertical * $i; }
 	@media #{$media-palm} {
-		.u-padding-top--palm-#{$i}x { padding-top: $u-padding-vertical * $i; }
-		.u-padding-bottom--palm-#{$i}x { padding-bottom: $u-padding-vertical * $i; }		
+		.u-padding-top--palm-#{$i}x { padding-top: $u-padding-vertical * $i !important; }
+		.u-padding-bottom--palm-#{$i}x { padding-bottom: $u-padding-vertical * $i !important; }
 	}
 }
