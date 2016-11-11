@@ -76,7 +76,7 @@ $hero-list-link-color-hover: $color-grey-dark !default;
 
 @media all and #{$media-portable} {
     .o-hero-list li {
-    	font-size: $hero-list-li-font-size  * 0.85;
+    	font-size: $hero-list-li-font-size  * 1.0;
     }
 }
 
