@@ -216,3 +216,9 @@ $u-padding-vertical: 10px !default;
 		.u-padding-bottom--palm-#{$i}x { padding-bottom: $u-padding-vertical * $i !important; }
 	}
 }
+
+// Line height
+
+.u-line-height-0 {
+	line-height: 0;
+}

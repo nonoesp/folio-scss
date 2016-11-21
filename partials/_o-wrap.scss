@@ -35,6 +35,13 @@ $gutters: $gutter * 2;
 
 // Modifiers
 
+@for $i from 0 through 20 {
+	.o-wrap--gutter-#{$i} {
+		padding-left: $i * 1px;
+		padding-right: $i * 1px;
+	}
+}
+
 .o-wrap--tiny {
 	max-width: $wrap-width-tiny + $gutters;
 }
