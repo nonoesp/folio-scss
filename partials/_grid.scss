@@ -12,9 +12,12 @@
 
   .grid--gutter-h-#{$i}x {
     margin-top: -$gutter !important;
-    .grid__item {
+    > .grid__item {
       line-height: 0;
       padding-top: $gutter !important;
+    }
+    > .grid__item > * {
+      line-height: 100%;
     }
   }
 }
