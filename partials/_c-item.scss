@@ -1,0 +1,466 @@
+
+/*
+
+ [ c-item v1.1 ]
+
+ [ Nono Martínez Alonso (@nonoesp) ]
+
+ —  1. Default            (settings)
+ —  2. Article            (c-item, states, modifiers)
+ —  3. Footnotes          (footnote, footnote-ref)
+ —  4. Horizontal Rules   (hr)
+ —  5. Paragraph          (p, headers, cover-media)
+ —  6. Lists              (ul, li, dashes)
+ —  7. Quotes             (blockquote)
+ —  8. Links              (a)
+ —  9. Code               (code, pre)
+ — 10. Data               (date, tags, tag)
+ — 11. Media              (img, is-cover (cover-media), is-overflow, is-full-bleed)
+ — 12. Special Tags       (customize the styling of posts with a first certain tag)
+
+*/
+
+// [ 1. Defaults ]
+
+$c-item-font-size: inherit !default;
+$c-item-line-height: inherit !default;
+$c-item-font-color: inherit !default;
+
+$c-item-link-color: $color-red !default;
+$c-item-link-color-hover: $color-red-dark !default;
+$c-item-quote-color: $c-item-link-color !default;
+$c-item-footnote-color: $c-item-link-color !default;
+
+$c-item-header-letter-spacing: auto !default;
+$c-item-header-resize: false !default;
+
+$c-item-link-monochrone: false !default;
+$c-item-cover-media-negative-margin: true !default;
+$c-item-3-column-style: true !default;
+
+$c-item-font-a: sans-serif !default;
+$c-item-font-b: serif !default;
+$c-item-font-c: sans-serif !default;
+
+$c-item-font-date: $c-item-font-a !default;
+$c-item-font-header: $c-item-font-a !default;
+$c-item-font-tag: $c-item-font-c !default;
+
+$padding-vertical: 27px !default;
+
+// [ 2. Article ]
+
+.c-item {
+  font-family: $c-item-font-a, sans-serif;
+  font-size: $c-item-font-size;
+  color: $c-item-font-color;
+  border-bottom: 1px solid #f2f2f0;
+  margin-bottom: $padding-vertical * 2 - 1;
+  padding-bottom: $padding-vertical * 2;
+}
+
+// Article: States
+
+.c-item:last-of-type {
+  padding-bottom: $padding-vertical;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+@media all and #{$media-portable} {
+    .c-item:last-of-type {
+        padding-bottom: $padding-vertical;
+    }
+}
+
+.c-item.is-tagged,
+.c-item.is-expected {
+  padding-bottom: 0;
+}
+
+// [ 3. Footnotes ]
+
+.c-item .footnote-ref {
+  font-size: 0.7em;
+  margin: 0 0.1rem;
+  text-decoration: none;
+  color: $c-item-footnote-color;
+}
+
+.c-item .footnotes p {
+    margin-bottom: $padding-vertical * 0.2;
+}
+
+.c-item .footnotes ol {
+    list-style-type: decimal;
+    font-size: 0.7em;
+}
+
+// [ 4. Horizontal Rules ]
+
+.c-item hr {
+    width: 6rem;
+
+    border: 0;
+    border-bottom: 2px solid rgba(61,70,77,0.1);
+    padding-top: 1.5rem;
+    margin-top: -2px;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    margin-left: auto;
+}
+
+// [ 5. Paragraph ]
+
+  // p
+
+.c-item p {
+  margin-bottom: $padding-vertical;
+  color: $c-item-font-color;
+}
+
+  // headers
+
+.c-item h1,
+.c-item h2,
+.c-item h3,
+.c-item h4,
+.c-item h5,
+.c-item h6 {
+    font-family: $c-item-font-header;
+    font-weight: $bold;
+    line-height: $c-item-line-height;
+    margin-bottom: $padding-vertical;
+    letter-spacing: $c-item-header-letter-spacing;
+}
+
+@if $c-item-header-resize == true {
+
+    .c-item h1,
+    .c-item h2,
+    .c-item h3,
+    .c-item h4,
+    .c-item h5,
+    .c-item h6 {
+        font-size: $c-item-font-size;
+    }
+
+} @else {
+
+    .c-item h1 {
+        font-size:2em; /*32px / 18px = 1.777777778em*/
+        //line-height: 0.75em; /*27px / 32px = 1em*/
+    }
+
+    .c-item h2 {
+        font-size:1.277777778em; /*23px / 18px = 1.388em*/
+        line-height:1.173913043em; /*27px / 25px = 1.08em */
+    }
+
+    .c-item h3 {
+        font-size:1.16666666666667em; /* 21px / 18px = 1.277777778em*/
+        line-height:1.28571428571429em;
+    }
+
+    .c-item h4 {
+        font-size:1.05555555555556em; /* 19px / 18px = */
+        line-height:1.42105263157895em;
+    }
+
+    .c-item h5,
+    .c-item h6 {
+        font-size:1em; /* 18px / 18px = 1em; */
+        line-height:1.5em; /* 1.5  / 1    = 1.5em */
+    }
+
+}
+
+.c-item h1.is-expected { //TODO: set it to .c-item h1.is-expected
+    color: #585858;
+}
+
+// [ 6. Lists ]
+
+.c-item ul,
+.c-item ol {
+  margin: 0 0 27px 0 !important;
+  list-style: inside;
+}
+
+.c-item ul > li {
+  margin-bottom: 12px;
+}
+
+    /*START: Dashes */
+    .c-item ul {
+      list-style-type: none;
+    }
+
+    .c-item ul > li:before {
+      content: "–"; /* en dash here */
+      position: absolute;
+      margin-left: -1.1em;
+    }
+
+    .c-item ul > li {
+      margin-left: 1.1em;
+    }
+    /*END: Dashes*/
+
+.c-item ul ul,
+.c-item ol ol {
+	margin: 0 0 0 60px !important;
+}
+
+// [ 7. Quotes ]
+
+.c-item blockquote {
+  margin: 0 40px 0 0px;
+  border-left: 2px solid $c-item-quote-color;
+  padding-left: 18px;
+  text-indent: 0;
+  quotes: none;
+}
+
+.c-item blockquote b {
+  display: block;
+}
+
+// [ 8. Links ]
+
+
+.c-item a {
+  @if $c-item-link-monochrone == true {
+      color: $c-item-font-color;
+      text-decoration: underline;
+  } @else {
+      color: $c-item-link-color;
+      text-decoration: none;
+  }
+}
+
+.c-item a:hover {
+
+  text-decoration:underline;
+
+  @if $c-item-link-monochrone == true {
+      color: $c-item-link-color;
+  } @else {
+      color: $c-item-link-color-hover;
+
+  }
+
+}
+
+// ----------
+
+.c-item h1 > a {
+  color: #333332;
+  text-decoration:none;
+}
+
+.c-item h1 > a:hover {
+  color:#000;
+  text-decoration:underline;
+}
+
+// [ 9. Code Pre ]
+
+
+.c-item code,
+.c-item pre {
+  font-family: Consolas, Monaco, Menlo, "Courier New", monospace;
+  font-size: 13px;
+  color: #333333;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.c-item pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 27px;
+  font-size: 13px;
+  line-height: 20px;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: pre-wrap;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.c-item code {
+  white-space: nowrap;
+}
+
+.c-item pre code {
+  padding: 0 13px 0 13px;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border: 0;
+}
+
+// [ 10. Data ]
+
+.c-item__date {
+  color: #bababa;
+  font-family: $c-item-font-date;
+  font-size: 14px;
+  line-height: $c-item-line-height;
+  margin-top: -20px;
+  margin-bottom: 47px !important;
+}
+
+.c-item__tags {
+  opacity: 0.0;
+  font-family: $c-item-font-tag;
+  font-weight: $extra-bold;
+  letter-spacing: 0.1em;
+  font-size: 11px;
+  line-height: $c-item-line-height;
+  @include transition( all 0.25s );
+}
+
+.c-item:hover .c-item__tags {
+  opacity: 1.0;
+}
+
+.c-item__tag {
+  margin-right: 13px;
+}
+
+.c-item__tag:link,
+.c-item__tag:visited {
+  text-decoration: none;
+  opacity: 0.35;
+  color: #000;
+}
+
+.c-item__tag:hover {
+  opacity: 0.70;
+  color: #000!important;
+  text-decoration: none!important;
+}
+
+// [ 11. Media ]
+
+/*
+	* img — 100%
+	* c-item-cover-media — removes extra margin from botton
+	* img is-fullBleed — snaps to borders when small;
+	* img is-overflow — padding left and right;
+*/
+
+.c-item img {
+	width: 100%;
+}
+
+.c-item figcaption {
+  font-size: 0.7em;
+}
+
+.c-item__cover-media {
+    margin-top:-1 * $padding-vertical;
+}
+
+@if $c-item-cover-media-negative-margin == false {
+    @media all and #{$media-desk} {
+        .c-item__cover-media {
+            margin-top: 0;
+        }
+    }
+}
+
+.c-item figure {
+  margin: 0 0 $padding-vertical 0;
+}
+
+@if $c-item-3-column-style == true {
+
+    @media all and #{$media-desk} {
+
+        // is-side common
+        .c-item figure.is-side,
+        .c-item figure.is-side-left,
+        .c-item figure.is-side-right {
+            width: calc(50% - #{$gutter}*0.5);
+            margin-top: 0.4rem; // Adjust height w/ text
+        }
+
+        // is-side-left
+        .c-item figure.is-side-left,
+        .c-item figure.is-side {
+            float: left;
+            margin-left: calc(-50% - #{$gutter}*0.5);
+        }
+
+        // is-side-right
+        .c-item figure.is-side-right {
+            float: right;
+            margin-right: calc(-50% - #{$gutter}*0.5);
+        }
+
+        // is-full-bleed
+        .c-item figure.is-full-bleed {
+            width: 150%;
+        }
+    }
+}
+
+// [ Scratch ] Arrange
+
+.c-item__meta {
+  color: $color-grey;
+  font-family: $c-item-font-date;
+  font-size: 14px;
+  line-height: $c-item-line-height;
+  margin-top: -20px;
+  margin-bottom: 47px !important;
+}
+
+.c-item__meta--closer {
+  margin-top: -30px;
+}
+
+.c-item__inline-container {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0.6;
+}
+
+.c-item__inline-detail a,
+.c-item__inline-detail a:hover,
+.c-item__inline-detail a:visited {
+  color: $color-grey;
+  text-decoration: underline;
+}
+
+.c-item__inline-detail {
+  font-size: 11px;
+}
+
+.c-item__inline-detail--medium {
+  font-size: 13px;
+}
+
+.c-item__inline-detail--user {
+  font-size: 12.5px;
+}
+
+a.c-item__link--accent,
+a.c-item__link--accent:visited {
+  color: $c-item-link-color;
+  text-decoration: none;
+}
+
+a.c-item__link--accent:hover {
+  color: $c-item-link-color-hover;
+  text-decoration: none;
+}
