@@ -1,0 +1,19 @@
+{
+  "name": "core-scss",
+  "version": "1.0.0",
+  "description": "A library with reusable SCSS classes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nonoesp/core-scss.git"
+  },
+  "author": "Nono Martínez Alonso, nono.ma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nonoesp/core-scss/issues"
+  },
+  "homepage": "https://github.com/nonoesp/core-scss#readme"
+}
