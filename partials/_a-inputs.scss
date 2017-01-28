@@ -41,43 +41,7 @@ input:focus, select:focus, textarea:focus {
   border: 2px solid $input-outline-color-focus;
 }
 
-/*
-input, textarea, keygen, select, button, isindex {
-  margin: 0em;
-  font: -webkit-small-control;
-  color: initial;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-}
-*/
-
-/*
-input[type=email], input[type=text], input[type=checkbox], select {
-  font-family: $input-font-family;
-  font-size:16px;
-  border-radius: 8px;
-  border-width:3px;
-  display: inline-block;
-  padding: .45em .55em;
-
-  min-height: 36px;
-  background-color: #fff;
-  border: 2px solid $input-outline-color;
-  margin: 0 5px 1em 0; 
-
-  vertical-align: middle;
-  border-radius: 3px;
-}
-*/
-
-
 // button
-
 
 button:focus {
   outline-width: 0;
@@ -100,13 +64,13 @@ button {
   letter-spacing: 0.037em;
   text-transform: uppercase;
   margin-right: 8px;
-  border: 2px solid #a8a8a8;  
+  border: 2px solid #a8a8a8;
   color: #a8a8a8;
   background-color: #fafafa;
   height:36px;
 
-  @include user-select(none);  
-  @include transition( all 0.2s );  
+  @include user-select(none);
+  @include transition( all 0.2s );
 }
 
 .button--round {
@@ -135,7 +99,7 @@ button {
 .button--twitter {
   background-color: #55acee;
   min-width: 100%;
-  font-weight: $regular;  
+  font-weight: $regular;
   color: #fff;
   text-transform: none;
   border: none;
@@ -145,7 +109,7 @@ button {
   border-radius: 30px;
   color: #55acee;
   background-color:transparent;
-  font-weight: $regular;  
+  font-weight: $regular;
   text-transform: none;
   border-color: #55acee;
 }
