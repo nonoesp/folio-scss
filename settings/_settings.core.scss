@@ -24,6 +24,9 @@
   $padding-vertical: 27px;
   $o-band-padding-vertical: 40px;
 
+  // core-scss.utilities.padding ($slug, $amount, $unit-vertical, $unit-horizontal)
+  @include padding("u-pad", 20, 10px, 5px);
+
   // c-item
 
   $c-item-font-size: 20px; //$typecsset-base-font-size;
