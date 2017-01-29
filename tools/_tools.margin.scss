@@ -1,0 +1,49 @@
+
+// # With default $breakpoints from settings.core
+
+// @include padding("u-pad", 20, 10px, 5px);
+
+// # Defining $breakpoints variable
+
+// $breakpoints: (
+//   'palm' '(max-width: 200px)',
+//   'lap' '(min-width: 531px) and (max-width: 1023px)',
+//   'portable' '(max-width: 1023px)',
+//   'desk' '(min-width: 1024px)',
+//   'wide' '(min-width: 1500px)'
+// );
+
+@mixin margin ($slug, $amount, $unit-vertical, $unit-horizontal, $breakpoints: $breakpoints) {
+
+  $media-palm: nth(nth($breakpoints, 1), 2);
+  $media-lap: nth(nth($breakpoints, 2), 2);
+  $media-portable: nth(nth($breakpoints, 3), 2);
+  $media-desk: nth(nth($breakpoints, 4), 2);
+  $media-wide: nth(nth($breakpoints, 5), 2);
+
+  @for $i from 0 through $amount {
+    .#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+    .#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	@media all and #{$media-palm} {
+  	  .palm--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+  		.palm--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	}
+  	@media all and #{$media-lap} {
+  	  .lap--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+  		.lap--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	}
+  	@media all and #{$media-portable} {
+  	  .portable--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+  		.portable--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	}
+  	@media all and #{$media-desk} {
+  	  .desk--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+  		.desk--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	}
+  	@media all and #{$media-wide} {
+  	  .wide--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
+  		.wide--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+  	}
+  }
+
+}
