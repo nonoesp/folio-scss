@@ -1,33 +1,34 @@
 
 
-// u-padding
+// utilities-padding
 
-$u-padding-slug: "u-padding" !default;
-$u-padding-padding-vertical: 15px !default;
+$utilities-padding-slug: "u-pad" !default;
+$utilities-padding-unit: 15px !default;
+$utilities-padding-amount: 20 !default;
 
 /* MODIFIERS: Padding */
 
-@for $i from 0 through 20 {
-  .#{$u-padding-slug}--top-#{$i}x { padding-top: $u-padding-padding-vertical * $i; }
-  .#{$u-padding-slug}--bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i; }
+@for $i from 0 through $utilities-padding-amount {
+  .#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i; }
+  .#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i; }
 	@media all and #{$media-palm} {
-	  .#{$u-padding-slug}--palm-top-#{$i}x { padding-top: $u-padding-padding-vertical * $i !important; }
-		.#{$u-padding-slug}--palm-bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i !important; }
+	  .palm--#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i !important; }
+		.palm--#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i !important; }
 	}
 	@media all and #{$media-lap} {
-	  .#{$u-padding-slug}--lap-top-#{$i}x { padding-top: $u-padding-padding-vertical * $i !important; }
-		.#{$u-padding-slug}--lap-bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i !important; }
+	  .lap--#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i !important; }
+		.lap--#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i !important; }
 	}
 	@media all and #{$media-portable} {
-	  .#{$u-padding-slug}--portable-top-#{$i}x { padding-top: $u-padding-padding-vertical * $i !important; }
-		.#{$u-padding-slug}--portable-bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i !important; }
+	  .portable--#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i !important; }
+		.portable--#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i !important; }
 	}
 	@media all and #{$media-desk} {
-	  .#{$u-padding-slug}--desk-top-#{$i}x { padding-top: $u-padding-padding-vertical * $i !important; }
-		.#{$u-padding-slug}--desk-bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i !important; }
+	  .desk--#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i !important; }
+		.desk--#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i !important; }
 	}
 	@media all and #{$media-wide} {
-	  .#{$u-padding-slug}--wide-top-#{$i}x { padding-top: $u-padding-padding-vertical * $i !important; }
-		.#{$u-padding-slug}--wide-bottom-#{$i}x { padding-bottom: $u-padding-padding-vertical * $i !important; }
+	  .wide--#{$utilities-padding-slug}-t-#{$i}x { padding-top: $utilities-padding-unit * $i !important; }
+		.wide--#{$utilities-padding-slug}-b-#{$i}x { padding-bottom: $utilities-padding-unit * $i !important; }
 	}
 }
