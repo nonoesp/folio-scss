@@ -1,6 +1,163 @@
-# core-scss
+More Transparent UI Code with Namespaces
+========================================
 
-This repository contains my Core SCSS stylesheets. The following guidelines are a reminder from [Harry Roberts](docs/csswizardry-namespaces.md) of the naming convention which this project intends to stick to.
+Written by **Harry Roberts** on **CSS Wizardry** on March 6, 2015.
+
+When we work at scale, we often find that we spend a large amount of our
+time reading, maintaining, and refactoring existing code, rather than
+writing and adding new features. This is the reason we focus so much on
+things like architectures, naming conventions, methodologies,
+preprocessors, scalability, etc.: because writing CSS is easy; looking
+after it is not.
+
+What we want is to be able to write code that is as transparent and
+self-documenting as possible. Transparency means that it is clear and
+obvious (to others) in its intent; self-documenting means that we don’t
+have to lose time to writing and reading lengthy, supplementary
+documentation.
+
+The need for this is particularly true when working with languages like
+HTML and CSS. Their declarative nature means there is no control flow to
+give clues as to the state or shape of the project, and the fact that
+the two languages are written separately but exist so closely often
+provides a large disconnect between some CSS’ source and where it is
+implemented. That is to say, we may see classes all throughout our
+markup, but that is only one very small part of the picture: somewhere
+else there is the corresponding CSS that completes the other half of the
+story. Cross-referencing these classes to ensure their proper treatment
+(reusing them elsewhere in the DOM, binding onto them to make
+modifications, deleting them to remove styling, etc.) requires a very
+diligent developer, and consumes a lot of time.
+
+How many times have you looked at a piece of HTML only to wonder which
+classes do what, which classes are related to each other (if at all),
+which classes are optional, which classes are recyclable, which classes
+can you delete, and so on? A lot of times, I’m willing to bet.
+
+Naming conventions like
+[BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+do a fantastic job to help communicate the roles and responsibilities of
+the classes we find in our HTML, and if you’re not yet using BEM then I
+urge you to stop reading this article right now and to start with that
+instead—this post will be levelling BEM up a notch.
+
+To quickly recap, BEM gives us two very useful
+suffixes—`__element`{.highlighter-rouge} and
+`--modifier`{.highlighter-rouge}—that we append onto our classes in
+order to tell us the role of certain bits of UI, for example:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+/**
+ * The top-level ‘Block’ of a component.
+ */
+.modal {}
+
+  /**
+   * An ‘Element’ that is a part of the larger Block.
+   */
+  .modal__title {}
+
+/**
+ * A ‘Modifier’ of the Block.
+ */
+.modal--large {}
+```
+
+</div>
+
+In our CSS, this naming isn’t all that useful, but when we see it in out
+HTML we get a much better view of what’s going on:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+<div class="modal  modal--large">
+
+  <h1 class="modal__title">Sign into your account</h1>
+
+  <div class="modal__content">
+    <form class="form-login">
+    </form>
+  </div>
+
+</div>
+```
+
+</div>
+
+We can see from this that we have a number of classes all relating to
+our `.modal`{.highlighter-rouge}, and a class of
+`.form-login`{.highlighter-rouge} which begins a brand new context.
+
+Being able to glean this level of information from our classes in our
+markup actually tells us quite a lot about the corresponding CSS, and
+also about how and why they interact with each other in the way they do.
+It also tells us about how we should (or should not) reuse these classes
+elsewhere in the DOM: `.modal--large`{.highlighter-rouge},
+`.modal__title`{.highlighter-rouge}, and
+`.modal__content`{.highlighter-rouge} all have a dependency on
+`.modal`{.highlighter-rouge}, and therefore cannot be used without that
+`.modal`{.highlighter-rouge} class also being present.
+
+This gives us some great transparency and—because it exists right there
+in our classes—it is also fairly self-documenting.
+
+This is a naming *convention*. One thing I’ve been researching and
+implementing a lot with my clients lately is the idea of taking naming
+conventions a step further by adding *namespaces*.
+
+A naming convention tells us how classes within a component relate to
+one another, but a namespace will tell us exactly how classes behave in
+a more global sense. A namespace tells us exactly what a class (or suite
+of classes) does in non-relative terms.
+
+------------------------------------------------------------------------
+
+There are a number of common problems when working with CSS at scale,
+but the major two that namespacing aims to solve are clarity and
+confidence:
+
+-   **Clarity:** How much information can we glean from the smallest
+    possible source? Is our code self-documenting? Can we make safe
+    assumptions from a single context? How much do we have to rely on
+    external or supplementary information in order to learn about a
+    system?
+-   **Confidence:** Do we have enough knowledge about a system to be
+    able to safely interface with it? Do we know enough about our code
+    to be able to confidently make changes? Do we have a way of knowing
+    the potential side effects of making a change? Do we have a way of
+    knowing what we might be able to remove?
+
+Usually, unfortunately, the answer to most of these questions is no.
+This is the main reason we end up with bloated codebases, full of legacy
+and unknown CSS that we daren’t touch. We lack the confidence to be able
+to work with and modify existing styles because we fear the consequences
+of CSS’ globally operating and leaky nature. Almost all problems with
+CSS at scale boil down to confidence (or lack thereof): People don’t
+know what things do any more. People daren’t make changes because they
+don’t know how far reaching the effects will be. Old CSS never gets
+deleted because it’s hard to tell where things might be being used.
+
+As a result, we pile on new CSS, using new selectors, in order to avoid
+having to touch anything that exists already. Our CSS gets increasingly
+hard to manage, new styles get added where they might not be needed,
+legacy CSS remains a part of the core codebase, and then the only option
+is to do a complete teardown and rewrite every few years. Expensive.
+
+With the nature of maintaining a large project like this, we often find
+that we spend more time reading markup and its styling through developer
+tools than we might do reading source CSS files. This means that
+meaningful class names become invaluable for communicating rich
+information to other developers.
+
+We need to say exactly what a class does, why it exists, where (else) it
+might already occur, whether or not we can reuse it elsewhere, and how
+safe it is to bind onto or modify. This means that the names of the
+classes become documentation, and we can read all of that documentation
+right there in the view. Wouldn’t it be nice to know the exact scope and
+reach of a selector from its name alone? Read on…
 
 The Namespaces
 --------------
@@ -841,3 +998,444 @@ the QA team’s hook stays in place.
     do it.
 -   Bind tests onto dedicated test classes.
 -   Ensure that any UI refactoring doesn’t affect the QA team’s hooks.
+
+------------------------------------------------------------------------
+
+Handy Side Effects
+------------------
+
+One amazing, incredibly useful, completely accidental, free-of-charge
+side effect of adding these namespaces comes when we use a text editor
+with class autocompletion:
+
+![](/wp-content/uploads/2015/03/autocomplete-anim.gif)
+Animated GIF showing class name autocompletion. [View full size/quality
+(88KB).](/wp-content/uploads/2015/03/autocomplete-anim-full.gif)
+Simply by hitting `o-`{.highlighter-rouge} we get presented with a list
+of every single Object in our project; by hitting
+`c-`{.highlighter-rouge} we get shown every usable Component;
+`u-`{.highlighter-rouge} gives us Utilities, and so on.
+
+This is a really, really nice feature: a find-as-you-type of every
+different type of class in the codebase. It makes things easily findable
+for those who know what they’re looking for, and makes things easily
+discoverable for those who just want to find out what Components might
+be available to them.
+
+------------------------------------------------------------------------
+
+Detecting Namespaces
+--------------------
+
+Because our classes now have this really, really strict naming, we can
+quite easily find
+
+-   malformed classes;
+-   types of rule in our CSS;
+-   types of class in our HTML.
+
+### Finding (In)valid Classes
+
+I wrote a pretty crude regex to find valid classes:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+^\.(_)?[a-z]+-[a-z0-9-]+((_{2}|-{2})?[a-z0-9-]+)?(-{2}[a-z0-9-]+)?[a-z0-9]$
+```
+
+</div>
+
+This will match all of the following:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+.o-layout__item
+.c-modal--wide
+.u-text-center
+.c-nav-primary__link--home
+._c-footer-mobile
+```
+
+</div>
+
+But none of these:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+.foo // No namespace
+.c-datePicker // Camel case
+.o-media_img // Single underscore
+.c-page-head-- // Trailing punctuation
+```
+
+</div>
+
+This works by:
+
+-   `^`{.highlighter-rouge}: Make sure we are at the very beginning of
+    the string.
+-   `\.`{.highlighter-rouge}: Must start with a period (i.e. is a
+    class).
+-   `(_)?`{.highlighter-rouge}: Optional leading underscore (i.e. a
+    Hack).
+-   `[a-z]+`{.highlighter-rouge}: A single alpha, lowercase string of
+    one letter or more (i.e. a namespace).
+-   `-`{.highlighter-rouge}: A single hyphen separator.
+-   `[a-z0-9-]+`{.highlighter-rouge}: Alphanumeric, lowercase, hyphen
+    delimited string of one or more characters (i.e. Block name).
+-   `(`{.highlighter-rouge}: Open an optional match.
+    -   `(_{2}|-{2})?`{.highlighter-rouge}: Optional two underscores or
+        hyphens (i.e. an Element or a Modifier).
+    -   `[a-z0-9-]+`{.highlighter-rouge}: Alphanumeric, lowercase,
+        hyphen delimited string of one or more characters (i.e. Element
+        or Modifier name).
+-   `)?`{.highlighter-rouge}: Close the optional match.
+-   `(-{2}[a-z0-9-]+)?`{.highlighter-rouge}: Optional alphanumeric,
+    lowercase Modifier on the end of all of that.
+-   `[a-z0-9]`{.highlighter-rouge}: Ensure that the very last character
+    is alphanumeric (i.e. no trailing punctuation).
+-   `$`{.highlighter-rouge}: Make sure we reach the very end of the
+    string.
+
+Yes, that’s very icky. I’ve never really written any regex before, so I
+have absolutely no doubt at all that there is a much more terse and
+effective way to achieve the same thing, but for now this regex seems to
+work for (almost) all eventualities: [try it
+out](https://regex101.com/r/rG7uF4/5).
+
+Highlight Types of Namespace
+----------------------------
+
+If you’d like to visualise the amount of, say, Components that are
+currently in any given view, you simply need a bit of CSS like this:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+[class^="c-"],
+[class*=" c-"] {
+  outline: 5px solid cyan;
+}
+```
+
+</div>
+
+This works by:
+
+-   `[class^="c-"]`{.highlighter-rouge}: Find all class attributes that
+    start with the string `c-`{.highlighter-rouge}, e.g.:
+
+    <div class="highlighter-rouge">
+
+    ``` {.highlight}
+      <blockquote class="c-testimonial">
+    ```
+
+    </div>
+
+-   `[class*=" c-"]`{.highlighter-rouge}: Find all class attributes that
+    contain the string `<space>c-`{.highlighter-rouge}, e.g.:
+
+    <div class="highlighter-rouge">
+
+    ``` {.highlight}
+      <blockquote class="o-media  c-testimonial">
+    ```
+
+    </div>
+
+A more complete example:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+[class^="o-"],
+[class*=" o-"] {
+  outline: 5px solid orange;
+}
+
+[class^="c-"],
+[class*=" c-"] {
+  outline: 5px solid cyan;
+}
+
+[class^="u-"],
+[class*=" u-"] {
+  outline: 5px solid violet;
+}
+
+[class^="_"],
+[class*=" _"] {
+  outline: 5px solid red;
+}
+```
+
+</div>
+
+What this allows us to do is get a quick visual indication of the rough
+make-up of a page. Lots of red? Yikes! That means there are a lot of
+hacks. Lots of violet? That implies you’re using a lot of utilities:
+could you maybe refactor and tidy them up?
+
+It’s not bulletproof or failsafe, but it’s a really handy start in
+getting a high-level overview of the composition of your UIs.
+
+### Finding Types in Our CSS
+
+If we want to find all types of namespace in our CSS files, we simply
+need to run a Grep, like so:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+$ git grep "\.t-"
+```
+
+</div>
+
+This will yield all Theme namespaces (the `\`{.highlighter-rouge} is
+simply escaping the `.`{.highlighter-rouge} so that it matches the
+`.`{.highlighter-rouge} string, and not its regex meaning of *anything*)
+in our source CSS files.
+
+Naturally, swapping out the `t-`{.highlighter-rouge} for
+`c-`{.highlighter-rouge} would return all of our Component namespaces.
+
+------------------------------------------------------------------------
+
+Too Much to Type?
+-----------------
+
+If you’re not too keen on the idea of typing out
+`o-`{.highlighter-rouge} and `c-`{.highlighter-rouge} for every
+class—and particularly if you aren’t really interested in the
+autocomplete benefits we can gain—another format we could employ is
+`.object`{.highlighter-rouge}, `.Component`{.highlighter-rouge}. That is
+to say, naming any widespread Object classes with no namespace and a
+lowercase first letter, and naming our Component classes with no
+namespace and a capitalised first letter.
+
+This actually feels almost natural: because components are named,
+complete pieces of UI, it feels proper to give them title case. Take
+these examples:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+<blockquote class="media  Testimonial">
+</blockquote>
+
+<ul class="list-inline  Nav-Primary">
+</ul>
+
+<ul class="box  box--large  Panel  Panel--info">
+</ul>
+```
+
+</div>
+
+Lowercase is a generic and global abstraction, title case is a named
+piece of specific UI.
+
+This would lose some other features we gained (namely autocompletion,
+regexing, and highlighting these pieces of UI visually) but will save
+you some keystrokes. The decision is yours.
+
+------------------------------------------------------------------------
+
+Learning the Namespaces
+-----------------------
+
+Because each namespace tends to be the first letter of the type of
+class, we should find that learning the namespaces is actually very
+simple: `c-`{.highlighter-rouge} means Component,
+`t-`{.highlighter-rouge} means Theme, `o-`{.highlighter-rouge} means
+Object. However, that isn’t to say we shouldn’t document our namespaces
+formally somewhere.
+
+The beauty of namespaces like these is that they’re completely rule
+based. There’s no room for interpretation, which means two things:
+
+1.  People have no excuse for not following them.
+2.  They can be presented as a cheat sheet.
+
+I would recommend creating a simple cheat sheet of your namespaces,
+printing it out on A3 paper, and hanging on the wall in front of your
+engineers. These rules are so straightforward that they can quite easily
+be distilled down and presented as a simple cheat sheet guide that
+anyone can follow.
+
+For reference, [here’s a particularly useful cheat
+sheet](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
+I referred to when I began to [learn
+Vim](http://csswizardry.com/2014/06/vim-for-people-who-think-things-like-vim-are-weird-and-hard/).
+
+------------------------------------------------------------------------
+
+An Example
+----------
+
+Below is a very contrived and forced example to try and demonstrate the
+power of meaningful namespacing. Of course, this example suffers two key
+problems:
+
+1.  It is out of the context of an actual big project, so although it
+    demonstrates what the namespaces are, it’s too small an example to
+    *really* show how powerful namespacing is.
+2.  You’ll be very new to the namespaces we’re using, so you won’t be
+    able to ‘read’ this HTML as quickly as you will once you’ve
+    memorised things a little better.
+
+So, what can we learn from this:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+<body class="t-light">
+
+  <article class="c-modal  c-modal--wide  js-modal  is-open">
+
+    <div class="c-modal__content">
+
+      <div class="s-cms-content">
+        ...
+      </div>
+
+    </div><!-- /.c-modal__content -->
+
+    <div class="c-modal__foot">
+
+      <p class="o-layout">
+        <span class="o-layout__item  u-1/3">
+          <a href="" class="c-btn  c-btn--negative  qa-modal-dismiss">Cancel</a>
+        </span>
+
+        <span class="u-hidden">or</span>
+
+        <span class="o-layout__item  u-2/3">
+          <a href="" class="c-btn  c-btn--positive  qa-modal-accept">Confirm</a>
+        </span>
+      </p>
+
+    </div><!-- /.c-modal__foot -->
+
+  </article><!-- /.c-modal -->
+
+  <footer class="c-page-foot">
+    <small class="c-copyright  _c-copyright">...</small>
+  </footer>
+
+</body>
+</html>
+```
+
+</div>
+
+Well, we can learn a lot:
+
+-   There’s a high-level Theme being used
+    (`.t-light`{.highlighter-rouge}): The UI probably has its current
+    look and feel because of that.
+-   We have a modal component (`.c-modal`{.highlighter-rouge}) which is
+    using a wide variant (`.c-modal--wide`{.highlighter-rouge}). It has
+    some JS binding onto it (`.js-modal`{.highlighter-rouge}) and it is
+    currently open (`.is-open`{.highlighter-rouge}).
+-   The modal is made up of a few more pieces
+    (`.c-modal__content`{.highlighter-rouge} and
+    `.c-modal__foot`{.highlighter-rouge}).
+-   There is an entire area of the DOM whose styling is defined by a
+    Scope (`.s-cms-content`{.highlighter-rouge}). This content comes
+    from a place where we cannot get at the DOM nodes individually, so
+    we revert to styling everything from a new context.
+-   We have a layout Object (`.o-layout`{.highlighter-rouge}) which is
+    currently laying out:
+-   Some layout items that are one- and two-thirds wide
+    (`.u-1/3`{.highlighter-rouge}, `.u-2/3`{.highlighter-rouge}).
+-   These width classes are Utilities, and therefore do not just have to
+    be used alongside the layout Objects—they can be used anywhere.
+-   Some button components (`.c-btn`{.highlighter-rouge}) which have:
+-   QA hooks to be bound onto for automated UI testing
+    (`.qa-modal-dismiss`{.highlighter-rouge},
+    `.qa-modal-accept`{.highlighter-rouge}).
+-   I know there are a number of things in here that I can reuse
+    elsewhere (Objects, Components and Utilities).
+-   A number of things I can reuse, but not bind onto or alter (Objects
+    and Utilities).
+-   A number of things I just plain should not touch (JS and QA peoples’
+    stuff).
+-   Some nasty hacks that need removing at some point, but cannot be
+    reused, modified, or moved.
+
+All of that learned *just* from some rich meaning placed in front of our
+classes. Amazing.
+
+Contrast that with the following:
+
+<div class="highlighter-rouge">
+
+``` {.highlight}
+<body class="light">
+
+  <article class="modal  wide  open">
+
+    <div class="modal__content">
+      ...
+    </div><!-- /.modal__content -->
+
+    <div class="modal__foot">
+
+      <p class="layout">
+        <span class="layout__item  1/3">
+          <a href="" class="btn  btn--negative">Cancel</a>
+        </span>
+
+        <span class="hidden">or</span>
+
+        <span class="layout__item  2/3">
+          <a href="" class="btn  btn--positive">Confirm</a>
+        </span>
+      </p>
+
+    </div><!-- /.modal__foot -->
+
+  </article><!-- /.modal -->
+
+  <footer class="page-foot">
+    <small class="copyright">...</small>
+  </footer>
+
+</body>
+</html>
+```
+
+</div>
+
+Other than the BEM naming, I can glean very little from this piece of
+HTML. I’m left in the dark, unaware of what I might be able to recycle,
+modify, or delete.
+
+------------------------------------------------------------------------
+
+Okay, we’re at over 6,400 words now, let’s wrap this up.
+
+BEM has already provided us with amazing clarity in our classes. Adding
+namespaces on top of this creates incredibly rich meaning that lives
+right there in our HTML. This level of clarity gives us much greater
+confidence when reworking existing markup, and helps us to make better
+and more informed decisions.
+
+It also means fewer regressions and collisions when working in
+multidisciplinary teams (e.g. JS engineers, QA engineers, etc.).
+
+We also get some pretty cool side effects if our text editor supports
+class autocompletion: a find-as-you-type directory of all of the
+different classifications of style in our project.
+
+Self-documenting, transparent UI code through namespacing.
+
+------------------------------------------------------------------------
+
+[Did you enjoy this? **Hire him!**](http://csswizardry.com/services/)
