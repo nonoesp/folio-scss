@@ -11,6 +11,13 @@
 */
 
 @import 'settings.colors';
+@import 'settings.breakpoints';
+@import 'settings.z-index';
+@import 'settings.font-weight';
+
+@import 'tools.fonts';
+@import 'tools.padding';
+@import 'tools.retina';
 
 // [ 1. Typecsset ]
 
@@ -23,9 +30,6 @@
   $type-font-family: BlinkMacSystemFont, sans-serif;
   $padding-vertical: 27px;
   $o-band-padding-vertical: 40px;
-
-  // core-scss.utilities.padding ($slug, $amount, $unit-vertical, $unit-horizontal)
-  @include padding("u-pad", 20, 10px, 5px);
 
   // c-item
 
@@ -55,43 +59,3 @@
   $input-font-size: 14px !default;
   $type-link-color: #000 !default;
   $type-link-text-decoration: underline !default;
-
-  // Font Weights
-
-  $thin: 100 !default;
-  $light: 300 !default;
-  $regular: 400 !default;
-  $bold: 600 !default;
-  $extra-bold: 700 !default;
-
-// [ 3. CSSWizardry-grids ]
-
-  $gutter: 17px !default;
-  $use-markup-fix: false !default;
-
-  $breakpoints: (
-    'palm' '(max-width: 530px)',
-    'lap' '(min-width: 531px) and (max-width: 1023px)',
-    'portable' '(max-width: 1023px)',
-    'desk' '(min-width: 1024px)',
-    'wide' '(min-width: 1500px)'
-  ) !default;
-
-  $media-palm: nth(nth($breakpoints, 1), 2);
-  $media-lap: nth(nth($breakpoints, 2), 2);
-  $media-portable: nth(nth($breakpoints, 3), 2);
-  $media-desk: nth(nth($breakpoints, 4), 2);
-  $media-wide: nth(nth($breakpoints, 5), 2);
-
-// 4. Z-Index Scale
-// --------------------------------------------------
-  $zIndex-1:   100;
-  $zIndex-2:   200;
-  $zIndex-3:   300;
-  $zIndex-4:   400;
-  $zIndex-5:   500;
-  $zIndex-6:   600;
-  $zIndex-7:   700;
-  $zIndex-8:   800;
-  $zIndex-9:   900;
-  $zIndex-10: 1000;
