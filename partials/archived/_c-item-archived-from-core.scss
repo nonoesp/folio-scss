@@ -1,7 +1,7 @@
 
 /*
 
- [ c-item v1.0 ]
+ [ c-item v1.1 ]
 
  [ Nono Martínez Alonso (@nonoesp) ]
 
@@ -28,9 +28,6 @@ $c-item-font-color: inherit !default;
 
 $c-item-link-color: $color-red !default;
 $c-item-link-color-hover: $color-red-dark !default;
-$c-item-link-underline: true !default;
-$c-item-link-underline-hover: true !default;
-
 $c-item-quote-color: $c-item-link-color !default;
 $c-item-footnote-color: $c-item-link-color !default;
 
@@ -60,10 +57,6 @@ $padding-vertical: 27px !default;
   border-bottom: 1px solid #f2f2f0;
   margin-bottom: $padding-vertical * 2 - 1;
   padding-bottom: $padding-vertical * 2;
-}
-
-.c-item__header {
-  margin-bottom: 27px;
 }
 
 // Article: States
@@ -124,7 +117,6 @@ $padding-vertical: 27px !default;
 .c-item p {
   margin-bottom: $padding-vertical;
   color: $c-item-font-color;
-  line-height: $c-item-line-height;
 }
 
   // headers
@@ -197,7 +189,6 @@ $padding-vertical: 27px !default;
 
 .c-item ul > li {
   margin-bottom: 12px;
-  line-height: $c-item-line-height;
 }
 
     /*START: Dashes */
@@ -237,22 +228,28 @@ $padding-vertical: 27px !default;
 
 // [ 8. Links ]
 
+
 .c-item a {
-  @include transition(none);
-  text-decoration: none;
-  color: $c-item-link-color;
-  @if $c-item-link-underline == true {
-    box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $c-item-link-color;
+  @if $c-item-link-monochrone == true {
+      color: $c-item-font-color;
+      text-decoration: underline;
+  } @else {
+      color: $c-item-link-color;
+      text-decoration: none;
   }
 }
 
 .c-item a:hover {
-  color: $c-item-link-color-hover;
-  @if $c-item-link-underline-hover == true {
-    box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $c-item-link-color-hover;
+
+  text-decoration:underline;
+
+  @if $c-item-link-monochrone == true {
+      color: $c-item-link-color;
   } @else {
-    box-shadow: none;
+      color: $c-item-link-color-hover;
+
   }
+
 }
 
 // ----------
@@ -312,6 +309,15 @@ $padding-vertical: 27px !default;
 
 // [ 10. Data ]
 
+.c-item__date {
+  color: #bababa;
+  font-family: $c-item-font-date;
+  font-size: 14px;
+  line-height: $c-item-line-height;
+  margin-top: -20px;
+  margin-bottom: 47px !important;
+}
+
 .c-item__tags {
   opacity: 0.0;
   font-family: $c-item-font-tag;
@@ -327,7 +333,6 @@ $padding-vertical: 27px !default;
 }
 
 .c-item__tag {
-  box-shadow: none !important;
   margin-right: 13px;
 }
 
@@ -416,9 +421,6 @@ $padding-vertical: 27px !default;
   font-family: $c-item-font-date;
   font-size: 14px;
   line-height: $c-item-line-height;
-}
-
-.c-item__meta--margin-setup {
   margin-top: -20px;
   margin-bottom: 47px !important;
 }
@@ -445,7 +447,7 @@ $padding-vertical: 27px !default;
 }
 
 .c-item__inline-detail--medium {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .c-item__inline-detail--user {
