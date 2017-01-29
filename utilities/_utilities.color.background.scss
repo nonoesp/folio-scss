@@ -1,13 +1,5 @@
 
-/**
- * Utilities: Color;
- *
- * 1. Background Color
- * 2. Font Color
- *
- */
-
-// [ 1. Background Color ]
+// Background Color
 
 .u-background-red {
 	background-color: $color-red;
@@ -59,31 +51,4 @@
 
 .u-background-black-broken {
 	background-color: $color-black;
-}
-
-// [ 2. Font Color ]
-
-.u-color-green {
-	color: $color-green;
-}
-
-.u-color-white {
-	color: #fff;
-}
-
-.u-color-white a:link,
-.u-color-white a:visited {
-	color: #fff;
-}
-
-.u-color-grey-light {
-	color: $color-grey-light;
-}
-
-.u-color-grey {
-	color: $color-grey;
-}
-
-.u-color-grey-dark {
-	color: $color-grey-dark;
 }
