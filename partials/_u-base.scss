@@ -36,14 +36,6 @@
 	cursor: pointer;
 }
 
-.u-animatable {
-	@include transition(all 0.5s ease-in-out);
-}
-
-.u-link--block {
-	display: inline-block;
-}
-
 // General: opacity
 
 .u-opacity--none {
