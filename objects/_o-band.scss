@@ -12,78 +12,15 @@ $size-big: 480px;
 $size-huge: 600px;
 
 $o-band-slug: "o-band";
-$o-band-padding-vertical: 27px !default;
 
 .o-band {
 	position: relative;
 	width: 100%;
-	padding-top: $o-band-padding-vertical * 4;
-	padding-bottom: $o-band-padding-vertical * 3;
 	@include transition( all 0.25s );
 	overflow: hidden;
 }
 
-@media all and #{$media-palm} {
-	.o-band {
-		padding-top: $o-band-padding-vertical * 2;
-		padding-bottom: $o-band-padding-vertical * 1;
-	}
-
-	.o-band--padding-top-static {
-		padding-top: $o-band-padding-vertical * 4;
-	}
-}
-
-/* MODIFIERS */
-
-/* MODIFIERS: Padding */
-
-@for $i from 0 through 8 {
-  .#{$o-band-slug}--padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i; }
-  .#{$o-band-slug}--padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i; }
-	@media all and #{$media-palm} {
-	  .#{$o-band-slug}--palm-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
-		.#{$o-band-slug}--palm-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
-	}
-	@media all and #{$media-lap} {
-	  .#{$o-band-slug}--lap-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
-		.#{$o-band-slug}--lap-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
-	}
-	@media all and #{$media-portable} {
-	  .#{$o-band-slug}--portable-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
-		.#{$o-band-slug}--portable-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
-	}
-	@media all and #{$media-desk} {
-	  .#{$o-band-slug}--desk-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
-		.#{$o-band-slug}--desk-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
-	}
-	@media all and #{$media-wide} {
-	  .#{$o-band-slug}--wide-padding-top-#{$i}x { padding-top: $o-band-padding-vertical * $i !important; }
-		.#{$o-band-slug}--wide-padding-bottom-#{$i}x { padding-bottom: $o-band-padding-vertical * $i !important; }
-	}
-}
-
-.o-band--padding-standard {
-	padding-top: 0;
-	padding-bottom: $o-band-padding-vertical;
-}
-
-.o-band--padding-bleed-bottom {
-	padding-bottom: 0;
-}
-
-@media all and #{$media-portable} {
-	.o-band--portable-bleed-bottom {
-		padding-bottom: 0;
-	}
-}
-
-.o-band--padding-footer {
-	padding-top: $o-band-padding-vertical;
-	padding-bottom: $o-band-padding-vertical*2;
-}
-
-/* MODIFIERS: Size */
+// Size modifiers
 
 .o-band--size-tiny {
 	min-height: $size-tiny;
