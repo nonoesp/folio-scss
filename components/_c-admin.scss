@@ -27,11 +27,29 @@ $c-admin-font-size: 16px !default;
   //
 }
 
+.c-admin-form__label * {
+  display:inline-block;
+  vertical-align:middle;
+  line-height: $input-height;
+}
+
+@media all and #{$media-portable} {
+	.c-admin-form__label * {
+		//margin-top: -10px;
+    line-height: $input-height * 0.7 !important;
+	}
+}
+
+.c-admin--font-light {
+  font-size:13px;
+  opacity:0.5;
+}
+
 @media all and #{$media-desk} {
 	.c-admin-form__label {
-		background-color:rgba(0,0,0,0.03);
 		position:absolute;
-		left:-16.666%;
+    left:-48.5%;
+    height: $input-height * 0.6 !important;
 	}
 }
 
