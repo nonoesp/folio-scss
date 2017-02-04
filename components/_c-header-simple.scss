@@ -1,0 +1,146 @@
+
+/* Variables */
+
+$c-header-navigation-height: 36px;
+$c-header-padding-vertical: 32px;
+
+$color-red: #db4a38;
+$color-black: #222;
+
+/* Main */
+
+.c-header-simple {
+	font-family: "franklin-gothic-urw", sans-serif;
+	position:relative;
+	width:100%;
+	font-size: 16px;
+	z-index:200;
+	background-color:$c-header-background-color;
+	padding: $c-header-padding-vertical 0;
+	border-bottom: solid 1px rgba(0,0,0,0.05);
+}
+
+/* Link */
+
+.c-header-simple .navigation-link--active {
+	border-bottom: solid 2px $color-black;
+	color: $color-black;
+	padding-bottom: 2px;
+}
+
+.c-header-simple a {
+	color: $color-black;
+}
+
+.c-header-simple a:hover {
+	color: $color-red;
+}
+
+.c-header-simple .m-social a,
+.c-header-simple .m-social a:visited, {
+	color: $color-black;
+}
+
+.c-header-simple .m-social a:hover {
+	color: $color-red;
+}
+
+/* Name */
+
+.c-header-simple__name {
+	font-weight: 600;
+	display: inline-block;
+	margin-bottom: 8px;
+}
+
+/* Media */
+
+.c-header-simple__media {
+	color: green;
+}
+
+/* o-wrap */
+
+.c-header-simple .o-wrap--bio {
+	max-width: 510px;
+	//background-color: rgba(0,0,0,0.05);
+}
+
+@media all and #{$media-palm} {
+	.c-header-simple .o-wrap--bio {
+		max-width: 340px;
+		margin-left:0;
+	}
+}
+
+/* Slogan */
+
+.c-header-simple__description {
+	font-size: 22px;
+	margin-bottom: 38px;
+}
+
+@media all and #{$media-palm} {
+	.c-header-simple__description {
+		font-size: 20px;
+		text-align: left;
+	}
+}
+
+/* Image */
+
+.c-header-simple__image {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	//background-color: #222;
+	margin-bottom: 20px;
+}
+
+@media all and #{$media-palm} {
+	.c-header-simple__image {
+		margin-left: -35px;
+	}
+}
+
+.c-header-simple__image img {
+	width: 100%;
+	//opacity: 0.98;
+}
+
+/* Navigation */
+
+.c-header-simple__navigation {
+	display: block;
+	margin-bottom: 34px;
+	//background-color: rgba(0,0,0,0.05);
+}
+
+.c-header-simple__navigation ul {
+	//background-color: rgba(0,0,0,0.05);
+	list-style: none;
+	margin:0 auto;
+	padding:0;
+	display:inline-block;
+}
+
+.c-header-simple__navigation ul li {
+	display: inline-block;
+	margin-right: 27px;
+	padding-bottom: 9px;
+	text-align: -webkit-match-parent;
+}
+
+.c-header-simple__navigation ul li:last-of-type {
+	margin-right: 0;
+}
+
+// #{$media-not-palm} = #{$media-lap} + #{$media-desk}
+@media all and #{$media-lap},
+			 all and #{$media-desk} {
+	.c-header-simple,
+	.c-header-simple__navigation {
+		text-align: center;
+	}
+}
