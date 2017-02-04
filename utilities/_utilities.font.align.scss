@@ -1,0 +1,37 @@
+
+// $breakpoints: (
+//   'palm' '(max-width: 530px)',
+//   'lap' '(min-width: 531px) and (max-width: 1023px)',
+//   'portable' '(max-width: 1023px)',
+//   'desk' '(min-width: 1024px)',
+//   'wide' '(min-width: 1500px)'
+// ) !default;
+
+.u-text-align--left {
+  text-align:left;
+}
+
+.u-text-align--center {
+  text-align:center;
+}
+
+.u-text-align--right {
+  text-align:right;
+}
+
+@each $breakpoint in $breakpoints {
+  $style: nth($breakpoint, 1);
+  $query: nth($breakpoint, 2);
+
+  @media all and #{$query} {
+    .u-text-align--#{$style}-left {
+      text-align: left !important;
+    }
+    .u-text-align--#{$style}-center {
+      text-align: center !important;
+    }
+    .u-text-align--#{$style}-right {
+      text-align: right !important;
+    }
+  }
+}

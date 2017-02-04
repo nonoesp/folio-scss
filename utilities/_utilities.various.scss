@@ -90,37 +90,6 @@
 	@include placeholder { text-transform: none; }
 }
 
-// Text: text-align
-
-.u-text-align--center {
-	text-align: center;
-}
-
-.u-text-align--justify {
-	text-align: justify;
-}
-
-.u-text-align--right {
-	text-align: right;
-}
-
-@media all and #{$media-palm} {
-	.u-text-align--palm-center {
-		text-align: center;
-	}
-	.u-text-align--palm-right {
-		text-align: right;
-	}
-}
-
-
-@media all and #{$media-desk} {
-	.u-text-align--desk-right {
-		text-align: right;
-	}
-}
-
-
 // Text: revert
 
 .u-text--revert {
@@ -204,4 +173,9 @@ $font-size-f: 1.25rem !default;
 
 .u-line-height-0 {
 	line-height: 0;
+}
+
+//
+.u-select-none {
+	@include user-select(none);
 }

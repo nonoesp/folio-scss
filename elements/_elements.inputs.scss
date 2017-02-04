@@ -2,76 +2,89 @@
 // DEFAULT SETTINGS
 
   $input-outline-color: #737373 !default;
-  $input-outline-color-focus: #bababa !default;
+  $input-outline-color-focus: rgba(0,0,0,0.30) !default;
   $input-font-family: sans-serif !default;
   $input-font-size: 16px !default;
-  $button-font-size: $input-font-size !default;
   $input-height: 36px !default;
+  $input-border-radius: 2px;
 
-label, input, select, textarea {
+
+.components-font {
   font-family: $input-font-family;
   font-size: $input-font-size;
   font-weight: $regular;
-  @include appearance(none);
+  //@include appearance(none);
+}
+
+.components-shape {
+  min-width:100%;
+  max-width:100%;
+  border-radius: $input-border-radius;
+  border: solid 1px $input-outline-color;
+  height: $input-height;
+  padding: 7px;
+  margin-bottom: 6px;
+  border-color: #dbdbdb;
+}
+
+.components--highlighted {
+  outline-width: 0;
+  border: 1px solid $input-outline-color-focus;
 }
 
 label {
+  @extend .components-font;
   @include user-select(none);
   display: inline-block;
   margin: 0 5px 1em 0;
   vertical-align: middle;
 }
 
-input, textarea {
-  min-width:100%;
-  max-width:100%;
-  height: $input-height;
-  padding: 7px;
-  margin-bottom: 6px;
-  border-radius: 2px;
-  border: solid 2px;
-  border-color: #dbdbdb;
+select {
+  @extend .components-font;
+}
+
+input {
+    @extend .components-shape,
+            .components-font;
 }
 
 textarea {
+  @extend .components-shape,
+          .components-font;
   min-height: 250px;
 }
 
-input:focus, select:focus, textarea:focus {
-  outline-width: 0;
-  border: 2px solid $input-outline-color-focus;
+button, input[type=submit] {
+  @extend .components-shape,
+          .components-font;
+  @include user-select(none);
+  background-color:transparent;
+  padding:0;
+  line-height: $input-height;
+  height: $input-height;
+  cursor:pointer;
+  font-weight: $bold;
+  color: $color-black;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+input:focus,
+input:hover,
+select:focus,
+select:hover,
+textarea:focus,
+textarea:hover,
+button:focus,
+button:hover {
+  @extend .components--highlighted;
 }
 
 // button
 
-button:focus {
-  outline-width: 0;
-}
-
 button:disabled {
   background-color: #dbdbdb;
-}
-
-button {
-  font-family: $input-font-family;
-  font-weight: $bold;
-  font-size: $button-font-size;
-  padding: 0 18px;
-  border-radius: 2px;
-  cursor: pointer;
-  overflow: hidden;
-  text-align: center;
-  vertical-align: middle;
-  letter-spacing: 0.037em;
-  text-transform: uppercase;
-  margin-right: 8px;
-  border: 2px solid #a8a8a8;
-  color: #a8a8a8;
-  background-color: #fafafa;
-  height:36px;
-
-  @include user-select(none);
-  @include transition( all 0.2s );
 }
 
 .button--round {
@@ -143,15 +156,6 @@ button {
 .button--background-white:hover,
 .button--background-white:focus {
   opacity: 1.00;
-}
-
-// INPUT SPECIFIC
-
-[type=submit] {
-  background-color: #333;
-  color: #fff;
-  font-weight: $bold;
-  border: 0;
 }
 
 input[name=title] {

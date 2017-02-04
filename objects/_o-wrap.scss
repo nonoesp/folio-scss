@@ -119,18 +119,42 @@ $o-wrap-sizes: (
     //$i: index($colors-list, $current-color);
 		$size: nth($wrap-size, 2);
 		$name: nth($wrap-size, 1);
-    .#{$o-wrap-slug}--size-#{$name} {
-        max-width: $size;
+		@if $size != 100% {
+			$size: $size + $gutters;
+		}
+		.#{$o-wrap-slug}--size-#{$name} {
+        max-width: $size;// + $gutters;
     }
+		@media all and #{$media-palm} {
+			.#{$o-wrap-slug}--palm-size-#{$name} {
+					max-width: $size!important;// + $gutters;
+			}
+		}
+		@media all and #{$media-lap} {
+			.#{$o-wrap-slug}--lap-size-#{$name} {
+					max-width: $size !important;// + $gutters;
+			}
+		}
+		@media all and #{$media-portable} {
+			.#{$o-wrap-slug}--portable-size-#{$name} {
+					max-width: $size !important;// + $gutters;
+			}
+		}
+		@media all and #{$media-desk} {
+			.#{$o-wrap-slug}--desk-size-#{$name} {
+					max-width: $size !important;// + $gutters;
+			}
+		}
+		@media all and #{$media-wide} {
+			.#{$o-wrap-slug}--wide-size-#{$name} {
+					max-width: $size !important;// + $gutters;
+			}
+		}
 }
 
 @for $i from 1 through 20 {
 	$size: $o-wrap-width-module * $i;
-  .#{$o-wrap-slug}--size-#{strip-units($size)} { max-width:: $o-wrap-width-module * $i; }
-}
-
-// Modifiers: margin
-
-.o-wrap--margin-bottom {
-	margin-bottom: 54px;
+  .#{$o-wrap-slug}--size-#{strip-units($size)} {
+		max-width: $o-wrap-width-module * $i + $gutters;
+	}
 }
