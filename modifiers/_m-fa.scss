@@ -29,10 +29,14 @@
 .m-fa a:visited {
   @include transition(none);
   text-decoration: none;
+}
+
+.m-fa--grey-fade a,
+.m-fa--grey-fade a:visited {
   color: rgba(0, 0, 0, 0.25);
 }
 
-.m-fa a:hover {
+.m-fa--grey-fade a:hover {
   color: rgba(0, 0, 0, 0.80);
 }
 
