@@ -144,3 +144,25 @@ $color-black: #222;
 		text-align: center;
 	}
 }
+
+/* Modifiers */
+
+// Modifier: absolute
+
+.c-header-simple--absolute {
+	position:absolute;
+}
+
+.c-header-simple--absolute a,
+.c-header-simple--absolute a:visited {
+	color: $color-white;
+	opacity: 0.8;
+}
+
+.c-header-simple--absolute a:hover {
+	opacity: 1.0;
+}
+
+.c-header-simple--borderless {
+	border-bottom: none;
+}
