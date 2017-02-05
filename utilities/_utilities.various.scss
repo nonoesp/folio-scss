@@ -165,6 +165,10 @@ $font-size-f: 1.25rem !default;
 	text-decoration: none;
 }
 
+.u-box-shadow--none {
+	box-shadow: none;
+}
+
 // New
 
 .u-a--box-shadow-reset {
