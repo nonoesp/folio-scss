@@ -161,12 +161,12 @@ $font-size-f: 1.25rem !default;
 	font-weight: $extra-bold;
 }
 
-.u-text-decoration--none {
+a.u-text-decoration--none {
 	text-decoration: none;
 }
 
-.u-box-shadow--none {
-	box-shadow: none;
+a.u-box-shadow--none {
+    box-shadow: none;
 }
 
 // New
