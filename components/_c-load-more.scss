@@ -15,7 +15,7 @@ $c-load-more-font-load-more: $type-font-family !default;
 .c-load-more {
     width: 100%;
     text-align: center;
-    border-top: 1px solid #f2f2f0;
+    //border-top: 1px solid #f2f2f0;
     padding-top: $padding-vertical * 2;
     padding-bottom: $padding-vertical * 3;
     height: 42px;
@@ -28,7 +28,7 @@ $c-load-more-font-load-more: $type-font-family !default;
     font-weight: $bold;
     font-family: $c-load-more-font-load-more, sans-serif;
     font-size: 14px;
-    letter-spacing: 0.17em;  
+    letter-spacing: 0.17em;
     @include transition( all 0.25s );
 }
 
