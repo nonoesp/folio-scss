@@ -23,31 +23,28 @@ $c-load-more-font-load-more: $type-font-family !default;
 
 // [ 3. Elements ]
 
-.c-load-more__item {
+.c-load-more__text-wrapper {
     opacity: 0.55;
     font-weight: $bold;
     font-family: $c-load-more-font-load-more, sans-serif;
     font-size: 14px;
     letter-spacing: 0.17em;
-    @include transition( all 0.25s );
 }
 
-.c-load-more__item:hover {
+.c-load-more__text-wrapper:hover {
     opacity: 1;
 }
 
-.c-load-more__item--loading-wheel {
+.c-load-more__image-wrapper {
     display:none;
 }
-
-
 
 // States
 
-.c-load-more.is-loading > .c-load-more__item--load-more {
+.c-load-more.is-loading > .c-load-more__text-wrapper {
     display:none;
 }
 
-.c-load-more.is-loading > .c-load-more__item--loading-wheel {
+.c-load-more.is-loading > .c-load-more__image-wrapper {
     display:block;
 }
