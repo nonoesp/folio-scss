@@ -116,7 +116,12 @@ button:disabled {
   font-weight: $regular;
   color: #fff;
   text-transform: none;
-  border: none;
+  border: none!important;
+  opacity:0.95;
+}
+
+.button--twitter:hover {
+  opacity:1;
 }
 
 .button--twitter-hero {
