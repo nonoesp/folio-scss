@@ -39,6 +39,10 @@ $c-load-more-font-load-more: $type-font-family !default;
     display:none;
 }
 
+.c-load-more__image {
+    width: 20px;
+}
+
 // States
 
 .c-load-more.is-loading > .c-load-more__text-wrapper {
