@@ -49,7 +49,8 @@ $c-item-font-date: $c-item-font-a !default;
 $c-item-font-header: $c-item-font-a !default;
 $c-item-font-tag: $c-item-font-c !default;
 
-$c-item-list-font-family: $c-item-font-a !default;
+$c-item-footnotes-font-family: $c-item-font-a !default;
+$c-item-footnotes-color: rgba(0,0,0,0.5) !default;
 
 $padding-vertical: 27px !default;
 
@@ -194,7 +195,6 @@ $padding-vertical: 27px !default;
 .c-item ul,
 .c-item ol {
   margin: 0 0 27px 0 !important;
-  font-family: $c-item-list-font-family;
   //list-style: inside;
 }
 
@@ -222,6 +222,50 @@ $padding-vertical: 27px !default;
 .c-item ul ul,
 .c-item ol ol {
 	margin: 0 0 0 60px !important;
+}
+
+// ----------
+
+.c-item .footnotes ul,
+.c-item .footnotes ol {
+  font-family: $c-item-footnotes-font-family;
+}
+
+.c-item .footnotes ul,
+.c-item .footnotes ol,
+.c-item .footnotes ul a,
+.c-item .footnotes ol a,
+.c-item .footnotes ul li,
+.c-item .footnotes ol li,
+.c-item .footnotes ul p,
+.c-item .footnotes ol p, {
+  color: $c-item-footnotes-color;
+}
+
+@media all and #{$media-portable} {
+  .c-item .footnotes ul,
+  .c-item .footnotes ol {
+    padding-left: 10px;
+  }
+}
+
+@media all and #{$media-palm} {
+  .c-item .footnotes ul,
+  .c-item .footnotes ol {
+    font-size: 12px;
+  }
+}
+
+.c-item .footnotes ul a,
+.c-item .footnotes ol a {
+  box-shadow: inset 0 -1.5px 0 white, inset 0 -2.5px 0 $c-item-footnotes-color;
+}
+
+@media all and #{$media-palm} {
+  .c-item .footnotes ul a,
+  .c-item .footnotes ol a {
+    box-shadow: inset 0 -1px 0 white, inset 0 -2px 0 $c-item-footnotes-color;
+  }
 }
 
 // [ 7. Quotes ]
