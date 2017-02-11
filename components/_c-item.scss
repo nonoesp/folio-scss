@@ -49,6 +49,8 @@ $c-item-font-date: $c-item-font-a !default;
 $c-item-font-header: $c-item-font-a !default;
 $c-item-font-tag: $c-item-font-c !default;
 
+$c-item-list-font-family: $c-item-font-a !default;
+
 $padding-vertical: 27px !default;
 
 // [ 2. Article ]
@@ -192,6 +194,7 @@ $padding-vertical: 27px !default;
 .c-item ul,
 .c-item ol {
   margin: 0 0 27px 0 !important;
+  font-family: $c-item-list-font-family;
   //list-style: inside;
 }
 
