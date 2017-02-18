@@ -22,8 +22,8 @@
   $media-wide: nth(nth($breakpoints, 5), 2);
 
   @for $i from 0 through $amount {
-    .#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
-    .#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
+    .#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i; }
+    .#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i; }
   	@media all and #{$media-palm} {
   	  .palm--#{$slug}-t-#{$i}x { margin-top: $unit-vertical * $i !important; }
   		.palm--#{$slug}-b-#{$i}x { margin-bottom: $unit-vertical * $i !important; }
