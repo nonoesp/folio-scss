@@ -13,7 +13,7 @@
 //   'wide' '(min-width: 1500px)'
 // );
 
-@mixin margin ($slug, $amount, $unit-vertical, $unit-horizontal, $breakpoints: $breakpoints) {
+@mixin core_margin ($slug, $amount, $unit-vertical, $unit-horizontal, $breakpoints: $breakpoints) {
 
   $media-palm: nth(nth($breakpoints, 1), 2);
   $media-lap: nth(nth($breakpoints, 2), 2);
