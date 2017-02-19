@@ -53,6 +53,44 @@ $c-admin-font-size: 16px !default;
 	}
 }
 
+@media all and #{$media-desk} {
+  .c-admin__property {
+    width:108.8%;
+  }
+}
+
+@media all and #{$media-lap} {
+  .c-admin__property {
+    width:104%;
+  }
+}
+
+.c-admin__property input {
+  font-size: 12px;
+}
+
+@media all and #{$media-palm} {
+  .c-admin__property input {
+    font-size: 10px;
+  }
+}
+
+.c-admin__property .c-admin__property-trash {
+  display:none;
+}
+
+.c-admin__property:hover .c-admin__property-trash {
+  display:inline-block;
+}
+
+@media all and #{$media-portable} {
+  .c-admin__property .c-admin__property-trash {
+    display:inline-block;
+  }
+}
+
+// ------------------------------
+
 $color-a: #000;
 $color-b: #bababa;
 
