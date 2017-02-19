@@ -89,6 +89,42 @@ $c-admin-font-size: 16px !default;
   }
 }
 
+.c-admin__existing-tags {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.c-admin__existing-tags ul {
+  display:inline-block;
+  margin:0;
+}
+
+.c-admin__existing-tags ul li {
+  display: inline-block;
+  margin-right:6px;
+  //background-color:rgba(0,0,0,0.15);
+  padding:3px 7px;
+  border:1px solid $color-grey;
+  border-radius: 25px;
+  margin-bottom:7px;
+}
+
+.c-admin__existing-tags ul li:hover {
+  // background-color:rgba(0,0,0,0.03);
+  border-color:$color-black;
+  color:$color-black;
+}
+
+.c-admin__existing-tags a,
+.c-admin__existing-tags a:visited
+// .c-admin__existing-tags a:hover,
+// .c-admin__existing-tags a:visited
+ {
+  color: rgba(0,0,0,0.33);
+  text-decoration:none;
+  // font-weight: $bold;
+}
+
 // ------------------------------
 
 $color-a: #000;
