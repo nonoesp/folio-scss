@@ -154,7 +154,32 @@ $o-wrap-sizes: (
 
 @for $i from 1 through 20 {
 	$size: $o-wrap-width-module * $i;
-  .#{$o-wrap-slug}--size-#{strip-units($size)} {
+	.#{$o-wrap-slug}--size-#{strip-units($size)} {
 		max-width: $o-wrap-width-module * $i + $gutters;
+	}
+	@media all and #{$media-palm} {
+		.palm--#{$o-wrap-slug}--size-#{strip-units($size)} {
+				max-width: $size!important;// + $gutters;
+		}
+	}
+	@media all and #{$media-lap} {
+		.lap--#{$o-wrap-slug}--size-#{strip-units($size)} {
+				max-width: $size !important;// + $gutters;
+		}
+	}
+	@media all and #{$media-portable} {
+		.portable--#{$o-wrap-slug}--size-#{strip-units($size)} {
+				max-width: $size !important;// + $gutters;
+		}
+	}
+	@media all and #{$media-desk} {
+		.desk--#{$o-wrap-slug}--size-#{strip-units($size)} {
+				max-width: $size !important;// + $gutters;
+		}
+	}
+	@media all and #{$media-wide} {
+		.wide--#{$o-wrap-slug}--size-#{strip-units($size)} {
+				max-width: $size !important;// + $gutters;
+		}
 	}
 }
