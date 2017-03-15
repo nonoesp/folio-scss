@@ -41,12 +41,13 @@ label {
 }
 
 select {
-  @extend .components-font;
+  @extend .components-shape,
+          .components-font;
 }
 
 input {
-    @extend .components-shape,
-            .components-font;
+  @extend .components-shape,
+          .components-font;
 }
 
 textarea {
