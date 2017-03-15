@@ -43,6 +43,7 @@ label {
 select {
   @extend .components-shape,
           .components-font;
+  background-color:transparent;
 }
 
 input {
