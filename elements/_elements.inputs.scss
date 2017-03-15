@@ -49,6 +49,9 @@ select {
 input {
   @extend .components-shape,
           .components-font;
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
 }
 
 textarea {
