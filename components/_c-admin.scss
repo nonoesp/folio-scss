@@ -129,6 +129,14 @@ $c-admin-font-size: 16px !default;
   // font-weight: $bold;
 }
 
+
+// .c-admin-form
+
+.c-admin__form select {
+  width:100%;
+  height: $input-height;
+}
+
 // ------------------------------
 
 $color-a: #000;
