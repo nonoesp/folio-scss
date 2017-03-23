@@ -26,9 +26,11 @@
 // [ 2. Custom Variables ]
 
   $type-font-family: BlinkMacSystemFont, "franklin-gothic-urw", "proxima-nova", sans-serif;
-  $selection-color: $color-grey;
   $padding-vertical: 27px;
   $o-band-padding-vertical: 40px;
+  // selection
+  $selection-background-color: $color-grey;
+  $selection-color: $color-white;
 
   // c-item
 
