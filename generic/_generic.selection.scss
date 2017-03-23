@@ -1,9 +1,6 @@
-::selection {
-  background: $color-grey; /* WebKit/Blink Browsers */
+::selection, /* WebKit/Blink Browsers */
+::-moz-selection /* Gecko Browsers */
+{
   color: #fff;
-}
-
-::-moz-selection {
-  color: #fff;
-  background: $color-grey; /* Gecko Browsers */
+  background: $text-selection-color;
 }
