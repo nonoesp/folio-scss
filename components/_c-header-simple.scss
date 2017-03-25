@@ -167,3 +167,29 @@ $color-black: #222;
 .c-header-simple--borderless {
 	border-bottom: none;
 }
+
+.c-header-simple--tight .c-header-simple__navigation {
+	margin:0;
+}
+
+.c-header-simple--night {
+	background-color:$color-black;
+	color:$color-white;
+}
+
+.c-header-simple--night a {
+	color: $color-white;
+}
+
+.c-header-simple--night a:hover {
+	color: $color-yellow;
+}
+
+.c-header-simple--night .m-social a,
+.c-header-simple--night .m-social a:visited, {
+	color: $color-white;
+}
+
+.c-header-simple--night .m-social a:hover {
+	color: $color-yellow;
+}
