@@ -1,26 +1,25 @@
-
 // grid modifiers for csswizardry-grids
-
 @for $i from 0 through 20 {
-  $gutter: $i * 1px;
-  .grid--gutter-#{$i}x {
-    margin-left:-$gutter!important;
-    .grid__item {
-      padding-left: $gutter!important;
+    $gutter: $i * 1px;
+    .grid--gutter-#{$i}x {
+        margin-left: -$gutter!important;
+        .grid__item {
+            padding-left: $gutter!important;
+        }
     }
-  }
-
-  .grid--gutter-h-#{$i}x {
-    margin-top: -$gutter !important;
-    > .grid__item {
-      line-height: 0;
-      padding-top: $gutter !important;
+    .grid--gutter-h-#{$i}x {
+        margin-top: -$gutter !important;
+        .grid__item {
+            line-height: 0;
+            padding-top: $gutter !important;
+            background-color: red;
+        }
+        .grid__item>* {
+            line-height: 100%;
+        }
     }
-    > .grid__item > * {
-      line-height: 100%;
-    }
-  }
 }
+
 // @for $i from 0 through 20 {
 //   $j: 12 + $i * 2;
 //   .grid--gutter-#{$j}x .grid__item {
