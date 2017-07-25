@@ -28,6 +28,10 @@ $color-black: #222;
     padding-bottom: 2px;
 }
 
+.c-header-simple--white .navigation-link--active {
+    border-bottom: solid 2px $color-white;
+}
+
 .c-header-simple a {
     color: $color-black;
 }
