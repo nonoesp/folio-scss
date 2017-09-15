@@ -1,17 +1,15 @@
-
 $c-admin-font-size: 16px !default;
-
 .c-admin {
-  //
+    //
 }
 
 .c-admin p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .c-admin textarea {
-  margin-bottom:0;
-  min-height: 150px;
+    margin-bottom: 0;
+    min-height: 150px;
 }
 
 .c-admin h1,
@@ -20,198 +18,208 @@ $c-admin-font-size: 16px !default;
 .c-admin h4,
 .c-admin h5,
 .c-admin h6 {
-  font-size: $c-admin-font-size;
+    font-size: $c-admin-font-size;
 }
 
 .c-admin__title {
-  //
+    //
 }
 
 .c-admin a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
+.c-admin-form-v2 {}
+
+.c-admin-form-v2 label {
+    margin-bottom: 0;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.c-admin-form-v2 input {
+    margin-bottom: 2px;
+}
+
+// -------
 .c-admin-form__label * {
-  display:inline-block;
-  vertical-align:middle;
-  line-height: $input-height;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: $input-height;
 }
 
 @media all and #{$media-portable} {
-	.c-admin-form__label * {
-		//margin-top: -10px;
-    line-height: $input-height * 0.7 !important;
-	}
+    .c-admin-form__label * {
+        //margin-top: -10px;
+        background-color: blue;
+        line-height: $input-height * 0.7 !important;
+    }
 }
 
 .c-admin--font-light {
-  font-size:13px;
-  opacity:0.5;
+    font-size: 13px;
+    opacity: 0.5;
 }
 
 @media all and #{$media-desk} {
-	.c-admin-form__label {
-		position:absolute;
-    left:-48.5%;
-    height: $input-height * 0.6 !important;
-	}
+    .c-admin-form__label {
+        position: absolute;
+        left: -48.5%;
+        height: $input-height * 0.6 !important;
+    }
 }
 
 @media all and #{$media-desk} {
-  .c-admin__property {
-    width:108.8%;
-  }
+    .c-admin__property {
+        width: 108.8%;
+    }
 }
 
 @media all and #{$media-lap} {
-  .c-admin__property {
-    width:104%;
-  }
+    .c-admin__property {
+        width: 104%;
+    }
 }
 
 .c-admin__property input {
-  font-size: 12px;
+    font-size: 12px;
 }
 
 @media all and #{$media-palm} {
-  .c-admin__property input {
-    font-size: 10px;
-  }
+    .c-admin__property input {
+        font-size: 10px;
+    }
 }
 
 .c-admin__property .c-admin__property-trash {
-  display:none;
+    display: none;
 }
 
 .c-admin__property:hover .c-admin__property-trash {
-  display:inline-block;
+    display: inline-block;
 }
 
 @media all and #{$media-portable} {
-  .c-admin__property .c-admin__property-trash {
-    display:inline-block;
-  }
+    .c-admin__property .c-admin__property-trash {
+        display: inline-block;
+    }
 }
 
 .c-admin__existing-tags {
-  font-size: 10px;
-  text-transform: uppercase;
+    font-size: 10px;
+    text-transform: uppercase;
 }
 
 .c-admin__existing-tags ul {
-  display:inline-block;
-  margin:0;
+    display: inline-block;
+    margin: 0;
 }
 
 .c-admin__existing-tags ul li {
-  display: inline-block;
-  margin-right:6px;
-  //background-color:rgba(0,0,0,0.15);
-  padding:3px 7px;
-  border:1px solid $color-grey;
-  border-radius: 25px;
-  margin-bottom:7px;
+    display: inline-block;
+    margin-right: 6px;
+    //background-color:rgba(0,0,0,0.15);
+    padding: 3px 7px;
+    border: 1px solid $color-grey;
+    border-radius: 25px;
+    margin-bottom: 7px;
 }
 
 .c-admin__existing-tags ul li:hover {
-  // background-color:rgba(0,0,0,0.03);
-  border-color:$color-black;
-  color:$color-black;
+    // background-color:rgba(0,0,0,0.03);
+    border-color: $color-black;
+    color: $color-black;
 }
 
 .c-admin__existing-tags a,
-.c-admin__existing-tags a:visited
-// .c-admin__existing-tags a:hover,
+.c-admin__existing-tags a:visited // .c-admin__existing-tags a:hover,
 // .c-admin__existing-tags a:visited
- {
-  color: rgba(0,0,0,0.33);
-  text-decoration:none;
-  // font-weight: $bold;
+{
+    color: rgba(0, 0, 0, 0.33);
+    text-decoration: none;
+    // font-weight: $bold;
 }
 
-
 // .c-admin-form
-
 .c-admin__form select {
-  width:100%;
-  height: $input-height;
+    width: 100%;
+    height: $input-height;
 }
 
 // ------------------------------
-
 $color-a: #000;
 $color-b: #bababa;
-
 $admin-list-primary-font-size: 17px;
 $admin-list-secondary-font-size: 14px;
-
 .admin-list-item {
-	font-size: $admin-list-primary-font-size;
-	margin-bottom: 8px;
+    font-size: $admin-list-primary-font-size;
+    margin-bottom: 8px;
 }
 
 .admin-list-itemLink {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .admin-list-item.is-active .admin-list-itemLink:link,
-.admin-list-item.is-active .admin-list-itemLink:visited, {
-	color: $color-a;
+.admin-list-item.is-active .admin-list-itemLink:visited,
+{
+    color: $color-a;
 }
 
 .admin-list-item.is-trashed .admin-list-itemLink:link,
-.admin-list-item.is-trashed .admin-list-itemLink:visited, {
-	color: $color-b;
+.admin-list-item.is-trashed .admin-list-itemLink:visited,
+{
+    color: $color-b;
 }
 
 .admin-list-optionLink {
-	font-size: $admin-list-secondary-font-size;
-	padding: 0 7px;
-	color: $color-b;
-	text-decoration: none;
+    font-size: $admin-list-secondary-font-size;
+    padding: 0 7px;
+    color: $color-b;
+    text-decoration: none;
 }
 
 .admin-list-item .is-invisible {
-	display: none;
+    display: none;
 }
 
 .admin-list-item:hover .is-invisible {
-	display: inline-block;
+    display: inline-block;
 }
 
 .admin-list-itemDetails {
-	margin-top: 6-$admin-list-secondary-font-size;
-	font-size: $admin-list-secondary-font-size;
-	line-height: $admin-list-secondary-font-size;
-	color: $color-b;
-	margin-bottom: 8px;
+    margin-top: 6-$admin-list-secondary-font-size;
+    font-size: $admin-list-secondary-font-size;
+    line-height: $admin-list-secondary-font-size;
+    color: $color-b;
+    margin-bottom: 8px;
 }
+
 
 /*-------*/
 
 .admin-title {
-	font-weight: $bold;
-	margin-bottom: 27px;
-	color: #333;
+    font-weight: $bold;
+    margin-bottom: 27px;
+    color: #333;
 }
 
 .admin-menu {
-	margin-bottom:27px;
+    margin-bottom: 27px;
 }
 
 .admin-menu-item {
-	text-decoration: none;
-	font-size: 14px;
-	margin-right: 6px;
-	color: #333;
-	opacity:0.6;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 6px;
+    color: #333;
+    opacity: 0.6;
 }
 
 a.admin-menu-item:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .admin-dashboard-greeting {
-	font-size: 26px;
-	font-weight: $light;
+    font-size: 26px;
+    font-weight: $light;
 }
