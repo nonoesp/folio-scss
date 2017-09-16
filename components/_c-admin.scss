@@ -50,7 +50,6 @@ $c-admin-font-size: 16px !default;
 @media all and #{$media-portable} {
     .c-admin-form__label * {
         //margin-top: -10px;
-        background-color: blue;
         line-height: $input-height * 0.7 !important;
     }
 }
