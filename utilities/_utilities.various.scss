@@ -140,8 +140,83 @@ $font-size-i: 1.75rem !default;
 
 // Type: font-size media queries
 @media all and #{$media-palm} {
-    .palm-font--size-a {
+    .u-font-size--a\@palm {
         font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@palm {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@palm {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@palm {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@palm {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@palm {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@palm {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@palm {
+        font-size: $font-size-i !important;
+    }
+}
+
+@media all and #{$media-lap} {
+    .u-font-size--a\@lap {
+        font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@lap {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@lap {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@lap {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@lap {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@lap {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@lap {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@lap {
+        font-size: $font-size-i !important;
+    }
+}
+
+@media all and #{$media-desk} {
+    .u-font-size--a\@desk {
+        font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@desk {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@desk {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@desk {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@desk {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@desk {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@desk {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@desk {
+        font-size: $font-size-i !important;
     }
 }
 
