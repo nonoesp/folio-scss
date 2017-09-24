@@ -103,45 +103,45 @@ $font-size-g: 1.35rem !default;
 $font-size-h: 1.55rem !default;
 $font-size-i: 1.75rem !default;
 .u-font-size--a {
-    font-size: $font-size-a;
+    font-size: $font-size-a !important;
 }
 
 .u-font-size--b {
-    font-size: $font-size-b;
+    font-size: $font-size-b !important;
 }
 
 .u-font-size--c {
-    font-size: $font-size-c;
+    font-size: $font-size-c !important;
 }
 
 .u-font-size--d {
-    font-size: $font-size-d;
+    font-size: $font-size-d !important;
 }
 
 .u-font-size--e {
-    font-size: $font-size-e;
+    font-size: $font-size-e !important;
 }
 
 .u-font-size--f {
-    font-size: $font-size-f;
+    font-size: $font-size-f !important;
 }
 
 .u-font-size--g {
-    font-size: $font-size-g;
+    font-size: $font-size-g !important;
 }
 
 .u-font-size--h {
-    font-size: $font-size-h;
+    font-size: $font-size-h !important;
 }
 
 .u-font-size--i {
-    font-size: $font-size-i;
+    font-size: $font-size-i !important;
 }
 
 // Type: font-size media queries
 @media all and #{$media-palm} {
     .palm-font--size-a {
-        font-size: $font-size-a;
+        font-size: $font-size-a !important;
     }
 }
 
