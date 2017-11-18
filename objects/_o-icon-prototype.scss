@@ -1,0 +1,84 @@
+
+// [ o-icon-prototype ]
+
+.o-icon-prototype__svg /*.o-icon-prototype__link*/ {
+  //cursor: pointer;
+  @include transition( all 0.0s );
+}
+
+.o-icon-prototype__svg:hover {
+  //opacity:0.9;
+  color: #222;
+  color: #222;
+}
+
+// MODIFIERS: COLOR
+
+.o-icon-prototype--color-white .o-icon-prototype__svg {
+  color:#fff;
+  fill:#fff;
+}
+
+.o-icon-prototype--color-dark-grey .o-icon-prototype__svg {
+  color:rgba(0,0,0,0.6);
+  fill:rgba(0,0,0,0.6);
+}
+
+// MODIFIERS: SIZE
+
+.o-icon-prototype {
+	width: 350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media all and #{$media-lap} {
+	.o-icon-prototype {
+		width: 300px;
+	}
+}
+
+@media all and #{$media-palm} {
+	.o-icon-prototype {
+		width: 200px;
+	}
+}
+
+.o-icon-prototype--size-home {
+	width: 260px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+@media all and #{$media-lap} {
+	.o-icon-prototype--size-home {
+		width: 210px;
+	}
+}
+
+@media all and #{$media-palm} {
+	.o-icon-prototype--size-home {
+		width: 180px;
+	}
+}
+
+.o-icon-prototype--size-logo-line-desktop {
+  width: 40px;
+}
+
+.o-icon-prototype--size-logo-line-desktop-static {
+  width: 100px;
+}
+
+// ARMA specific
+
+// size logo header line
+.o-icon-prototype--size-logo-line-palm {
+  width: 70px;
+}
+
+// MODIFIERS: display
+
+.o-icon-prototype--display-inline {
+  display:inline-block;
+}
