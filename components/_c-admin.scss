@@ -29,12 +29,6 @@ $c-admin-font-size: 16px !default;
     text-decoration: none;
 }
 
-// .c-admin-form-v2 p {
-//     margin-right: auto;
-//     margin-left: auto;
-//     padding: 0 18px;
-//     max-width: 600px;
-// }
 .c-admin p.unwrapped.wide {
     margin-right: auto;
     margin-left: auto;
@@ -56,14 +50,17 @@ $c-admin-font-size: 16px !default;
 @import url(https://fonts.googleapis.com/css?family=Cousine:400,400i,700,700i);
 .c-admin-form-v2 textarea {
     font-family: Cousine;
-    padding: 10px;
     font-size: 1.05em;
     line-height: 1.8em;
     border-color: transparent; // rgba(0, 0, 0, 0.02);
-    // state when selected
-    left: 0;
     min-height: 150px;
     resize: none;
+}
+
+@media all and #{$media-palm} {
+    .c-admin-form-v2 textarea {
+        font-size: 0.8em;
+    }
 }
 
 .c-admin-form-v2 textarea::-webkit-scrollbar {
