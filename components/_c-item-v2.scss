@@ -38,7 +38,7 @@ $c-item-v2-blockquote-color: rgba(0, 0, 0, 0.3) !default;
 $c-item-v2-header-letter-spacing: auto !default;
 $c-item-v2-header-resize: true !default;
 $c-item-v2-header-text-align: left !default;
-$c-item-v2-header-font-weight: 700 !default;
+$c-item-v2-header-font-weight: $semibold !default;
 $c-item-v2-link-monochrone: false !default;
 $c-item-v2-cover-media-negative-margin: true !default;
 $c-item-v2-3-column-style: true !default;
@@ -195,7 +195,7 @@ $_c-item-v2-wrap-width: 30em;
     margin: 0 auto;
     font-family: $c-item-v2-font-header;
     margin-bottom: $padding-vertical;
-    font-weight: $c-item-v2-font-weight;
+    font-weight: $c-item-v2-header-font-weight;
     line-height: $c-item-v2-line-height;
     letter-spacing: $c-item-v2-header-letter-spacing;
 }
