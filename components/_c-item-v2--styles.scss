@@ -38,6 +38,10 @@
     padding: 2em $c-item-v2-gutter;
 }
 
+.c-item-v2__section:last-of-type {
+    padding: 1em $c-item-v2-gutter;
+}
+
 .c-item-v2__section .section {
     @extend .c-item-v2--bleed;
 }

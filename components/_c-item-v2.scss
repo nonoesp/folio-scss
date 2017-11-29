@@ -5,7 +5,7 @@
  [ Nono Martínez Alonso, nono.ma ]
 
  —  1. Default            (settings)
- —  2. Item            (c-item, states, modifiers)
+ —  2. Item               (c-item, states, modifiers)
  —  3. Footnotes          (footnote, footnote-ref)
  —  4. Horizontal Rules   (hr)
  —  5. Paragraph          (p, headers, cover-media)
@@ -37,13 +37,15 @@ $c-item-v2-link-underline-hover: true !default;
 $c-item-v2-blockquote-color: rgba(0, 0, 0, 0.3) !default;
 $c-item-v2-header-letter-spacing: auto !default;
 $c-item-v2-header-resize: true !default;
-$c-item-v2-header-text-align: center !default;
+$c-item-v2-header-text-align: left !default;
+$c-item-v2-header-font-weight: 700 !default;
 $c-item-v2-link-monochrone: false !default;
 $c-item-v2-cover-media-negative-margin: true !default;
 $c-item-v2-3-column-style: true !default;
 $c-item-v2-font-a: sans-serif !default;
 $c-item-v2-font-b: serif !default;
 $c-item-v2-font-c: sans-serif !default;
+$c-item-v2-font-weight: inherit !default;
 $c-item-v2-font-date: $c-item-v2-font-a !default;
 $c-item-v2-font-header: $c-item-v2-font-a !default;
 $c-item-v2-font-tag: $c-item-v2-font-c !default;
@@ -62,10 +64,6 @@ $_c-item-v2-wrap-width: 30em;
     // border-bottom: 1px solid #f2f2f0;
     // margin-bottom: $padding-vertical * 2 - 1;
     // padding-bottom: $padding-vertical * 2;
-}
-
-.c-item-v2__header {
-    margin-bottom: 27px;
 }
 
 // States
@@ -184,7 +182,7 @@ $_c-item-v2-wrap-width: 30em;
 }
 
 .c-item-v2 p:first-child {
-    margin-top: 2em;
+    margin-top: 0;
 }
 
 // headers
@@ -196,20 +194,54 @@ $_c-item-v2-wrap-width: 30em;
 .c-item-v2 h6 {
     margin: 0 auto;
     font-family: $c-item-v2-font-header;
-    font-weight: $bold;
+    margin-bottom: $padding-vertical;
+    font-weight: $c-item-v2-font-weight;
     line-height: $c-item-v2-line-height;
     letter-spacing: $c-item-v2-header-letter-spacing;
 }
 
+.c-item-v2 *+.h1,
+.c-item-v2 *+h1 {
+    margin-top: 2*$padding-vertical;
+    padding: $padding-vertical 0;
+}
+
+.c-item-v2 *+.h2,
+.c-item-v2 *+h2,
+.c-item-v2 *+.h3,
+.c-item-v2 *+h3 {
+    margin-top: $padding-vertical;
+    padding-top: $padding-vertical;
+}
+
+// Remove padding top of p after header
+.c-item-v2 h1,
+.c-item-v2 h2,
+.c-item-v2 h3,
+.c-item-v2 h4 {
+    &+p {
+        margin-top: 0;
+        //color: red;
+    }
+}
+
 @if $c-item-v2-header-resize==true {
-    .c-item-v2 h1,
     .c-item-v2 h2,
-    .c-item-v2 h3,
     .c-item-v2 h4,
     .c-item-v2 h5,
     .c-item-v2 h6 {
-        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.85);
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.95);
         text-align: $c-item-v2-header-text-align;
+    }
+    .c-item-v2 h3 {
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.8);
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+    .c-item-v2 h1 {
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 1.2);
+        //font-family: "myriad-pro", Georgia;
+        //font-weight: 300;
     }
 }
 
@@ -242,6 +274,10 @@ $_c-item-v2-wrap-width: 30em;
         line-height: 1.5em;
         /* 1.5  / 1    = 1.5em */
     }
+}
+
+h1.c-item-v2__title {
+    text-align: center;
 }
 
 .c-item-v2 h1.is-expected {
