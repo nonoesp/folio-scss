@@ -5,3 +5,5 @@ $regular: 400 !default;
 $semibold: 600 !default;
 $bold: 700 !default;
 $black: 900 !default;
+// legacy
+$extra-bold: $black !default;
