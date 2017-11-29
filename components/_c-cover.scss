@@ -5,11 +5,14 @@
 
 $header-height: 84px !default;
 $c-cover__title-b-font-size-small: $typecsset-base-font-size !default;
+// family
 $c-cover__title-a-font-family: $type-font-family !default;
 $c-cover__title-b-font-family: $type-font-family !default;
 $c-cover__title-description-font-family: $type-font-family !default;
+// weights
 $c-cover__title-a-font-weight: $bold !default;
 $c-cover__title-b-font-weight: $light !default;
+$c-cover__title-description-font-weight: $light !default;
 
 /* c-cover */
 
@@ -164,8 +167,8 @@ $c-cover__title-b-font-weight: $light !default;
 // .c-cover__description
 .c-cover__description {
     font-family: $c-cover__title-description-font-family;
+    font-weight: $c-cover__title-description-font-weight;
     z-index: $zIndex-3;
-    font-weight: $regular;
     opacity: 0.8;
     position: relative;
     color: inherit;
