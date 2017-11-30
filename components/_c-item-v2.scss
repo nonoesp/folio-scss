@@ -6,7 +6,7 @@
 
  —  1. Default            (settings)
  —  2. Item               (c-item, states, modifiers)
- —  3. Footnotes          (footnote, footnote-ref)
+ —  3. Footnotes          (footnote, footnote-ref, sup)
  —  4. Horizontal Rules   (hr)
  —  5. Paragraph          (p, headers, cover-media)
  —  6. Lists              (ul, li, dashes)
@@ -55,7 +55,6 @@ $c-item-v2-footnotes-color: rgba(0, 0, 0, 0.5) !default;
 $c-item-v2-footnote-ref-font-family: $c-item-v2-font-c !default;
 $c-item-v2-footnote-ref-color: $c-item-v2-link-color !default;
 $padding-vertical: 27px !default;
-// new
 $c-item-v2-gutter: 0.5em;
 $_c-item-v2-wrap-width: 30em;
 // [ 2. Item ]
@@ -63,14 +62,12 @@ $_c-item-v2-wrap-width: 30em;
     font-family: $c-item-v2-font-a, sans-serif;
     font-size: $c-item-v2-font-size;
     color: $c-item-v2-font-color;
-    // border-bottom: 1px solid #f2f2f0;
-    // margin-bottom: $padding-vertical * 2 - 1;
-    // padding-bottom: $padding-vertical * 2;
 }
 
-// States
+
+/* States */
+
 .c-item-v2:last-of-type {
-    // padding-bottom: $padding-vertical;
     margin-bottom: 0;
     border-bottom: none;
 }
@@ -86,10 +83,18 @@ $_c-item-v2-wrap-width: 30em;
     padding-bottom: 0;
 }
 
-// [ 3. Footnotes ]
+
+/* [ 3. Footnotes ] */
+
+.c-item-v2 sup {
+    font-feature-settings: "sups" 1;
+    font-size: inherit;
+    vertical-align: inherit;
+}
+
 .c-item-v2 .footnote-ref {
     font-family: $c-item-v2-footnote-ref-font-family;
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 0 0.15rem;
     text-decoration: none;
     color: $c-item-v2-footnote-ref-color;
@@ -122,7 +127,9 @@ $_c-item-v2-wrap-width: 30em;
     margin-bottom: 0.2em;
 }
 
-// ----------
+
+/* ---------- */
+
 .c-item-v2 .footnotes ul,
 .c-item-v2 .footnotes ol,
 .c-item-v2 .footnotes ul a,
