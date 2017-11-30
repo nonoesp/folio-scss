@@ -52,6 +52,8 @@ $c-item-v2-font-tag: $c-item-v2-font-c !default;
 $c-item-v2-footnotes-font-family: $c-item-v2-font-a !default;
 $c-item-v2-footnote-color: $c-item-v2-link-color !default;
 $c-item-v2-footnotes-color: rgba(0, 0, 0, 0.5) !default;
+$c-item-v2-footnote-ref-font-family: $c-item-v2-font-c !default;
+$c-item-v2-footnote-ref-color: $c-item-v2-link-color !default;
 $padding-vertical: 27px !default;
 // new
 $c-item-v2-gutter: 0.5em;
@@ -86,10 +88,17 @@ $_c-item-v2-wrap-width: 30em;
 
 // [ 3. Footnotes ]
 .c-item-v2 .footnote-ref {
-    font-size: 0.7em;
-    margin: 0 0.1rem;
+    font-family: $c-item-v2-footnote-ref-font-family;
+    font-size: 0.8em;
+    margin: 0 0.15rem;
     text-decoration: none;
-    color: $c-item-v2-footnote-color;
+    color: $c-item-v2-footnote-ref-color;
+    box-shadow: none;
+}
+
+.c-item-v2 .footnote-ref:hover {
+    color: $c-item-v2-footnote-ref-color;
+    box-shadow: none;
 }
 
 .c-item-v2 .footnotes p {
