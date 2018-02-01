@@ -69,6 +69,15 @@ $c-cover-selection-color: $color-white !default;
     background-color: rgba(0, 0, 0, 0.40);
 }
 
+$c-cover-is-faded-slug: 'is-faded';
+$c-cover-is-faded-step: 10;
+@for $i from 1 through 9 {
+    $opacity: $c-cover-is-faded-step * $i;
+    .#{$c-cover-is-faded-slug}--#{strip-units($opacity)}:before {
+        background-color: rgba(0, 0, 0, $opacity/100.0);
+    }
+}
+
 .c-cover.is-header {
     padding-top: $header-height;
     min-height: 400px;
