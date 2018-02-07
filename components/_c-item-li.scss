@@ -1,78 +1,76 @@
 // MODIFIERS (TEMPORARY)
-
 $c-item-li-date-color: #bababa !default;
-
+$c-item-li-link-color-hover: $color-red !default;
+$c-item-li-link-color: #222 !default;
 .c-item-li {
-  padding:0;
-  margin:0;
-  padding-top: 15px;
-  border-bottom: 1px solid rgba(0,0,0,0.04);
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 // .c-item-li__container:last-of-type .c-item-li {
 //   border-bottom: none;
 // }
-
 .c-item-li__date {
- margin-top: -27px;
- margin-bottom: 10px!important;
- text-align: left;
- // from default c-item__date
- color: $c-item-li-date-color;
- font-family: "franklin-gothic-urw";
- font-size: 14px;
- line-height: 27px;
+    margin-top: -27px;
+    margin-bottom: 10px!important;
+    text-align: left;
+    // from default c-item__date
+    color: $c-item-li-date-color;
+    font-family: "franklin-gothic-urw";
+    font-size: 14px;
+    line-height: 27px;
 }
 
 .c-item-li h1 {
-  text-align: left;
-  font-size: 20px;
-  color: #222;
-  font-family: "franklin-gothic-urw";
-  font-weight: $regular;
-  letter-spacing: 0;
-  line-height: 20px;
+    text-align: left;
+    font-size: 20px;
+    color: #222;
+    font-family: "franklin-gothic-urw";
+    font-weight: $regular;
+    letter-spacing: 0;
+    line-height: 20px;
 }
 
 .c-item-li:hover h1 {
-  color: $color-red;
+    color: $c-item-li-link-color-hover;
 }
 
 .c-item-li a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .c-item-li.is-expected h1,
 .c-item-li.is-expected:hover h1 {
-  color: rgba(0,0,0,0.45);
+    color: rgba(0, 0, 0, 0.45);
 }
 
 .c-item-li.is-expected {
-  cursor:default;
+    cursor: default;
 }
 
 .c-item-li.is-expected a,
 .c-item-li.is-expected a:visited,
 .c-item-li.is-expected a:hover {
-  color: $c-item-li-date-color;
-  text-decoration: underline;
-  cursor:pointer;
+    color: $c-item-li-date-color;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .c-item-li .is-external::after {
-  content: "➝";
-  display: inline-block;
-  font-size: 0.85em;
-  margin-left:-5px;
-  padding-left: 0.35em;
-  opacity: 0;
-  transform: translateX(-5px);
-  transition: transform 0.3s cubic-bezier(0, 0.25, 0.08, 1), opacity 0.3s cubic-bezier(0, 0.25, 0.08, 1), -webkit-transform 0.3s cubic-bezier(0, 0.25, 0.08, 1);
+    content: "➝";
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: -5px;
+    padding-left: 0.35em;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: transform 0.3s cubic-bezier(0, 0.25, 0.08, 1), opacity 0.3s cubic-bezier(0, 0.25, 0.08, 1), -webkit-transform 0.3s cubic-bezier(0, 0.25, 0.08, 1);
 }
 
-
 .c-item-li:hover .is-external::after {
-  padding-left: 0.35em;
-  transform: translateX(0px);
-  opacity: 100;
+    padding-left: 0.35em;
+    transform: translateX(0px);
+    opacity: 100;
 }
