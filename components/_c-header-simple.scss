@@ -3,8 +3,8 @@
 $c-header-navigation-height: 36px;
 $c-header-padding-vertical: 32px;
 $c-header-background-color: transparent !default;
-$color-red: #db4a38;
-$color-black: #222;
+$c-header-simple-link-color: $link-color !default;
+$c-header-simple-link-color-hover: $link-color-hover !default;
 
 /* Main */
 
@@ -33,21 +33,21 @@ $color-black: #222;
 }
 
 .c-header-simple a {
-    color: $color-black;
+    color: $c-header-simple-link-color;
 }
 
 .c-header-simple a:hover {
-    color: $color-red;
+    color: $c-header-simple-link-color-hover;
 }
 
 .c-header-simple .m-social a,
 .c-header-simple .m-social a:visited,
 {
-    color: $color-black;
+    color: $c-header-simple-link-color;
 }
 
 .c-header-simple .m-social a:hover {
-    color: $color-red;
+    color: $c-header-simple-link-color-hover;
 }
 
 
