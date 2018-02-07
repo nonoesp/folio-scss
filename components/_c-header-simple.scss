@@ -28,6 +28,10 @@ $c-header-simple-link-color-hover: $link-color-hover !default;
     padding-bottom: 2px;
 }
 
+.c-header-simple .navigation-link--active:hover {
+    border-bottom: solid 2px $c-header-simple-link-color-hover;
+}
+
 .c-header-simple--white .navigation-link--active {
     border-bottom: solid 2px $color-white;
 }
