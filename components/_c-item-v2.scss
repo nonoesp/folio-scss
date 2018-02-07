@@ -201,6 +201,16 @@ $_c-item-v2-wrap-width: 30em;
     margin-top: 0;
 }
 
+// indented p
+.c-item-v2.c-item-v2--indent p {
+    margin: 0;
+    hyphens: auto;
+}
+
+.c-item-v2.c-item-v2--indent p+p {
+    text-indent: 1.5em;
+}
+
 // headers
 .c-item-v2 h1,
 .c-item-v2 h2,
