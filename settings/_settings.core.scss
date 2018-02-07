@@ -1,5 +1,3 @@
-
-
 /*
 
  core-scss core settings
@@ -14,46 +12,40 @@
 @import 'settings.breakpoints';
 @import 'settings.z-index';
 @import 'settings.font-weight';
-
 @import '../tools/tools.all';
-
 // [ 1. Typecsset ]
-
-  $typecsset-base-font-size: 16px;
-  $typecsset-base-line-height: 27px;
-  $typecsset-show-baseline: false;
-
-// [ 2. Custom Variables ]
-
-  $type-font-family: BlinkMacSystemFont, "franklin-gothic-urw", "proxima-nova", sans-serif;
-  $padding-vertical: 27px;
-  $o-band-padding-vertical: 40px;
-
-  // c-item
-
-  $c-item-font-size: 20px; //$typecsset-base-font-size;
-  $c-item-font-color: $color-black;
-  $c-item-line-height: 1.33 !important;
-
-  $c-item-link-color: $color-black;//$color-red;
-  $c-item-link-color-hover: $c-item-link-color;
-  $c-item-quote-color: $color-grey-dark;
-
-  $c-item-font-a: "minion-pro", serif;
-  $c-item-font-b: $type-font-family;
-  $c-item-font-c: $type-font-family;
-
-  $c-item-font-date: $c-item-font-b;
-  $c-item-font-header: $c-item-font-b;
-  $c-item-font-tag: $c-item-font-b;
-
-  $c-item-header-resize: true;
-  $c-item-link-monochrone: true;
-  $c-item-cover-media-negative-margin: false;
-
-  // Inputs
-
-  $input-font-family: $type-font-family !default;
-  $input-font-size: 14px !default;
-  $type-link-color: #000 !default;
-  $type-link-text-decoration: underline !default;
+$typecsset-base-font-size: 16px;
+$typecsset-base-line-height: 27px;
+$typecsset-show-baseline: false;
+// [ 2. Global variables ]
+$link-color: purple;
+$link-color-hover: orange;
+// [ 3. Component-specific variables ]
+$type-font-family: BlinkMacSystemFont,
+"franklin-gothic-urw",
+"proxima-nova",
+sans-serif;
+$padding-vertical: 27px;
+$o-band-padding-vertical: 40px;
+// c-item
+$c-item-font-size: 20px; //$typecsset-base-font-size;
+$c-item-font-color: $color-black;
+$c-item-line-height: 1.33 !important;
+$c-item-link-color: $color-black; //$color-red;
+$c-item-link-color-hover: $c-item-link-color;
+$c-item-quote-color: $color-grey-dark;
+$c-item-font-a: "minion-pro",
+serif;
+$c-item-font-b: $type-font-family;
+$c-item-font-c: $type-font-family;
+$c-item-font-date: $c-item-font-b;
+$c-item-font-header: $c-item-font-b;
+$c-item-font-tag: $c-item-font-b;
+$c-item-header-resize: true;
+$c-item-link-monochrone: true;
+$c-item-cover-media-negative-margin: false;
+// inputs
+$input-font-family: $type-font-family !default;
+$input-font-size: 14px !default;
+$type-link-color: #000 !default;
+$type-link-text-decoration: underline !default;
