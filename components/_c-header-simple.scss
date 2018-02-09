@@ -32,10 +32,19 @@ $c-header-simple-link-color-hover: $link-color-hover !default;
     border-bottom: solid 2px $c-header-simple-link-color-hover;
 }
 
-.c-header-simple--white .navigation-link--active {
+// white
+.c-header-simple--white .navigation-link--active,
+.c-header-simple--white .navigation-link--active:hover {
     border-bottom: solid 2px $color-white;
 }
 
+.c-header-simple--white a,
+.c-header-simple--white a:visited,
+.c-header-simple--white a:hover {
+    color: $color-white!important;
+}
+
+// link
 .c-header-simple a {
     color: $c-header-simple-link-color;
 }

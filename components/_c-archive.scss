@@ -1,70 +1,67 @@
-
 .c-archive__year {
-	font-size: $typecsset-base-font-size;
-	padding: 8px 0 0 0;
-	align-items: baseline;
-	margin: 0;
+    font-size: $typecsset-base-font-size;
+    padding: 8px 0 0 0;
+    align-items: baseline;
+    margin: 0;
 }
 
 @media all and #{$media-palm} {
-	.c-archive__year {
-		padding: 30px 0 12px 0;
-		display: block;
-		border-bottom: 1px solid $color-grey-light;
-	}
-
-	.c-archive__year:first {
-		padding: 0 0 12px 0;
-	}
+    .c-archive__year {
+        padding: 30px 0 12px 0;
+        display: block;
+        border-bottom: 1px solid $color-grey-light;
+    }
+    .c-archive__year:first {
+        padding: 0 0 12px 0;
+    }
 }
 
-
 ul.c-archive__list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	line-height: 1.4;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
 }
 
 ul.c-archive__list li {
-	border-bottom: 1px solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
 }
 
 ul.c-archive__list li:last-child {
-	border-bottom: none;
+    border-bottom: none;
 }
 
 ul.c-archive__list li a {
-	@include display(flex);
-	text-decoration: none;
-	padding: 8px 0 9.6px 0;
-	align-items: baseline;
-	justify-content: space-between;
-	@include transition(none);
+    @include display(flex);
+    text-decoration: none;
+    padding: 8px 0 9.6px 0;
+    align-items: baseline;
+    justify-content: space-between;
+    @include transition(none);
 }
 
 ul.c-archive__list li a:visited {
-	color: #bababa;
+    color: #bababa;
 }
 
 ul.c-archive__list li a:hover {
-	text-decoration: none;
-	color: $color-red;
+    text-decoration: none;
+    color: $color-red;
 }
 
 .c-archive__list__title {
-	display: block;
-	font-weight: $regular;
+    display: block;
+    font-weight: $regular;
 }
 
 .c-archive__list__date {
-	font-style: normal;
-	color: $color-grey;
-	font-size: 14px;
+    font-style: normal;
+    color: $color-grey;
+    font-size: 14px;
 }
 
 .c-archive__list--border-top {
-	border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 @media all and #{$media-palm} {
