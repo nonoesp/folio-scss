@@ -381,17 +381,17 @@ h1.c-item-v2__title {
 // [ 8. Links ]
 .c-item-v2 a {
     @include transition(none);
-    text-decoration: none;
     color: $c-item-v2-link-color;
+    text-decoration: none;
     @if $c-item-v2-link-underline==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $c-item-v2-link-underline-color;
+        box-shadow: inset 0 -3px 0 white, inset 0 -4px 0 $c-item-v2-link-underline-color;
     }
 }
 
 .c-item-v2 a:hover {
     color: $c-item-v2-link-color-hover;
     @if $c-item-v2-link-underline-hover==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $c-item-v2-link-underline-color-hover;
+        box-shadow: inset 0 -3px 0 white, inset 0 -4px 0 $c-item-v2-link-underline-color-hover;
     }
     @else {
         box-shadow: none;
