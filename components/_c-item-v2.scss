@@ -182,10 +182,16 @@ $_c-item-v2-wrap-width: 30em;
 .c-item-v2 hr {
     width: 5em;
     border: none;
-    border-bottom: 2px solid rgba(61, 70, 77, 0.1);
-    margin: 3em auto;
+    margin: 1.25em auto;
 }
 
+// .c-item-v2 hr {
+//     width: 5em;
+//     //border: none;
+//     //border-bottom: 2px solid rgba(61, 70, 77, 0.1);
+//     border: none;
+//     margin: 1.5em auto;
+// }
 // [ 5. Paragraph ]
 // p
 .c-item-v2 p {
@@ -201,13 +207,15 @@ $_c-item-v2-wrap-width: 30em;
     margin-top: 0;
 }
 
+//--------
 // indented p
-.c-item-v2.c-item-v2--indent p {
-    margin: 0;
+.c-item-v2.c-item-v2--indent p:not(.c-item-v2__date):not(.c-item-v2__tags) {
+    margin-bottom: 0;
+    margin-top: 0;
     hyphens: auto;
 }
 
-.c-item-v2.c-item-v2--indent p+p {
+.c-item-v2.c-item-v2--indent p+p:not(.c-item-v2__date):not(.c-item-v2__tags) {
     text-indent: 1.5em;
 }
 
