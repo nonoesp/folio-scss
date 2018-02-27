@@ -5,11 +5,13 @@ $c-header-padding-vertical: 32px;
 $c-header-background-color: transparent !default;
 $c-header-simple-link-color: $link-color !default;
 $c-header-simple-link-color-hover: $link-color-hover !default;
+$c-header-simple-font-family: "franklin-gothic-urw",
+sans-serif !default;
 
 /* Main */
 
 .c-header-simple {
-    font-family: "franklin-gothic-urw", sans-serif;
+    font-family: $c-header-simple-font-family;
     position: relative;
     width: 100%;
     font-size: 16px;
@@ -129,7 +131,6 @@ $c-header-simple-link-color-hover: $link-color-hover !default;
 
 .c-header-simple__image img {
     width: 100%;
-    //opacity: 0.98;
 }
 
 
@@ -220,4 +221,8 @@ all and #{$media-desk} {
 
 .c-header-simple--center {
     text-align: center;
+}
+
+.c-header-simple--center .c-header-simple__image {
+    margin-left: 0;
 }
