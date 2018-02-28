@@ -55,7 +55,7 @@ $c-item-v2-footnote-color: $c-item-v2-link-color !default;
 $c-item-v2-footnotes-color: rgba(0, 0, 0, 0.5) !default;
 $c-item-v2-footnote-ref-font-family: $c-item-v2-font-c !default;
 $c-item-v2-footnote-ref-color: $c-item-v2-link-color-hover !default;
-$c-item-v2-gutter: 25px !default;
+$c-item-v2-gutter: 27px !default;
 $padding-vertical: 27px !default;
 $_c-item-v2-wrap-width: 30em;
 
@@ -393,7 +393,7 @@ h1.c-item-v2__title {
     color: $c-item-v2-link-color;
     text-decoration: none;
     @if $c-item-v2-link-underline==true {
-        box-shadow: inset 0 -0.16em 0 white, inset 0 -0.20em 0 $c-item-v2-link-underline-color;
+        box-shadow: inset 0 -0.14em 0 white, inset 0 -0.21em 0 $c-item-v2-link-underline-color;
         // box-shadow: inset 0 -3px 0 white, inset 0 -4px 0 $c-item-v2-link-underline-color;
     }
 }
@@ -401,7 +401,7 @@ h1.c-item-v2__title {
 .c-item-v2 a:hover {
     color: $c-item-v2-link-color-hover;
     @if $c-item-v2-link-underline-hover==true {
-        box-shadow: inset 0 -0.16em 0 white, inset 0 -0.20em 0 $c-item-v2-link-underline-color-hover;
+        box-shadow: inset 0 -0.14em 0 white, inset 0 -0.21em 0 $c-item-v2-link-underline-color-hover;
         // box-shadow: inset 0 -3px 0 white, inset 0 -4px 0 $c-item-v2-link-underline-color-hover;
     }
     @else {
