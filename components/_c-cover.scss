@@ -46,6 +46,12 @@ $c-cover-selection-color: $color-white !default;
     height: 100vh;
 }
 
+@media all and #{$media-portable} {
+    .c-cover.is-fullscreen {
+        height: 85vh;
+    }
+}
+
 .c-cover:before {
     content: "";
     display: block;
