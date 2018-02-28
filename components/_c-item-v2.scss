@@ -26,6 +26,7 @@
 
 // [ 1. Defaults ]
 $c-item-v2-font-size: 2em !default;
+$c-item-v2-font-size-palm: 1.7em !default;
 $c-item-v2-line-height: 1.4em !default;
 $c-item-v2-font-color: inherit !default;
 $c-item-v2-link-color: $link-color !default;
@@ -54,14 +55,22 @@ $c-item-v2-footnote-color: $c-item-v2-link-color !default;
 $c-item-v2-footnotes-color: rgba(0, 0, 0, 0.5) !default;
 $c-item-v2-footnote-ref-font-family: $c-item-v2-font-c !default;
 $c-item-v2-footnote-ref-color: $c-item-v2-link-color-hover !default;
+$c-item-v2-gutter: 25px !default;
 $padding-vertical: 27px !default;
-$c-item-v2-gutter: 0.5em;
 $_c-item-v2-wrap-width: 30em;
-// [ 2. Item ]
+
+/* [ 2. Item ] */
+
 .c-item-v2 {
     font-family: $c-item-v2-font-a, sans-serif;
     font-size: $c-item-v2-font-size;
     color: $c-item-v2-font-color;
+}
+
+@media all and #{$media-palm} {
+    .c-item-v2 {
+        font-size: $c-item-v2-font-size-palm;
+    }
 }
 
 
@@ -445,7 +454,7 @@ h1.c-item-v2__title {
     background-color: rgba(0, 0, 0, 0.04);
     padding: 0 0.3em;
     line-height: 1.4em;
-    //display: inline-block;
+    display: auto;
 }
 
 .c-item-v2 pre code {
