@@ -14,11 +14,17 @@ sans-serif !default;
     font-family: $c-header-simple-font-family;
     position: relative;
     width: 100%;
-    font-size: 16px;
+    font-size: 1em;
     z-index: 200;
     background-color: $c-header-background-color;
     padding: $c-header-padding-vertical 0;
     border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+}
+
+@media all and #{$media-palm} {
+    .c-header-simple {
+        font-size: 0.85em;
+    }
 }
 
 
@@ -119,7 +125,6 @@ sans-serif !default;
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    //background-color: #222;
     margin-bottom: 20px;
 }
 
@@ -139,11 +144,9 @@ sans-serif !default;
 .c-header-simple__navigation {
     display: block;
     margin-bottom: 34px;
-    //background-color: rgba(0,0,0,0.05);
 }
 
 .c-header-simple__navigation ul {
-    //background-color: rgba(0,0,0,0.05);
     list-style: none;
     margin: 0 auto;
     padding: 0;
@@ -152,9 +155,15 @@ sans-serif !default;
 
 .c-header-simple__navigation ul li {
     display: inline-block;
-    margin-right: 27px;
+    margin-right: 1.35em;
     padding-bottom: 9px;
     text-align: -webkit-match-parent;
+}
+
+@media all and #{$media-palm} {
+    .c-header-simple__navigation ul li {
+        margin-right: 0.9em;
+    }
 }
 
 .c-header-simple__navigation ul li:last-of-type {
