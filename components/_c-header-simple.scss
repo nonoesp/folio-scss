@@ -228,8 +228,13 @@ all and #{$media-desk} {
     color: $color-yellow;
 }
 
-.c-header-simple--center {
+.c-header-simple--center,
+.c-header-simple--center .c-header-simple__description {
     text-align: center;
+}
+
+.c-header-simple--center .o-wrap--bio {
+    margin-left: auto;
 }
 
 .c-header-simple--center .c-header-simple__image {
