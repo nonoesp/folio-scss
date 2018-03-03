@@ -47,7 +47,7 @@
     
     .c-header-simple a:hover.navigation-link {
         color: $c-header-simple-link-color-hover;
-        border-bottom: solid 2px $color-blue;
+        border-bottom: solid 2px $c-header-simple-link-color-hover;
     }
     
     .c-header-simple .m-social a,
