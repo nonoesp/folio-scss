@@ -1,0 +1,49 @@
+.c-floating-menu {
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: 300;
+}
+
+.c-floating-menu--left {
+    left: 1em;
+    right: auto;
+}
+
+.c-floating-menu__item {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    background-color: $color-white;
+    padding: 0.5em 0.5em;
+    border-radius: 25px;
+    display: inline-block;
+}
+
+.c-floating-menu__item-button {
+    background-color: $color-white;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0 0.7em;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    font-weight: 600;
+}
+
+@media all and #{$media-palm} {
+    .c-floating-menu {
+        position: fixed;
+        top: 1em;
+        right: 1em;
+        z-index: 300;
+    }
+    .c-floating-menu__item {
+        display: block;
+    }
+}
+
+
+/* modifiers */
+
+.c-floating-menu__item-button--black {
+    color: rgba(255, 255, 255, 0.85);
+    background-color: $color-black;
+}
