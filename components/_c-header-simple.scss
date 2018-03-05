@@ -36,18 +36,17 @@
         color: $c-header-simple-link-color;
     }
     
-    .c-header-simple .navigation-link--active:hover {
-        border-bottom: solid 2px $c-header-simple-link-color-hover;
-    }
-    
+    // .c-header-simple a:hover.navigation-link--active {
+    //     border-bottom: solid 2px $c-header-simple-link-color-hover;
+    // }
     // link
     .c-header-simple a {
         color: $c-header-simple-link-color;
     }
     
-    .c-header-simple a:hover.navigation-link {
-        color: $c-header-simple-link-color-hover;
-        border-bottom: solid 2px $c-header-simple-link-color-hover;
+    .c-header-simple a:hover.navigation-link:not(.navigation-link--active) {
+        //color: $c-header-simple-link-color-hover;
+        border-bottom: solid 2px rgba(0, 0, 0, 0.35); //$c-header-simple-link-color-hover;
     }
     
     .c-header-simple .m-social a,
@@ -205,10 +204,14 @@
         color: $color-yellow;
     }
     
-    .c-header-simple--night a:hover.navigation-link,
+    .c-header-simple--night a:hover.navigation-link:not(.navigation-link--active) {
+        color: $color-yellow;
+        border-bottom: solid 2px rgba($color-yellow, 0.3)!important;
+    }
+    
     .c-header-simple--night .navigation-link--active {
         color: $color-yellow;
-        border-bottom: solid 2px $c-header-simple-link-color-hover;
+        border-bottom: solid 2px $color-yellow;
     }
     
     .c-header-simple--night .m-social a,
