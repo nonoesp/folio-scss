@@ -167,6 +167,11 @@
     .c-header-simple--white a:hover {
         color: $color-white!important;
     }
+    
+    .c-header-simple--white .o-icon-prototype {
+        color: $color-white;
+        fill: $color-white;
+    }
     /* --absolute */
     
     .c-header-simple--absolute {
