@@ -5,6 +5,10 @@
     z-index: 300;
 }
 
+.c-floating-menu a {
+    text-decoration: none;
+}
+
 .c-floating-menu--left {
     left: 1em;
     right: auto;
