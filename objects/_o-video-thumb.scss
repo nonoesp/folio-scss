@@ -1,5 +1,6 @@
 // [ c-video-thumb ]
 $padding-vertical: 27px !default;
+.o-video-thumb,
 .video-thumb {
     overflow: hidden;
     width: 100%;
@@ -8,6 +9,7 @@ $padding-vertical: 27px !default;
     cursor: pointer;
 }
 
+.o-video-thumb__mask,
 .video-thumb__mask {
     position: absolute;
     z-index: 1;
@@ -16,20 +18,33 @@ $padding-vertical: 27px !default;
     margin: 0!important;
 }
 
+.o-video-thumb__image,
 .video-thumb__image {
     width: 100%;
 }
 
 
-/*YouTube*/
+/* YouTube */
 
+.o-video-thumb__image--youtube,
 .video-thumb__image--youtube {
     margin: -18% -0px -18% -0px!important;
 }
 
+.o-video-thumb__image--youtube-custom,
+.video-thumb__image--youtube-custom {
+    margin: 0!important;
+}
 
-/*Vimeo*/
 
+/* Vimeo */
+
+.o-video-thumb__image--vimeo,
 .video-thumb__image--vimeo {
-    margin: -8% -0px -8% -0px!important;
+    margin: -1% -0px -1% -0px!important;
+}
+
+.o-video-thumb__image--vimeo-custom,
+.video-thumb__image--vimeo-custom {
+    margin: 0!important;
 }
