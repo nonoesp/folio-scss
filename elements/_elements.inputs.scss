@@ -1,78 +1,74 @@
-
 // DEFAULT SETTINGS
-
-  $input-outline-color: #737373 !default;
-  $input-outline-color-focus: rgba(0,0,0,0.30) !default;
-  $input-font-family: sans-serif !default;
-  $input-font-size: 16px !default;
-  $input-height: 36px !default;
-  $input-border-radius: 2px;
-
-
+$input-outline-color: #737373 !default;
+$input-outline-color-focus: rgba(0, 0, 0, 0.30) !default;
+$input-font-family: sans-serif !default;
+$input-font-size: 16px !default;
+$input-height: 36px !default;
+$input-border-radius: 2px;
 .components-font {
-  font-family: $input-font-family;
-  font-size: $input-font-size;
-  font-weight: $regular;
-  //@include appearance(none);
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    font-weight: $regular;
 }
 
 .components-shape {
-  min-width:100%;
-  max-width:100%;
-  border-radius: $input-border-radius;
-  border: solid 1px $input-outline-color;
-  height: $input-height;
-  padding: 7px;
-  margin-bottom: 6px;
-  border-color: #dbdbdb;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: $input-border-radius;
+    border: solid 1px $input-outline-color;
+    height: $input-height;
+    padding: 7px;
+    margin-bottom: 6px;
+    border-color: #dbdbdb;
 }
 
 .components--highlighted {
-  outline-width: 0;
-  border: 1px solid $input-outline-color-focus;
+    outline-width: 0;
+    border: 1px solid $input-outline-color-focus;
 }
 
 label {
-  @extend .components-font;
-  @include user-select(none);
-  display: inline-block;
-  margin: 0 5px 1em 0;
-  vertical-align: middle;
+    @extend .components-font;
+    @include user-select(none);
+    display: inline-block;
+    margin: 0 5px 1em 0;
+    vertical-align: middle;
 }
 
 select {
-  @extend .components-shape,
-          .components-font;
-  background-color:transparent;
+    @extend .components-shape,
+    .components-font;
+    background-color: transparent;
 }
 
 input {
-  @extend .components-shape,
-          .components-font;
-   -webkit-appearance: none;
-   -moz-appearance:    none;
-   appearance:         none;
+    @extend .components-shape,
+    .components-font;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 textarea {
-  @extend .components-shape,
-          .components-font;
-  min-height: 250px;
+    @extend .components-shape,
+    .components-font;
+    min-height: 250px;
 }
 
-button, input[type=submit] {
-  @extend .components-shape,
-          .components-font;
-  @include user-select(none);
-  background-color:transparent;
-  padding:0;
-  line-height: $input-height;
-  height: $input-height;
-  cursor:pointer;
-  font-weight: $bold;
-  color: $color-black;
-  overflow: hidden;
-  vertical-align: middle;
+button,
+input[type=submit] {
+    @extend .components-shape,
+    .components-font;
+    @include user-select(none);
+    background-color: transparent;
+    padding: 0;
+    line-height: $input-height;
+    height: $input-height;
+    cursor: pointer;
+    font-weight: $bold;
+    color: $color-black;
+    overflow: hidden;
+    vertical-align: middle;
 }
 
 input:focus,
@@ -83,109 +79,115 @@ textarea:focus,
 textarea:hover,
 button:focus,
 button:hover {
-  @extend .components--highlighted;
+    @extend .components--highlighted;
 }
 
-// button
 
+/* button */
+
+input[type=submit]:disabled,
 button:disabled {
-  background-color: #dbdbdb;
+    background-color: #dbdbdb;
+    opacity: 0.3;
+    border-color: transparent;
+}
+
+input[type=submit]:disabled:hover,
+button:disabled:hover {
+    background-color: #dbdbdb;
+    border-color: transparent;
 }
 
 .button--round {
-  border-radius: 36px;
+    border-radius: 36px;
 }
 
 // BOOKS SPECIFIC
-
 // green
-
 .button--border-green {
-  border-color: $color-green;
+    border-color: $color-green;
 }
 
 .button--background-green {
-  background-color: $color-green;
-  border: none;
-  color: #fff;
+    background-color: $color-green;
+    border: none;
+    color: #fff;
 }
 
 .button--background-green:hover,
 .button--background-green:focus {
-  background-color: $color-green-dark;
+    background-color: $color-green-dark;
 }
 
 .button--twitter {
-  background-color: #55acee;
-  min-width: 100%;
-  font-weight: $regular;
-  color: #fff;
-  text-transform: none;
-  border: none!important;
-  opacity:0.95;
+    background-color: #55acee;
+    min-width: 100%;
+    font-weight: $regular;
+    color: #fff;
+    text-transform: none;
+    border: none!important;
+    opacity: 0.95;
 }
 
 .button--twitter:hover {
-  opacity:1;
+    opacity: 1;
 }
 
 .button--twitter-hero {
-  border-radius: 30px;
-  color: #55acee;
-  background-color:transparent;
-  font-weight: $regular;
-  text-transform: none;
-  border-color: #55acee;
+    border-radius: 30px;
+    color: #55acee;
+    background-color: transparent;
+    font-weight: $regular;
+    text-transform: none;
+    border-color: #55acee;
 }
 
 // grey
-
 .button--border-grey {
-  border-color: $color-grey;
+    border-color: $color-grey;
 }
 
 .button--background-grey {
-  background-color: $color-grey;
-  border: none;
-  color: #fff;
+    background-color: $color-grey;
+    border: none;
+    color: #fff;
 }
 
 .button--background-grey:hover,
 .button--background-grey:focus {
-  background-color: $color-grey-dark;
+    background-color: $color-grey-dark;
 }
 
 // white
-
 .button--background-white {
-  background-color: #fff;
-  opacity: 0.85;
-  border: none;
+    background-color: #fff;
+    opacity: 0.85;
+    border: none;
 }
 
 .button--background-white:hover,
 .button--background-white:focus {
-  opacity: 1.00;
+    opacity: 1.00;
 }
 
 input[name=title] {
-  padding-left: 0;
-  font-weight: $bold;
-  border: none;
-  background-color: transparent;
-  font-size: 1.6em;
+    padding-left: 0;
+    font-weight: $bold;
+    border: none;
+    background-color: transparent;
+    font-size: 1.6em;
 }
 
 input[name=title]:focus {
-  outline-width: 0;
-  border: 0;
+    outline-width: 0;
+    border: 0;
 }
 
 input[type=checkbox] {
-  -webkit-appearance: checkbox;
-  -moz-appearance: checkbox;
-  -ms-appearance: checkbox;
-  -o-appearance: checkbox;
-  appearance: checkbox;
-  height: auto;
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -ms-appearance: checkbox;
+    -o-appearance: checkbox;
+    appearance: checkbox;
+    height: auto;
 }
