@@ -218,21 +218,25 @@ $_c-item-v2-wrap-width: 30em;
 
 //--------
 // indented p
+//.c-item-v2.c-item-v2--indent p:not(.statement):not(.aside) {
 .c-item-v2.c-item-v2--indent p {
     margin-bottom: 0;
     margin-top: 0;
     hyphens: auto;
 }
 
-.c-item-v2.c-item-v2--indent p+p {
+.c-item-v2.c-item-v2--indent p:not(.statement):not(.aside)+p:not(.statement):not(.aside) {
     text-indent: 1.5em;
 }
 
+// .c-item-v2.c-item-v2--indent p.aside+p {
+//     margin-top: 1em;
+// }
 .c-item-v2.c-item-v2--indent blockquote>p,
 .c-item-v2.c-item-v2--indent p.c-item-v2__date,
 .c-item-v2.c-item-v2--indent p.c-item-v2__tags {
     margin: 1em auto;
-    text-indent: 0;
+    text-indent: 0!important;
 }
 
 // headers
@@ -481,6 +485,13 @@ h1.c-item-v2__title {
 }
 
 // [ 10. Data ]
+.c-item-v2__meta {
+    color: $color-grey;
+    font-family: $c-item-v2-font-date;
+    font-size: 0.65em;
+    line-height: $c-item-v2-line-height;
+}
+
 .c-item-v2 .c-item-v2__tags {
     opacity: 0.0;
     font-family: $c-item-v2-font-tag;
@@ -652,22 +663,6 @@ h1.c-item-v2__title {
 // ---------------------------
 // [ new stuff ]
 // [ Scratch ] Arrange
-.c-item-v2__meta {
-    color: $color-grey;
-    font-family: $c-item-v2-font-date;
-    font-size: 14px;
-    line-height: $c-item-v2-line-height;
-}
-
-.c-item-v2__meta--margin-setup {
-    margin-top: -20px;
-    margin-bottom: 47px !important;
-}
-
-.c-item-v2__meta--closer {
-    margin-top: -30px;
-}
-
 .c-item-v2__inline-container {
     display: inline-block;
     vertical-align: middle;
@@ -712,7 +707,6 @@ a.c-item-v2__link--accent:hover {
     blockquote {
         width: 100%;
         max-width: $_c-item-v2-wrap-width;
-        // max-width: 30rem;
     }
 }
 
