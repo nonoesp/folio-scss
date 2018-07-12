@@ -217,6 +217,16 @@
     font-size: 2.25rem;
 }
 
+// Type: font-size media queries
+@media all and #{$media-palm} {
+    .u-font-size--225\@palm {
+        font-size: 2.25rem;
+    }
+    .u-font-size--250\@palm {
+        font-size: 2.50rem;
+    }
+}
+
 .u-font-size--250 {
     font-size: 2.50rem;
 }
@@ -245,7 +255,9 @@
     font-size: 4.00rem;
 }
 
-// Type: font-size
+
+/* Type: font-size */
+
 $font-size-a: 0.75rem !default;
 $font-size-b: 0.85rem !default;
 $font-size-c: 1.00rem !default;
