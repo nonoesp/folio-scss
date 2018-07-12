@@ -43,6 +43,33 @@
     cursor: pointer;
 }
 
+
+/* external links*/
+
+.u-is-external::after {
+    content: "➝";
+    display: inline-block;
+    margin: auto;
+    font-size: 0.85em;
+    margin-left: -19px;
+    opacity: 0;
+    transform: translateX(13px);
+    transition: transform 0.3s cubic-bezier(0, 0.25, 0.08, 1), opacity 0.3s cubic-bezier(0, 0.25, 0.08, 1), -webkit-transform 0.3s cubic-bezier(0, 0.25, 0.08, 1);
+}
+
+.u-is-external:hover::after {
+    transform: translateX(17px);
+    opacity: 100;
+}
+
+.u-is-external--top-right::after {
+    transform: translateX(13px) translateY(0px + 3px) rotate(-45deg);
+}
+
+.u-is-external--top-right:hover::after {
+    transform: translateX(17px) translateY(0px) rotate(-45deg);
+}
+
 // General: opacity
 .u-opacity--none {
     opacity: 0;
