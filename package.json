@@ -1,5 +1,5 @@
 {
-  "name": "core-scss",
+  "name": "folio-scss",
   "version": "1.0.0",
   "description": "A library with reusable SCSS classes.",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nonoesp/core-scss.git"
+    "url": "git+https://github.com/nonoesp/folio-scss.git"
   },
   "author": "Nono Martínez Alonso, nono.ma",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nonoesp/core-scss/issues"
+    "url": "https://github.com/nonoesp/folio-scss/issues"
   },
-  "homepage": "https://github.com/nonoesp/core-scss#readme"
+  "homepage": "https://github.com/nonoesp/folio-scss#readme"
 }
