@@ -1,0 +1,43 @@
+/* Sample usage */
+
+// $grid-gutter-names-sizes: ( 'loose' 80, 'tight' 15) !default;
+// $grid-gutter-sizes: 10 20 30;
+
+/* Mixins */
+
+@mixin grid-gutter-modifier ($name, $gutter) {
+    $gutter: $gutter * 1px;
+    .grid--gutter-#{$name} {
+        margin-left: -$gutter!important;
+        .grid__item {
+            padding-left: $gutter!important;
+        }
+    }
+    .grid--gutter-h-#{$name} {
+        margin-top: -$gutter !important;
+        .grid__item {
+            line-height: 0;
+            padding-top: $gutter !important;
+        }
+        .grid__item>* {
+            line-height: 100%;
+        }
+    }
+}
+
+@mixin grid-gutter-modifiers-sizes ($grid-gutter-sizes) {
+    @each $size in $grid-gutter-sizes {
+        @include grid-gutter-modifier($size, $size);
+    }
+}
+
+@mixin grid-gutter-modifiers-names-sizes ($grid-gutter-sizes) {
+    @each $modifier in $grid-gutter-sizes {
+        $name: nth($modifier, 1);
+        $gutter: nth($modifier, 2);
+        @include grid-gutter-modifier($name, $gutter);
+    }
+}
+
+@include grid-gutter-modifiers-sizes($grid-gutter-sizes);
+@include grid-gutter-modifiers-names-sizes($grid-gutter-names-sizes);
