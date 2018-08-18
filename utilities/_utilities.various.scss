@@ -280,6 +280,15 @@
 
 // Type: font-size media queries
 @media all and #{$media-palm} {
+    .u-font-size--85\@palm {
+        font-size: 0.85rem;
+    }
+    .u-font-size--90\@palm {
+        font-size: 0.9rem;
+    }
+    .u-font-size--95\@palm {
+        font-size: 0.95rem;
+    }
     .u-font-size--225\@palm {
         font-size: 2.25rem;
     }
