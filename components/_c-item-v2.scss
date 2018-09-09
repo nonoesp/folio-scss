@@ -761,6 +761,23 @@ a.c-item-v2__link--accent:hover {
     margin-left: 0;
 }
 
+.c-item-v2 a .is-external::after {
+    content: "➝";
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: -5px;
+    padding-left: 0.35em;
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: transform 0.3s cubic-bezier(0, 0.25, 0.08, 1), opacity 0.3s cubic-bezier(0, 0.25, 0.08, 1), -webkit-transform 0.3s cubic-bezier(0, 0.25, 0.08, 1);
+}
+
+.c-item-v2 a:hover .is-external::after {
+    padding-left: 0.35em;
+    transform: translateX(0px);
+    opacity: 100;
+}
+
 
 /*END: Dashes*/
 
