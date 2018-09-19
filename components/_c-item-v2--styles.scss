@@ -373,4 +373,12 @@
         border-width: 0 0 1px 0;
         border-style: none none solid none;
     }
+    .c-item-v2__meta {
+        font-family: system-ui, $c-item-v2-font-tag, sans;
+        font-weight: $bold;
+        letter-spacing: 0.03em;
+        line-height: $c-item-v2-line-height;
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.55);
+        @include transition( all 0.25s);
+    }
 }
