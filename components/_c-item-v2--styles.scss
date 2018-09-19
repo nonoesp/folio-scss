@@ -320,7 +320,7 @@
         box-shadow: none;
     }
     .c-item-v2__body>p>a,
-    .c-item-v2__body a {
+    .c-item-v2__body a:not(.footnote-ref) {
         box-shadow: none;
         border-color: rgb(177, 177, 177);
         border-width: 0 0 1px 0;
@@ -328,6 +328,9 @@
     }
     .c-item-v2__body>p>a:hover {
         box-shadow: none;
+    }
+    .c-item-v2__body>p>.no-border {
+        border: none;
     }
     .c-item-v2__title h1 {
         font-family: system-ui, "Helvetica", serif;
