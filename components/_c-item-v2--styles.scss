@@ -358,10 +358,9 @@
         font-family: system-ui, "Helvetica", serif;
         @include c-item-v2-font ($_c-item-v2-wrap-width, 0.9);
     }
-    // .c-item-v2__body ul+p {
-    //     background-color: red;
-    //     text-indent: 0;
-    // }
+    .c-item-v2__body p.no-text+p {
+        text-indent: 0!important;
+    }
     .c-item-v2__meta a {
         box-shadow: none;
         font-size: 0.95em;
@@ -390,5 +389,32 @@
         line-height: $c-item-v2-line-height;
         @include c-item-v2-font ($_c-item-v2-wrap-width, 0.55);
         @include transition( all 0.25s);
+    }
+    .c-item-v2__body figure.bleed,
+    .c-item-v2__body img.bleed,
+    .c-item-v2__body video.bleed,
+    .c-item-v2__body figure.wide,
+    .c-item-v2__body img.wide,
+    .c-item-v2__body video.wide {
+        width: 100%;
+        display: block;
+        max-width: $_c-item-v2-wrap-width!important;
+        margin: 1em auto;
+    }
+    @media all and #{$media-palm} {
+        .c-item-v2__body figure.limit,
+        .c-item-v2__body img.limit,
+        .c-item-v2__body video.limit {
+            margin-left: 0;
+        }
+    }
+    h2 {
+        font-family: system-ui, "Helvetica", sans;
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.75);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+    code {
+        font-size: 0.9em;
     }
 }
