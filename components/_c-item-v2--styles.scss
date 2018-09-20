@@ -353,10 +353,16 @@
         text-decoration: none;
     }
     .c-item-v2__body>p,
+    .c-item-v2__body blockquote {
+        font-family: system-ui, "Helvetica", serif;
+        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.9);
+    }
     .c-item-v2__body ul li,
     .c-item-v2__body ol li {
         font-family: system-ui, "Helvetica", serif;
-        @include c-item-v2-font ($_c-item-v2-wrap-width, 0.9);
+    }
+    .c-item-v2__body p.no-text {
+        display: block;
     }
     .c-item-v2__body p.no-text+p {
         text-indent: 0!important;
@@ -393,6 +399,9 @@
     .c-item-v2__body figure.bleed,
     .c-item-v2__body img.bleed,
     .c-item-v2__body video.bleed,
+    .c-item-v2__body figure.full,
+    .c-item-v2__body img.full,
+    .c-item-v2__body video.full,
     .c-item-v2__body figure.wide,
     .c-item-v2__body img.wide,
     .c-item-v2__body video.wide {
@@ -414,7 +423,10 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
     }
-    code {
-        font-size: 0.9em;
+    .c-item-v2__body code {
+        font-size: .8em;
+    }
+    .c-item-v2__body pre>code {
+        font-size: .7em;
     }
 }
