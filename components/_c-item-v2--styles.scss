@@ -353,7 +353,9 @@
         text-decoration: none;
     }
     .c-item-v2__body>p,
-    .c-item-v2__body blockquote {
+    .c-item-v2__body blockquote,
+    .c-item-v2__body>ul,
+    .c-item-v2__body>ol {
         font-family: system-ui, "Helvetica", serif;
         @include c-item-v2-font ($_c-item-v2-wrap-width, 0.9);
     }
