@@ -369,8 +369,12 @@
     }
     .c-item-v2__meta a {
         box-shadow: none;
-        font-size: 0.95em;
-        letter-spacing: 0.15em;
+        color: #939393;
+    }
+    .c-item-v2__meta a:hover {
+        border-color: rgb(177, 177, 177);
+        border-width: 0 0 1px 0;
+        border-style: none none solid none;
     }
     .c-item-v2__body>hr {
         margin-top: 0.8em;
