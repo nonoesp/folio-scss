@@ -39,7 +39,7 @@ $c-header-background-color: transparent !default;
         margin-top: $c-header-height * 0.75 - $c-header-navigation-height * 0.5;
         height: $c-header-navigation-height;
         vertical-align: middle;
-        right: $gutter;
+        left: $gutter;
         @media #{$media-palm} {
             //margin-top: $c-header-height * 0.25; // Removed to simplify header.js
             width: 100%;
@@ -55,13 +55,14 @@ $c-header-background-color: transparent !default;
             display: inline-block;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
+            margin:0;
             @media #{$media-palm} {
                 margin-left: 0;
             }
         }
         ul>li {
             float: left;
-            padding-left: 25px;
+            // padding-right: 0;
             @media #{$media-palm} {
                 float: center;
                 padding: 0 4px;
@@ -91,6 +92,11 @@ $c-header-background-color: transparent !default;
         .navigation-link--active {
             color: #000 !important;
         }
+    }
+
+    .navigation--right {
+        left: none;
+        right: $gutter;
     }
 }
 
