@@ -366,7 +366,8 @@
     .c-item-v2__body p.no-text {
         display: block;
     }
-    .c-item-v2__body p.no-text+p {
+    .c-item-v2__body p.no-text+p,
+    .c-item-v2__body p.no-indent {
         text-indent: 0!important;
     }
     .c-item-v2__meta a {
