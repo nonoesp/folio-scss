@@ -1,9 +1,9 @@
 $o-notification-color: #fff !default;
 $o-notification-background-color: rgba(0, 0, 0, 0.2);
-$o-notification-opacity: 0.7 !default;
+$o-notification-opacity: .9 !default;
 $o-notification-border-bottom: 1px solid rgba(0, 0, 0, 0.05) !default;
-$o-notification-font-size: 60% !default;
-$o-notification-height: 25px !default;
+$o-notification-font-size: 55% !default;
+$o-notification-height: 20px !default;
 .o-notification {
     position: absolute;
     width: 100%;
@@ -17,8 +17,26 @@ $o-notification-height: 25px !default;
     background-color: $o-notification-background-color;
 }
 
-.o-notification--transparent {
+.o-notification--transparent-light {
     background-color: transparent;
-    color: rgba(0, 0, 0, 0.75);
+    color: #fff;
     border-bottom: $o-notification-border-bottom;
+}
+
+.o-notification--transparent-dark {
+    background-color: transparent;
+    color: #222;
+    // border-bottom: $o-notification-border-bottom;
+}
+
+.o-notification--light {
+    background-color: #fafafa;
+    color: #222;
+    border-bottom: $o-notification-border-bottom;
+}
+
+.o-notification--dark {
+    background-color: #222;
+    color: #fafafa;
+    // border-bottom: $o-notification-border-bottom;
 }
