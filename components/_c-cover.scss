@@ -33,6 +33,36 @@ $c-cover-selection-color: $color-white !default;
 
 /* States */
 
+.c-cover.height--250 {
+    height: 600px;
+    max-height: 80vh;
+}
+
+.c-cover.height--400 {
+    height: 600px;
+    max-height: 80vh;
+}
+
+.c-cover.height--600 {
+    height: 600px;
+    max-height: 80vh;
+}
+
+.c-cover.height--800 {
+    height: 600px;
+    max-height: 80vh;
+}
+
+.c-cover.height--80p {
+    min-height: 250px;
+    height: 80vh;
+}
+
+.c-cover.margin-10 {
+    width: 95%;
+    margin: auto;
+}
+
 .c-cover.is-clear {
     background-color: transparent;
 }
