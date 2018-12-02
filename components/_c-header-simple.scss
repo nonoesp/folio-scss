@@ -247,3 +247,17 @@
     .c-header-simple--center .c-header-simple__image {
         margin-left: 0;
     }
+    /* --left */
+    
+    .c-header-simple--left,
+    .c-header-simple--left .c-header-simple__description {
+        text-align: left;
+    }
+    
+    .c-header-simple--left .o-wrap--bio {
+        margin-left: auto;
+    }
+    
+    .c-header-simple--left .c-header-simple__image {
+        margin-left: 0;
+    }
