@@ -25,6 +25,34 @@ $gutters: $gutter * 2;
 	padding-right: 0;
 }
 
+@media all and #{$media-palm} {
+	.o-wrap--bleed\@palm {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media all and #{$media-desk} {
+	.o-wrap--bleed\@desk {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media all and #{$media-portable} {
+	.o-wrap--bleed\@portable {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media all and #{$media-lap} {
+	.o-wrap--bleed\@lap {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
 .o-wrap--bleed-left {
 	padding-left: 0;
 }
