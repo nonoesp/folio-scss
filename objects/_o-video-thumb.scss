@@ -9,13 +9,17 @@ $padding-vertical: 27px !default;
     cursor: pointer;
 }
 
-.o-video-thumb__mask,
-.video-thumb__mask {
+img.o-video-thumb__mask,
+img.video-thumb__mask {
     position: absolute;
     z-index: 1;
-    width: 100%;
+    width: 128px;
+    height: 128px;
+    top: 0;
     bottom: 0;
-    margin: 0!important;
+    left: 0;
+    right: 0;
+    margin: auto !important;
 }
 
 .o-video-thumb__image,

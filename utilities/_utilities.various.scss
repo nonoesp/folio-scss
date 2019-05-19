@@ -29,7 +29,8 @@
     border-bottom: none;
 }
 
-.u-no-underline a {
+.u-no-underline a,
+.u-no-underline:hover a {
     text-decoration: none;
     -webkit-box-shadow: none;
     box-shadow: none;
