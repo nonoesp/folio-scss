@@ -13,7 +13,7 @@ img.o-video-thumb__mask,
 img.video-thumb__mask {
     position: absolute;
     z-index: 1;
-    width: 128px;
+    width: 128px !important;
     height: 128px;
     top: 0;
     bottom: 0;
