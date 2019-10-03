@@ -49,6 +49,8 @@
 
 .u-is-external::after {
     content: "➝";
+    position: absolute;
+    pointer-events: none;
     display: inline-block;
     margin: auto;
     font-size: 0.85em;
