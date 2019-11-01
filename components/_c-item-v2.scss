@@ -239,6 +239,23 @@ $_c-item-v2-wrap-width: 30em;
     text-indent: 0!important;
 }
 
+/*****
+.c-item-v2 free flowing paragraph width
+*****/
+.c-item-v2.c-item-v2--free-width p,
+.c-item-v2.c-item-v2--free-width h1 {
+    max-width: none;
+}
+
+/*****
+.c-item-v2 fixed size title
+*****/
+.c-item-v2 h1.c-item-v2__title--fixed-size  {
+    font-size: 1.3rem;
+    font-family: "Inter", system-ui, sans-serif;
+    letter-spacing: -0.03em;
+}
+
 // headers
 .c-item-v2 h1,
 .c-item-v2 h2,
