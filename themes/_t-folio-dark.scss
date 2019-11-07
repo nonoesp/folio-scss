@@ -1,0 +1,35 @@
+$t-folio-dark-background-color: #222;
+$t-folio-dark-foreground-color: #fff;
+
+.t-folio-dark {
+    background-color: $t-folio-dark-background-color;
+
+    .o-band {
+        background-color: $t-folio-dark-background-color;
+    }
+
+    .c-item-v2 {
+
+        background-color: $t-folio-dark-background-color;
+        color: #fafafa;
+    }
+
+    /* c-footer*/
+
+    .c-footer,
+    .c-footer a {
+        color: $t-folio-dark-foreground-color;
+    }
+
+    .c-footer input[type=submit] {
+        background-color: rgba(255,255,255,0.2);
+        color: $t-folio-dark-foreground-color;
+        border-color: rgba(255,255,255,0.05);
+    }
+
+    .c-footer input[type=email] {
+        background-color: rgba(255,255,255,0.05);
+        color: $t-folio-dark-foreground-color;
+        border-color: rgba(255,255,255,0.15);
+    }    
+}
