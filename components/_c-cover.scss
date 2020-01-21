@@ -260,6 +260,35 @@ $c-cover-is-faded-step: 10;
     font-weight: $extra-bold;
 }
 
+// .c-cover-arrow
+$c-cover__arrow-down-size: 55px;
+$c-cover__arrow-down-padding: 35px;
+$c-cover__arrow-down-bottom: 65px;
+
+.c-cover__arrow-down {
+    position: absolute;
+    width: $c-cover__arrow-down-size + $c-cover__arrow-down-padding * 2;
+    height: $c-cover__arrow-down-size * 0.5 + $c-cover__arrow-down-padding * 2;
+    padding: $c-cover__arrow-down-padding;
+    bottom: $c-cover__arrow-down-bottom - $c-cover__arrow-down-padding;
+    // border: solid 1px #fff;
+    margin: auto;
+    left:0;
+    right:0;
+    opacity: 0.8;
+}
+
+.c-cover__arrow-down .o-icon {
+    fill: #fff;
+    width: 100%;
+}
+
+.c-cover__arrow-down:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    @include transition(transform 0.05s ease-in-out);
+}
+
 // Video
 .c-cover__video {
     z-index: $zIndex-1;
