@@ -278,6 +278,13 @@ $c-cover__arrow-down-bottom: 69px;
     opacity: 0.8;
 }
 
+@media all and #{$media-portable} {
+    .c-cover__arrow-down,
+    .c-cover__arrow-down .js-arrow-down {
+        display: none;
+    }
+}
+
 .c-cover__arrow-down .o-icon {
     fill: #fff;
     width: 100%;
