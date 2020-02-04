@@ -348,6 +348,16 @@ $c-cover__arrow-down-bottom: 69px;
     background-color: rgba(0, 0, 0, 0.45);
 }
 
+/* c-cover__image */
+
+.c-cover__image {
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+  }
 
 /* Selection */
 
