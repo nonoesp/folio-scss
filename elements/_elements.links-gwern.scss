@@ -1,6 +1,7 @@
 $gwern-links-parent-class: '.c-item-v2__body' !default;
 $gwern-links-link-opacity: 0.8;
 $gwern-links-link-hover-opacity: 0.75;
+$gwern-links-icons-path: '/img/icons' !default;
 
 /*=-----------------------------------------=*/
 /*= Icons for certain link types: by target =*/
@@ -416,7 +417,7 @@ $gwern-links-link-hover-opacity: 0.75;
     /* IMAGE-BASED PER-DOMAIN LINK ICONS: */
     /* BioRxiv (custom icon: italic Chi with DNA cross-strands) */
     #{$gwern-links-parent-class} a[href*='biorxiv.org']::after {
-        background-image: url("/img/icons/chi-dna.svg");
+        background-image: url(#{$gwern-links-icons-path}/chi-dna.svg);
     }
     #{$gwern-links-parent-class} a[href*='biorxiv.org']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -435,7 +436,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Google Scholar */
     #{$gwern-links-parent-class} a[href*='scholar.google.com']::after {
-        background-image: url("/img/icons/google-scholar.svg");
+        background-image: url(#{$gwern-links-icons-path}/google-scholar.svg);
     }
     #{$gwern-links-parent-class} a[href*='scholar.google.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -456,7 +457,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href*='plosone.org']::after,
     #{$gwern-links-parent-class} a[href*='plos.org']::after,
     #{$gwern-links-parent-class} a[href*='www.plos']::after {
-        background-image: url("/img/icons/plos.svg");
+        background-image: url(#{$gwern-links-icons-path}/plos.svg);
     }
     #{$gwern-links-parent-class} a[href*='plosone.org']:hover::after,
     #{$gwern-links-parent-class} a[href*='plos.org']:hover::after,
@@ -479,7 +480,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Patreon: used the old one (https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg) because I don't like the new one */
     #{$gwern-links-parent-class} a[href*='patreon.com']::after {
-        background-image: url("/img/icons/patreon.svg");
+        background-image: url(#{$gwern-links-icons-path}/patreon.svg);
     }
     #{$gwern-links-parent-class} a[href*='patreon.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -498,7 +499,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Upton Tea */
     #{$gwern-links-parent-class} a[href*='uptontea.com']::after {
-                  background-image: url("/img/icons/uptontea.svg");
+                  background-image: url(#{$gwern-links-icons-path}/uptontea.svg);
     }
     #{$gwern-links-parent-class} a[href*='uptontea.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -516,7 +517,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Wired */
     #{$gwern-links-parent-class} a[href*='wired.com']::after {
-        background-image: url("/img/icons/wired.svg");
+        background-image: url(#{$gwern-links-icons-path}/wired.svg);
     }
     #{$gwern-links-parent-class} a[href*='wired.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -535,7 +536,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* The Washington Post: truncated their blackletter to 'WP' */
     #{$gwern-links-parent-class} a[href*='washingtonpost.com']::after {
-        background-image: url("/img/icons/washingtonpost.svg");
+        background-image: url(#{$gwern-links-icons-path}/washingtonpost.svg);
     }
     #{$gwern-links-parent-class} a[href*='washingtonpost.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -554,7 +555,8 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* The New York Times: reduction of full SVG logo to just the 'T' they use as an icon */
     #{$gwern-links-parent-class} a[href*='nytimes.com']::after {
-        background-image: url("/img/icons/newyorktimes.svg");}
+        background-image: url(#{$gwern-links-icons-path}/newyorktimes.svg);
+    }
     #{$gwern-links-parent-class} a[href*='nytimes.com']:hover::after {
         opacity: 0.45;
     }
@@ -572,7 +574,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* NCBI/Pubmed: simplification of their logo (https://upload.wikimedia.org/wikipedia/commons/0/07/US-NLM-NCBI-Logo.svg) */
     #{$gwern-links-parent-class} a[href*='nlm.nih.gov']::after {
-        background-image: url("/img/icons/nlm-ncbi.svg");
+        background-image: url(#{$gwern-links-icons-path}/nlm-ncbi.svg);
         }
     #{$gwern-links-parent-class} a[href*='nlm.nih.gov']:hover::after {
         opacity: 0.45;
@@ -591,7 +593,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* The New Yorker: the Dandy SVG, simplified & rotated more vertically */
     #{$gwern-links-parent-class} a[href*='newyorker.com']::after {
-        background-image: url("/img/icons/thenewyorker.svg");
+        background-image: url(#{$gwern-links-icons-path}/thenewyorker.svg);
     }
     #{$gwern-links-parent-class} a[href*='newyorker.com']:hover::after {
         opacity: 0.45;
@@ -611,7 +613,7 @@ $gwern-links-link-hover-opacity: 0.75;
     /* El Grauniad */
     #{$gwern-links-parent-class} a[href*='theguardian.com']::after,
     #{$gwern-links-parent-class} a[href*='www.guardian.co.uk']::after {
-        background-image: url("/img/icons/theguardian.svg");
+        background-image: url(#{$gwern-links-icons-path}/theguardian.svg);
     }
     #{$gwern-links-parent-class} a[href*='theguardian.com']:hover::after,
     #{$gwern-links-parent-class} a[href*='www.guardian.co.uk']:hover::after {
@@ -632,7 +634,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Reddit */
     #{$gwern-links-parent-class} a[href*='reddit.com']::after {
-        background-image: url("/img/icons/reddit.svg");
+        background-image: url(#{$gwern-links-icons-path}/reddit.svg);
     }
     #{$gwern-links-parent-class} a[href*='reddit.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -652,7 +654,7 @@ $gwern-links-link-hover-opacity: 0.75;
     /* PG/HN/YC (shared logo): */
     #{$gwern-links-parent-class} a[href*='paulgraham.com']::after,
     #{$gwern-links-parent-class} a[href*='ycombinator.com']::after {
-        background-image: url("/img/icons/hn.svg");
+        background-image: url(#{$gwern-links-icons-path}/hn.svg);
     }
     #{$gwern-links-parent-class} a[href*='paulgraham.com']:hover::after,
     #{$gwern-links-parent-class} a[href*='ycombinator.com']:hover::after {
@@ -673,7 +675,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* MIRI/intelligence.org */
     #{$gwern-links-parent-class} a[href*='intelligence.org']::after {
-        background-image: url("/img/icons/miri.svg");
+        background-image: url(#{$gwern-links-icons-path}/miri.svg);
     }
     #{$gwern-links-parent-class} a[href*='intelligence.org']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -692,7 +694,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* DeepMind; match articles or anchors about DM too */
     #{$gwern-links-parent-class} a[href*='deepmind']::after {
-        background-image: url("/img/icons/deepmind.svg");
+        background-image: url(#{$gwern-links-icons-path}/deepmind.svg);
     }
     #{$gwern-links-parent-class} a[href*='deepmind']:hover::after {
         opacity: 0.5;
@@ -710,7 +712,7 @@ $gwern-links-link-hover-opacity: 0.75;
     }
     
     #{$gwern-links-parent-class} a[href*='openai']::after {
-        background-image: url("/img/icons/openai.svg");
+        background-image: url(#{$gwern-links-icons-path}/openai.svg);
     }
     #{$gwern-links-parent-class} a[href*='openai']:hover::after {
         opacity: 0.5;
@@ -729,7 +731,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Twitter */
     #{$gwern-links-parent-class} a[href*='twitter.com']::after {
-        background-image: url("/img/icons/twitter.svg");
+        background-image: url(#{$gwern-links-icons-path}/twitter.svg);
     }
     #{$gwern-links-parent-class} a[href*='twitter.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -748,7 +750,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Erowid */
     #{$gwern-links-parent-class} a[href*='erowid.org']::after {
-        background-image: url("/img/icons/erowid.svg");
+        background-image: url(#{$gwern-links-icons-path}/erowid.svg);
     }
     #{$gwern-links-parent-class} a[href*='erowid.org']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -793,12 +795,12 @@ $gwern-links-link-hover-opacity: 0.75;
     /* https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg */
     #{$gwern-links-parent-class} a[href*='youtube.com']::after,
     #{$gwern-links-parent-class} a[href*='youtu.be']::after {
-        background-image: url('/img/icons/youtube.svg');
+        background-image: url('#{$gwern-links-icons-path}/youtube.svg');
     }
     /* Bandcamp/SoundCloud links */
     #{$gwern-links-parent-class} a[href*='soundcloud.com']::after,
     #{$gwern-links-parent-class} a[href*='bandcamp.com']::after {
-        background-image: url('/img/icons/video.svg');
+        background-image: url('#{$gwern-links-icons-path}/video.svg');
     }
     #{$gwern-links-parent-class} a[href*='youtube.com']:hover::after,
     #{$gwern-links-parent-class} a[href*='youtu.be']:hover::after,
@@ -826,7 +828,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href*="overflow.com"]::after,
     #{$gwern-links-parent-class} a[href*="stackexchange.com"]::after {
         content: "";
-        background-image: url("/img/icons/stackexchange.svg");
+        background-image: url(#{$gwern-links-icons-path}/stackexchange.svg);
         background-repeat: no-repeat;
         background-size: 0.75em;
         background-position: right 1px top;
@@ -850,7 +852,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href*="a.co"]::after,
     #{$gwern-links-parent-class} a[href*="amzn.com"]::after {
         content: "";
-        background-image: url("/img/icons/amazon.svg");
+        background-image: url(#{$gwern-links-icons-path}/amazon.svg);
         background-repeat: no-repeat;
         background-size: 0.75em;
         background-position: right 1px top;
@@ -871,7 +873,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* Github; I exclude github.io because that's blogs */
     #{$gwern-links-parent-class} a[href*='github.com']::after {
-        background-image: url("/img/icons/github.svg");
+        background-image: url(#{$gwern-links-icons-path}/github.svg);
     }
     #{$gwern-links-parent-class} a[href*='github.com']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -891,7 +893,7 @@ $gwern-links-link-hover-opacity: 0.75;
     /* Dropbox: old file-host, deprecated since they've started killing inactive accounts */
     #{$gwern-links-parent-class} a[href*='dropbox.com']::after,
     #{$gwern-links-parent-class} a[href*='dropboxusercontent.com']::after {
-        background-image: url("/img/icons/dropbox.svg");
+        background-image: url(#{$gwern-links-icons-path}/dropbox.svg);
     }
     #{$gwern-links-parent-class} a[href*='dropbox.com']:hover::after,
     #{$gwern-links-parent-class} a[href*='dropboxusercontent.com']:hover::after {
@@ -912,7 +914,7 @@ $gwern-links-link-hover-opacity: 0.75;
     
     /* MegaUpload/Mega: filesharing (used for big files) */
     #{$gwern-links-parent-class} a[href*='mega.nz']::after {
-        background-image: url("/img/icons/mega.svg");
+        background-image: url(#{$gwern-links-icons-path}/mega.svg);
     }
     #{$gwern-links-parent-class} a[href*='mega.nz']:hover::after {
         opacity: $gwern-links-link-hover-opacity;
@@ -933,7 +935,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href*='archive-it.org']::after,
     #{$gwern-links-parent-class} a[href*='archiveteam.org']::after,
     #{$gwern-links-parent-class} a[href*='waybackmachine.org']::after {
-        background-image: url("/img/icons/internetarchive.svg");
+        background-image: url(#{$gwern-links-icons-path}/internetarchive.svg);
     }
     #{$gwern-links-parent-class} a[href*='archive.org']:hover::after,
     #{$gwern-links-parent-class} a[href*='archive-it.org']:hover::after,
@@ -1128,7 +1130,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.page' i]::after,
     #{$gwern-links-parent-class} a[href$='.txt' i]::after,
     #{$gwern-links-parent-class} a[href$='.xml' i]::after {
-        background-image: url('/img/icons/txt.svg');
+        background-image: url('#{$gwern-links-icons-path}/txt.svg');
     }
     
     /*  Code, scripts, etc.
@@ -1142,7 +1144,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.patch' i]::after,
     #{$gwern-links-parent-class} a[href^="."][href$='.php' i]::after,
     #{$gwern-links-parent-class} a[href$='.sh' i]::after {
-        background-image: url('/img/icons/code.svg');
+        background-image: url('#{$gwern-links-icons-path}/code.svg');
     }
     
     /*  Word (& compatible) documents.
@@ -1150,7 +1152,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.doc' i]::after,
     #{$gwern-links-parent-class} a[href$='.docx' i]::after,
     #{$gwern-links-parent-class} a[href*='docs.google.com' i]::after {
-        background-image: url('/img/icons/worddoc.svg');
+        background-image: url('#{$gwern-links-icons-path}/worddoc.svg');
     }
     
     /*  Excel (& compatible) documents.
@@ -1158,13 +1160,13 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.xls' i]::after,
     #{$gwern-links-parent-class} a[href$='.ods' i]::after,
     #{$gwern-links-parent-class} a[href$='.xlsx' i]::after {
-        background-image: url('/img/icons/spreadsheet.svg');
+        background-image: url('#{$gwern-links-icons-path}/spreadsheet.svg');
     }
     
     /*  CSV files.
         */
     #{$gwern-links-parent-class} a[href$='.csv' i]::after {
-        background-image: url('/img/icons/csv.svg');
+        background-image: url('#{$gwern-links-icons-path}/csv.svg');
     }
     
     /*  Images.
@@ -1178,7 +1180,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.svg' i]::after,
     #{$gwern-links-parent-class} a[href$='.xcf' i]::after,
     #{$gwern-links-parent-class} a[href*='imgur.com']::after {
-        background-image: url('/img/icons/image.svg');
+        background-image: url('#{$gwern-links-icons-path}/image.svg');
     }
     
     /*  Audio files.
@@ -1188,7 +1190,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.flac' i]::after,
     #{$gwern-links-parent-class} a[href$='.rm' i]::after,
     #{$gwern-links-parent-class} a[href$='.ogg' i]::after {
-        background-image: url('/img/icons/audio.svg');
+        background-image: url('#{$gwern-links-icons-path}/audio.svg');
     }
     
     /*  Video files.
@@ -1197,7 +1199,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.avi' i]::after,
     #{$gwern-links-parent-class} a[href$='.mp4' i]::after,
     #{$gwern-links-parent-class} a[href$='.webm' i]::after {
-        background-image: url('/img/icons/video.svg');
+        background-image: url('#{$gwern-links-icons-path}/video.svg');
     }
     
     /*  Archive files.
@@ -1206,7 +1208,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.zip' i]::after,
     #{$gwern-links-parent-class} a[href$='.zip' i]::after,
     #{$gwern-links-parent-class} a[href$='.img' i]::after {
-        background-image: url('/img/icons/archive.svg');
+        background-image: url('#{$gwern-links-icons-path}/archive.svg');
     }
     
     /*  Miscellaneous files (for which there is no specific icon).
@@ -1215,7 +1217,7 @@ $gwern-links-link-hover-opacity: 0.75;
     #{$gwern-links-parent-class} a[href$='.mdb' i]::after,
     #{$gwern-links-parent-class} a[href$='.mht' i]::after,
     #{$gwern-links-parent-class} a[href$='.ttf' i]::after {
-        background-image: url('/img/icons/misc.svg');
+        background-image: url('#{$gwern-links-icons-path}/misc.svg');
     }
     
     /*=-----------------------------------------=*/
