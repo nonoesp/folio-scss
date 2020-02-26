@@ -1,0 +1,12 @@
+$div-lazy-animation-duration: 0.2s;
+
+div.lazy {
+    opacity: 0;
+    transition: opacity $div-lazy-animation-duration ease-in;
+    -moz-transition: opacity $div-lazy-animation-duration ease-in;
+    -webkit-transition: opacity $div-lazy-animation-duration ease-in;
+  }
+
+div.lazy--visible {
+    opacity: 1;
+}
