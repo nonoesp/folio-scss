@@ -30,6 +30,7 @@ $c-admin-font-size: 16px !default;
     text-decoration: none;
 }
 
+.c-admin .o-textarea:not(.o-textarea--fullscreen) .o-textarea__textarea p,
 .c-admin p.unwrapped.wide {
     margin-right: auto;
     margin-left: auto;
