@@ -1,4 +1,4 @@
-# Folio SCSS
+# Folio SCSS 🎨
 
 This repository contains a set of sass stylesheets with elements and tools that intend to be reusable. The file structure is inspired by [inuitcss](https://github.com/inuitcss/inuitcss), and the following guidelines are a reminder from [Harry Roberts](docs/csswizardry-namespaces.md) of the naming convention which this project intends to stick to.
 
