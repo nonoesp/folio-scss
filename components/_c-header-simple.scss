@@ -125,19 +125,19 @@
         height: 150px;
         border-radius: 50%;
         margin-bottom: 20px;
-        @include transition(transform 0.05s ease-in-out);
+    }
+
+    // todo - make modifier c-header-simple__image--rotates
+    .c-header-simple__image {
+        transform: rotate(0deg);
+        @include transition(transform 0.5s ease-in-out);
     }
 
     .c-header-simple__image:hover {
-        -webkit-animation:spin 4s linear infinite;
-        -moz-animation:spin 4s linear infinite;
-        animation:spin 4s linear infinite;
+        transform: rotate(360deg);
+        @include transition(transform 2.5s linear);
     }
 
-    @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-    @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-    @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-    
     @media all and #{$media-palm} {
         .c-header-simple__image {
             width: 105px;
