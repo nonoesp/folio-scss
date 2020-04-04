@@ -1,5 +1,12 @@
 $div-lazy-animation-duration: 0.2s !default;
 
+img.lazy {
+    position:absolute;
+    opacity:0;
+    width:0;
+    height:0;
+}
+
 div.lazy {
     opacity: 0;
     transition: opacity $div-lazy-animation-duration ease-in;
