@@ -23,6 +23,15 @@ $c-item-li-link-color: $link-color !default;
     line-height: 27px;
 }
 
+.c-item-li .c-item-li__date a {
+    color: $c-item-li-date-color;
+}
+
+.c-item-li .c-item-li__date a:hover {
+    color: #999;
+    text-decoration: underline;
+}
+
 .c-item-li h1 {
     text-align: left;
     font-size: 20px;
