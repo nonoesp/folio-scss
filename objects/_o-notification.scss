@@ -5,11 +5,11 @@ $o-notification-border-bottom: 1px solid rgba(0, 0, 0, 0.05) !default;
 $o-notification-font-size: 55% !default;
 $o-notification-height: 20px !default;
 .o-notification {
-    position: absolute;
+    position: relative;
     width: 100%;
     height: $o-notification-height;
     line-height: $o-notification-height;
-    z-index: 1;
+    // z-index: 1;
     text-align: center;
     font-size: $o-notification-font-size;
     opacity: $o-notification-opacity;
