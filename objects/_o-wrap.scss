@@ -1,135 +1,134 @@
 
-$wrap-width: 942px !default;
+$o-wrap-class-name: 'o-wrap' !default;
+$o-wrap-width-step: 50px;
 
-$wrap-width-tiny: 480px !default;
-$wrap-width-small: 680px !default;
-$wrap-width-medium: 800px !default;
-$wrap-width-big: 1000px !default;
-$wrap-width-huge: 1200px !default;
-$wrap-width-full: 100%;
+$o-wrap-width: 942px !default;
+
+$o-wrap-width-tiny: 480px !default;
+$o-wrap-width-small: 680px !default;
+$o-wrap-width-medium: 800px !default;
+$o-wrap-width-big: 1000px !default;
+$o-wrap-width-huge: 1200px !default;
+$o-wrap-width-full: 100%;
 
 $gutters: $gutter * 2;
 
-.o-wrap {
+.#{$o-wrap-class-name} {
 	position:relative;
-	max-width: $wrap-width + $gutters;
+	max-width: $o-wrap-width + $gutters;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: $gutter;
 	padding-right: $gutter;
-	//height:100%;
 }
 
-.o-wrap--bleed {
+.#{$o-wrap-class-name}--bleed {
 	padding-left: 0;
 	padding-right: 0;
 }
 
 @media all and #{$media-palm} {
-	.o-wrap--bleed\@palm {
+	.#{$o-wrap-class-name}--bleed\@palm {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
 @media all and #{$media-desk} {
-	.o-wrap--bleed\@desk {
+	.#{$o-wrap-class-name}--bleed\@desk {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
 @media all and #{$media-portable} {
-	.o-wrap--bleed\@portable {
+	.#{$o-wrap-class-name}--bleed\@portable {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
 @media all and #{$media-lap} {
-	.o-wrap--bleed\@lap {
+	.#{$o-wrap-class-name}--bleed\@lap {
 		padding-left: 0;
 		padding-right: 0;
 	}
 }
 
-.o-wrap--bleed-left {
+.#{$o-wrap-class-name}--bleed-left {
 	padding-left: 0;
 }
 
-.o-wrap--bleed-right {
+.#{$o-wrap-class-name}--bleed-right {
 	padding-right: 0;
 }
 
 // Modifiers
 
 @for $i from 0 through 20 {
-	.o-wrap--gutter-#{$i} {
+	.#{$o-wrap-class-name}--gutter-#{$i} {
 		padding-left: $i * 1px;
 		padding-right: $i * 1px;
 	}
 }
 
-.o-wrap--tiny {
-	max-width: $wrap-width-tiny + $gutters;
+.#{$o-wrap-class-name}--tiny {
+	max-width: $o-wrap-width-tiny + $gutters;
 }
 
-.o-wrap--small {
-	max-width: $wrap-width-small + $gutters;
+.#{$o-wrap-class-name}--small {
+	max-width: $o-wrap-width-small + $gutters;
 }
 
-.o-wrap--medium {
-	max-width: $wrap-width-medium + $gutters;
+.#{$o-wrap-class-name}--medium {
+	max-width: $o-wrap-width-medium + $gutters;
 }
 
-.o-wrap--big {
-	max-width: $wrap-width-big + $gutters;
+.#{$o-wrap-class-name}--big {
+	max-width: $o-wrap-width-big + $gutters;
 }
 
-.o-wrap--huge {
-	max-width: $wrap-width-huge + $gutters;
+.#{$o-wrap-class-name}--huge {
+	max-width: $o-wrap-width-huge + $gutters;
 }
 
-.o-wrap--full {
-	max-width: $wrap-width-full;
+.#{$o-wrap-class-name}--full {
+	max-width: $o-wrap-width-full;
 }
 
 @media all and #{$media-portable} {
-	.o-wrap--portable-small {
-		max-width: $wrap-width-small + $gutters;
+	.#{$o-wrap-class-name}--portable-small {
+		max-width: $o-wrap-width-small + $gutters;
 	}
 
-	.o-wrap--portable-tiny {
-		max-width: $wrap-width-tiny + $gutters;
+	.#{$o-wrap-class-name}--portable-tiny {
+		max-width: $o-wrap-width-tiny + $gutters;
 	}
 }
 
 @media all and #{$media-palm} {
-	.o-wrap--palm-small {
-		max-width: $wrap-width-small + $gutters;
+	.#{$o-wrap-class-name}--palm-small {
+		max-width: $o-wrap-width-small + $gutters;
 	}
 
-	.o-wrap--palm-tiny {
-		max-width: $wrap-width-tiny + $gutters;
+	.#{$o-wrap-class-name}--palm-tiny {
+		max-width: $o-wrap-width-tiny + $gutters;
 	}
 }
 
 @media all and #{$media-lap} {
-	.o-wrap--lap-small {
-		max-width: $wrap-width-small + $gutters;
+	.#{$o-wrap-class-name}--lap-small {
+		max-width: $o-wrap-width-small + $gutters;
 	}
 
-	.o-wrap--lap-tiny {
-		max-width: $wrap-width-tiny + $gutters;
+	.#{$o-wrap-class-name}--lap-tiny {
+		max-width: $o-wrap-width-tiny + $gutters;
 	}
 }
 
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
-
-$o-wrap-slug: 'o-wrap';
-$o-wrap-width-module: 50px;
 
 $o-wrap-sizes: (
   'minuscule' 240px,
@@ -143,70 +142,70 @@ $o-wrap-sizes: (
 	'full' 100%,
 ) !default;
 
-@each $wrap-size in $o-wrap-sizes {
+@each $o-wrap-size in $o-wrap-sizes {
     //$i: index($colors-list, $current-color);
-		$size: nth($wrap-size, 2);
-		$name: nth($wrap-size, 1);
+		$size: nth($o-wrap-size, 2);
+		$name: nth($o-wrap-size, 1);
 		@if $size != 100% {
 			$size: $size + $gutters;
 		}
-		.#{$o-wrap-slug}--size-#{$name} {
+		.#{$o-wrap-class-name}--size-#{$name} {
         max-width: $size;// + $gutters;
     }
 		@media all and #{$media-palm} {
-			.#{$o-wrap-slug}--palm-size-#{$name} {
+			.#{$o-wrap-class-name}--palm-size-#{$name} {
 					max-width: $size!important;// + $gutters;
 			}
 		}
 		@media all and #{$media-lap} {
-			.#{$o-wrap-slug}--lap-size-#{$name} {
+			.#{$o-wrap-class-name}--lap-size-#{$name} {
 					max-width: $size !important;// + $gutters;
 			}
 		}
 		@media all and #{$media-portable} {
-			.#{$o-wrap-slug}--portable-size-#{$name} {
+			.#{$o-wrap-class-name}--portable-size-#{$name} {
 					max-width: $size !important;// + $gutters;
 			}
 		}
 		@media all and #{$media-desk} {
-			.#{$o-wrap-slug}--desk-size-#{$name} {
+			.#{$o-wrap-class-name}--desk-size-#{$name} {
 					max-width: $size !important;// + $gutters;
 			}
 		}
 		@media all and #{$media-wide} {
-			.#{$o-wrap-slug}--wide-size-#{$name} {
+			.#{$o-wrap-class-name}--wide-size-#{$name} {
 					max-width: $size !important;// + $gutters;
 			}
 		}
 }
 
 @for $i from 1 through 20 {
-	$size: $o-wrap-width-module * $i;
-	.#{$o-wrap-slug}--size-#{strip-units($size)} {
-		max-width: $o-wrap-width-module * $i + $gutters;
+	$size: $o-wrap-width-step * $i;
+	.#{$o-wrap-class-name}--size-#{strip-units($size)} {
+		max-width: $o-wrap-width-step * $i + $gutters;
 	}
 	@media all and #{$media-palm} {
-		.palm--#{$o-wrap-slug}--size-#{strip-units($size)} {
+		.palm--#{$o-wrap-class-name}--size-#{strip-units($size)} {
 				max-width: $size!important;// + $gutters;
 		}
 	}
 	@media all and #{$media-lap} {
-		.lap--#{$o-wrap-slug}--size-#{strip-units($size)} {
+		.lap--#{$o-wrap-class-name}--size-#{strip-units($size)} {
 				max-width: $size !important;// + $gutters;
 		}
 	}
 	@media all and #{$media-portable} {
-		.portable--#{$o-wrap-slug}--size-#{strip-units($size)} {
+		.portable--#{$o-wrap-class-name}--size-#{strip-units($size)} {
 				max-width: $size !important;// + $gutters;
 		}
 	}
 	@media all and #{$media-desk} {
-		.desk--#{$o-wrap-slug}--size-#{strip-units($size)} {
+		.desk--#{$o-wrap-class-name}--size-#{strip-units($size)} {
 				max-width: $size !important;// + $gutters;
 		}
 	}
 	@media all and #{$media-wide} {
-		.wide--#{$o-wrap-slug}--size-#{strip-units($size)} {
+		.wide--#{$o-wrap-class-name}--size-#{strip-units($size)} {
 				max-width: $size !important;// + $gutters;
 		}
 	}

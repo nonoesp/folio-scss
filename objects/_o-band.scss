@@ -1,55 +1,8 @@
+$o-band-slug: "o-band" !default;
 
-
-// o-band
-// Band Model
-
-/* SETTINGS */
-
-$size-tiny: 120px;
-$size-small: 240px;
-$size-standard: 360px;
-$size-big: 480px;
-$size-huge: 600px;
-
-$o-band-slug: "o-band";
-
-.o-band {
+.#{$o-band-slug} {
 	position: relative;
 	width: 100%;
-	@include transition( all 0.25s );
 	overflow: hidden;
-}
-
-// Size modifiers
-
-.o-band--size-tiny {
-	min-height: $size-tiny;
-}
-
-.o-band--size-huge {
-	min-height: $size-huge;
-}
-
-@media all and #{$media-palm} {
-	.o-band--tinySizePalm {
-		min-height: $size-tiny;
-	}
-
-	.o-band--mediumSizePalm {
-		min-height: $size-standard;
-	}
-}
-
-@media all and #{$media-lap} {
-	.o-band--tinySizeLap {
-		min-height: $size-tiny;
-	}
-
-	.o-band--mediumSizeLap {
-		min-height: $size-standard;
-	}
-
-	.o-band--bigSizeLap {
-		min-height: $size-big;
-	}
+	@include transition( all 0.25s );
 }

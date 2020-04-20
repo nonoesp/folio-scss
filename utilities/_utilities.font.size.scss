@@ -1,0 +1,129 @@
+/* Type: font-size */
+
+$font-size-a: 0.75rem !default;
+$font-size-b: 0.85rem !default;
+$font-size-c: 1.00rem !default;
+$font-size-d: 1.10rem !default;
+$font-size-e: 1.15rem !default;
+$font-size-f: 1.25rem !default;
+$font-size-g: 1.35rem !default;
+$font-size-h: 1.55rem !default;
+$font-size-i: 1.75rem !default;
+
+.u-font-size--a {
+    font-size: $font-size-a !important;
+}
+
+.u-font-size--b {
+    font-size: $font-size-b !important;
+}
+
+.u-font-size--c {
+    font-size: $font-size-c !important;
+}
+
+.u-font-size--d {
+    font-size: $font-size-d !important;
+}
+
+.u-font-size--e {
+    font-size: $font-size-e !important;
+}
+
+.u-font-size--f {
+    font-size: $font-size-f !important;
+}
+
+.u-font-size--g {
+    font-size: $font-size-g !important;
+}
+
+.u-font-size--h {
+    font-size: $font-size-h !important;
+}
+
+.u-font-size--i {
+    font-size: $font-size-i !important;
+}
+
+// Type: font-size media queries
+@media all and #{$media-palm} {
+    .u-font-size--a\@palm {
+        font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@palm {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@palm {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@palm {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@palm {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@palm {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@palm {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@palm {
+        font-size: $font-size-i !important;
+    }
+}
+
+@media all and #{$media-lap} {
+    .u-font-size--a\@lap {
+        font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@lap {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@lap {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@lap {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@lap {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@lap {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@lap {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@lap {
+        font-size: $font-size-i !important;
+    }
+}
+
+@media all and #{$media-desk} {
+    .u-font-size--a\@desk {
+        font-size: $font-size-a !important;
+    }
+    .u-font-size--b\@desk {
+        font-size: $font-size-b !important;
+    }
+    .u-font-size--c\@desk {
+        font-size: $font-size-c !important;
+    }
+    .u-font-size--e\@desk {
+        font-size: $font-size-e !important;
+    }
+    .u-font-size--f\@desk {
+        font-size: $font-size-f !important;
+    }
+    .u-font-size--g\@desk {
+        font-size: $font-size-g !important;
+    }
+    .u-font-size--h\@desk {
+        font-size: $font-size-h !important;
+    }
+    .u-font-size--i\@desk {
+        font-size: $font-size-i !important;
+    }
+}
