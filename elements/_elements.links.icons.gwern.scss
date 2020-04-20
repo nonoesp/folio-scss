@@ -333,7 +333,7 @@ $gwern-links-icons-path: '/folio/icons' !default;
     // #{$gwern-links-parent-class} a[href*="r-project.org"]::after,
     // #{$gwern-links-parent-class} a[href*="rstudio.com"]::after {
     //     content: "R";
-    }
+    // }
     
     /* Haskell: simplify logo; the double-lambda is too busy when used for link icons */
     #{$gwern-links-parent-class} a[href*="haskell.org"]::after {
