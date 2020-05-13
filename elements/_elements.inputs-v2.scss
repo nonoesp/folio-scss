@@ -1,0 +1,127 @@
+// DEFAULT SETTINGS
+$input-outline-color: #737373 !default;
+$input-outline-color-focus: rgba(0, 0, 0, 0.30) !default;
+$input-font-family: sans-serif !default;
+$input-font-size: 16px !default;
+$input-height: 36px !default;
+$input-border-radius: 2px !default;
+
+$inputs-tag: '.folio-inputs';
+
+.inputs-font {
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    font-weight: $regular;
+}
+
+.inputs-shape {
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: $input-border-radius;
+    border: solid 1px $input-outline-color;
+    height: $input-height;
+    padding: 7px;
+    margin-bottom: 6px;
+    border-color: #dbdbdb;
+}
+
+.inputs--highlighted {
+    outline-width: 0;
+    border: 1px solid $input-outline-color-focus;
+}
+
+#{$inputs-tag} label {
+    @extend .inputs-font;
+    @include user-select(none);
+    display: inline-block;
+    margin: 0 5px 1em 0;
+    vertical-align: middle;
+}
+
+#{$inputs-tag} select {
+    @extend .inputs-shape,
+    .inputs-font;
+    background-color: transparent;
+}
+
+#{$inputs-tag} input {
+    @extend .inputs-shape,
+    .inputs-font;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#{$inputs-tag} textarea {
+    @extend .inputs-shape,
+    .inputs-font;
+    min-height: 250px;
+}
+
+#{$inputs-tag} button,
+#{$inputs-tag} input[type=submit] {
+    @extend .inputs-shape,
+    .inputs-font;
+    @include user-select(none);
+    background-color: transparent;
+    padding: 0;
+    line-height: $input-height;
+    height: $input-height;
+    cursor: pointer;
+    font-weight: $bold;
+    color: $color-black;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+#{$inputs-tag} input:focus,
+#{$inputs-tag} input:hover,
+#{$inputs-tag} select:focus,
+#{$inputs-tag} select:hover,
+#{$inputs-tag} textarea:focus,
+#{$inputs-tag} textarea:hover,
+#{$inputs-tag} button:focus,
+#{$inputs-tag} button:hover {
+    @extend .inputs--highlighted;
+}
+
+/* Button */
+
+#{$inputs-tag} input[type=submit]:disabled,
+#{$inputs-tag} button:disabled {
+    background-color: #dbdbdb;
+    opacity: 0.3;
+    border-color: transparent;
+}
+
+#{$inputs-tag} input[type=submit]:disabled:hover,
+#{$inputs-tag} button:disabled:hover {
+    background-color: #dbdbdb;
+    border-color: transparent;
+}
+
+#{$inputs-tag} .button--round {
+    border-radius: 36px;
+}
+
+#{$inputs-tag} input[name=title] {
+    padding-left: 0;
+    font-weight: 600;
+    border: none;
+    background-color: transparent;
+    font-size: 1.6em;
+}
+
+#{$inputs-tag} input[name=title]:focus {
+    outline-width: 0;
+    border: 0;
+}
+
+#{$inputs-tag} input[type=checkbox] {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    -ms-appearance: checkbox;
+    -o-appearance: checkbox;
+    appearance: checkbox;
+    height: auto;
+}
