@@ -128,7 +128,7 @@
 .u-text--revert {
     unicode-bidi: bidi-override;
     direction: rtl;
-    @include user-select(none);
+    user-select: none;
     cursor: default;
 }
 
@@ -574,5 +574,5 @@ a.u-box-shadow--none {
 
 //
 .u-select-none {
-    @include user-select(none);
+    user-select: none;
 }

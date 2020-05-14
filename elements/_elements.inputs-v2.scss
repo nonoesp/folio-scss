@@ -1,8 +1,15 @@
-// DEFAULT SETTINGS
-$input-outline-color: #737373 !default;
-$input-outline-color-focus: rgba(0, 0, 0, 0.30) !default;
-$input-font-family: sans-serif !default;
-$input-font-size: 16px !default;
+
+// ██╗    ███╗   ██╗    ██████╗     ██╗   ██╗    ████████╗    ███████╗
+// ██║    ████╗  ██║    ██╔══██╗    ██║   ██║    ╚══██╔══╝    ██╔════╝
+// ██║    ██╔██╗ ██║    ██████╔╝    ██║   ██║       ██║       ███████╗
+// ██║    ██║╚██╗██║    ██╔═══╝     ██║   ██║       ██║       ╚════██║
+// ██║    ██║ ╚████║    ██║         ╚██████╔╝       ██║       ███████║
+// ╚═╝    ╚═╝  ╚═══╝    ╚═╝          ╚═════╝        ╚═╝       ╚══════╝
+
+$input-outline-color: var(--color-dim) !default;
+$input-outline-color-focus: var(--color-mid) !default;
+$input-font-family: var(--font-sans) !default;
+$input-font-size: var(--font-default) !default;
 $input-height: 36px !default;
 $input-border-radius: 2px !default;
 
@@ -22,7 +29,7 @@ $inputs-tag: '.folio-inputs';
     height: $input-height;
     padding: 7px;
     margin-bottom: 6px;
-    border-color: #dbdbdb;
+    border-color: var(--color-dim);
 }
 
 .inputs--highlighted {
@@ -32,7 +39,7 @@ $inputs-tag: '.folio-inputs';
 
 #{$inputs-tag} label {
     @extend .inputs-font;
-    @include user-select(none);
+    user-select: none;
     display: inline-block;
     margin: 0 5px 1em 0;
     vertical-align: middle;
@@ -62,14 +69,14 @@ $inputs-tag: '.folio-inputs';
 #{$inputs-tag} input[type=submit] {
     @extend .inputs-shape,
     .inputs-font;
-    @include user-select(none);
+    user-select: none;
     background-color: transparent;
     padding: 0;
     line-height: $input-height;
     height: $input-height;
     cursor: pointer;
     font-weight: $bold;
-    color: $color-black;
+    color: var(--color-base);
     overflow: hidden;
     vertical-align: middle;
 }
@@ -89,14 +96,14 @@ $inputs-tag: '.folio-inputs';
 
 #{$inputs-tag} input[type=submit]:disabled,
 #{$inputs-tag} button:disabled {
-    background-color: #dbdbdb;
+    background-color: var(--color-dim);
     opacity: 0.3;
     border-color: transparent;
 }
 
 #{$inputs-tag} input[type=submit]:disabled:hover,
 #{$inputs-tag} button:disabled:hover {
-    background-color: #dbdbdb;
+    background-color: var(--color-dim);
     border-color: transparent;
 }
 

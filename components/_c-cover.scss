@@ -1,6 +1,6 @@
 /*
   Cover Component
-  by Nono Martínez Alonso (nono.ma)
+  by Nono Martínez Alonso (Nono.MA)
 */
 
 $header-height: 84px !default;
@@ -296,7 +296,7 @@ $c-cover__arrow-down-bottom: 69px;
 .c-cover__arrow-down:hover {
     opacity: 1;
     transform: scale(1.1);
-    @include transition(transform 0.05s ease-in-out);
+    transition: transform 0.05s ease-in-out;
 }
 
 // Video

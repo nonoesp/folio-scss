@@ -58,21 +58,15 @@
     }
     /* Name */
     
-    // $c-header-simple__name-padding: 8px;
-
     .c-header-simple__name {
         font-weight: 600;
         display: inline-block; //inline-block;
         margin-bottom: 8px; // - $c-header-simple__name-padding;
         font-family: $c-header-simple-header-font-family;
-        // padding: $c-header-simple__name-padding;
-        // margin-top: -$c-header-simple__name-padding;
     }
 
     .c-header-simple__name:hover {
         color: lighten($c-header-simple-link-color-hover, 5%);
-        //transform: scale(1.1);
-        //@include transition(transform 0.05s ease-in-out);
     }
 
     /* Media */
@@ -127,15 +121,14 @@
         margin-bottom: 20px;
     }
 
-    // todo - make modifier c-header-simple__image--rotates
     .c-header-simple__image {
         transform: rotate(0deg);
-        @include transition(transform 0.5s ease-in-out);
+        transition: transform 0.5s ease-in-out;
     }
 
     .c-header-simple__image:hover {
         transform: rotate(360deg);
-        @include transition(transform 2.5s linear);
+        transition: transform 2.5s linear;
     }
 
     @media all and #{$media-palm} {

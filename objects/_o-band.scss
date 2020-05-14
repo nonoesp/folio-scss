@@ -4,5 +4,5 @@ $o-band-slug: "o-band" !default;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
-	@include transition( all 0.25s );
+	transition: all 0.25s;;
 }

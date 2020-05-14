@@ -1,0 +1,14 @@
+.u-case-upper {
+    text-transform: uppercase;
+}
+
+.u-case-lower {
+    text-transform: lowercase;
+    @include placeholder {
+        text-transform: none;
+    }
+}
+
+.u-case-capitalize {
+    text-transform: capitalize;
+}

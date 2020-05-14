@@ -1,10 +1,18 @@
-// DEFAULT SETTINGS
+
+// ██╗    ███╗   ██╗    ██████╗     ██╗   ██╗    ████████╗    ███████╗
+// ██║    ████╗  ██║    ██╔══██╗    ██║   ██║    ╚══██╔══╝    ██╔════╝
+// ██║    ██╔██╗ ██║    ██████╔╝    ██║   ██║       ██║       ███████╗
+// ██║    ██║╚██╗██║    ██╔═══╝     ██║   ██║       ██║       ╚════██║
+// ██║    ██║ ╚████║    ██║         ╚██████╔╝       ██║       ███████║
+// ╚═╝    ╚═╝  ╚═══╝    ╚═╝          ╚═════╝        ╚═╝       ╚══════╝
+
 $input-outline-color: #737373 !default;
 $input-outline-color-focus: rgba(0, 0, 0, 0.30) !default;
 $input-font-family: sans-serif !default;
 $input-font-size: 16px !default;
 $input-height: 36px !default;
 $input-border-radius: 2px;
+
 .components-font {
     font-family: $input-font-family;
     font-size: $input-font-size;
@@ -29,7 +37,7 @@ $input-border-radius: 2px;
 
 label {
     @extend .components-font;
-    @include user-select(none);
+    user-select: none;
     display: inline-block;
     margin: 0 5px 1em 0;
     vertical-align: middle;
@@ -59,7 +67,7 @@ button,
 input[type=submit] {
     @extend .components-shape,
     .components-font;
-    @include user-select(none);
+    user-select: none;
     background-color: transparent;
     padding: 0;
     line-height: $input-height;

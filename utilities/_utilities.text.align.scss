@@ -5,6 +5,7 @@
 //   'desk' '(min-width: 1024px)',
 //   'wide' '(min-width: 1500px)'
 // ) !default;
+
 .u-text-align--left {
     text-align: left;
 }
@@ -21,6 +22,7 @@
     $style: nth($breakpoint, 1);
     $query: nth($breakpoint, 2);
     @media all and #{$query} {
+
         .u-text-align--#{$style}-left {
             text-align: left !important;
         }
@@ -30,5 +32,6 @@
         .u-text-align--#{$style}-right {
             text-align: right !important;
         }
+
     }
 }

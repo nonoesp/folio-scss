@@ -32,12 +32,12 @@ ul.c-archive__list li:last-child {
 }
 
 ul.c-archive__list li a {
-    @include display(flex);
+    display: flex;
     text-decoration: none;
     padding: 8px 0 9.6px 0;
     align-items: baseline;
     justify-content: space-between;
-    @include transition(none);
+    transition: none;
 }
 
 ul.c-archive__list li a:visited {

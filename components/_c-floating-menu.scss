@@ -23,11 +23,11 @@
 }
 
 .c-floating-menu__item-button {
-    background-color: $color-white;
-    color: rgba(0, 0, 0, 0.6);
+    background-color: var(--color-background);
+    color: var(--color-mid);
     padding: 0 0.7em;
     border-radius: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--color-dim);
     font-weight: 600;
 }
 

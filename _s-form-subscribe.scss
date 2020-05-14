@@ -6,7 +6,7 @@ $button-background-color-hover: $color-grey-dark;
 	[type=submit] {
 		background-color: $button-background-color;
 		cursor: pointer;
-		@include transition( all 0.2s );
+		transition: all 0.2s;
 	}
 
 	[type=submit]:focus,

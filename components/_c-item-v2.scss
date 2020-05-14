@@ -409,7 +409,7 @@ h1.c-item-v2__title {
 
 // [ 8. Links ]
 .c-item-v2 a {
-    @include transition(none);
+    transition: none;
     color: $c-item-v2-link-color;
     text-decoration: none;
     @if $c-item-v2-link-underline==true {
@@ -513,7 +513,7 @@ h1.c-item-v2__title {
     letter-spacing: 0.03em;
     line-height: $c-item-v2-line-height;
     @include c-item-v2-font ($_c-item-v2-wrap-width, 0.55);
-    @include transition( all 0.25s);
+    transition: all 0.25s;
 }
 
 .c-item-v2:hover .c-item-v2__tags {

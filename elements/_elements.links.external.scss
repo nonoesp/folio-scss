@@ -1,0 +1,30 @@
+.u-is-external::after {
+    content: "➝";
+    position: absolute;
+    pointer-events: none;
+    display: inline-block;
+    margin: auto;
+    font-size: 0.85em;
+    margin-left: -16px;
+    opacity: 0;
+    transform: translateX(13px);
+    transition: transform 0.3s cubic-bezier(0, 0.25, 0.08, 1), opacity 0.3s cubic-bezier(0, 0.25, 0.08, 1), -webkit-transform 0.3s cubic-bezier(0, 0.25, 0.08, 1);
+}
+
+.u-is-external:hover::after {
+    transform: translateX(17px);
+    opacity: 100;
+}
+
+.u-is-external-v2::after {
+    // vertical-align: middle;
+    content: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 11 11'%3E%3Cg fill='%23222222' fill-rule='evenodd'%3E%3Cpath d='M4 0h7v1H4z'/%3E%3Cpath d='M.55 9.743L9.743.55l.707.707-9.193 9.193z'/%3E%3Cpath d='M10 0h1v7h-1z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.u-is-external--top-right::after {
+    transform: translateX(13px) translateY(0px + 3px) rotate(-45deg);
+}
+
+.u-is-external--top-right:hover::after {
+    transform: translateX(17px) translateY(0px) rotate(-45deg);
+}

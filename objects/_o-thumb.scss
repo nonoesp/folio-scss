@@ -99,7 +99,7 @@
   height: 100%;
   z-index: $zIndex-2;
   /*background-color: rgba(0,0,0,0.05);*/
-  @include user-select(none);
+  user-select: none;
 }
 
 .o-thumb__label {
@@ -116,21 +116,21 @@
     //
     height: 50px;
     text-align: center;
-  @include user-select(none);
+  user-select: none;
 }
 
 .o-thumb__link {
-  @include user-select(none);
+  user-select: none;
 }
 
 .o-thumb__link:hover .o-thumb__veil {
   background-color: rgba(255,255,255,1.0);
-  @include transition(all 0.25s ease-in-out);
+  transition: all 0.25s ease-in-out;
 }
 
 .o-thumb__link:hover .o-thumb__label {
   opacity: 1.0;
-  @include transition(all 0.25s ease-in-out);
+  transition: all 0.25s ease-in-out;
 }
 
 // SAMPLE MODIFIER: c-project-view
@@ -147,7 +147,7 @@
 }
 
 .c-project-view .o-thumb__link:hover .o-thumb__label {
-  @include transition(all 0.25s ease-in-out);
+  transition: all 0.25s ease-in-out;
   color:#000;
   opacity: 1.0;
 }

@@ -2,8 +2,7 @@
 // [ o-icon-prototype ]
 
 .o-icon-prototype__svg /*.o-icon-prototype__link*/ {
-  //cursor: pointer;
-  @include transition( all 0.0s );
+  transition: none;
 }
 
 .o-icon-prototype__svg:hover {

@@ -285,7 +285,7 @@ $padding-vertical: 27px !default;
 // [ 8. Links ]
 
 .c-item a {
-  @include transition(none);
+  transition: none;
   text-decoration: none;
   color: $c-item-link-color;
   @if $c-item-link-underline == true {
@@ -366,7 +366,7 @@ $padding-vertical: 27px !default;
   letter-spacing: 0.1em;
   font-size: 11px;
   line-height: $c-item-line-height;
-  @include transition( all 0.25s );
+  transition: all 0.25s;;
 }
 
 .c-item:hover .c-item__tags {
