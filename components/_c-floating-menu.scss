@@ -1,3 +1,9 @@
+@media print {
+    .c-floating-menu {
+        display: none;
+    }
+}
+
 .c-floating-menu {
     position: fixed;
     top: 1em;

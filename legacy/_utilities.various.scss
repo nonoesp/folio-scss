@@ -119,9 +119,10 @@
 
 .u-case-input-lower {
     text-transform: lowercase;
-    @include placeholder {
-        text-transform: none;
-    }
+}
+
+.u-case-input-lower::placeholder {
+    text-transform: none;
 }
 
 // Text: revert
