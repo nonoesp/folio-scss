@@ -5,7 +5,15 @@ html, :root {
     margin: 0;
     min-height: 100%;	
     background-color: $reset-background-color;
-    font-size: $html-font-size;
+    // font-size: $html-font-size;
+}
+
+:root {
+  font-size: $html-font-size;  
+}
+
+html:not(.limit) {
+  font-size: $html-font-size;
 }
 
 *, *:before, *:after {
