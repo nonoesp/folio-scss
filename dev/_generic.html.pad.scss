@@ -1,0 +1,12 @@
+$html-pad-spacing: 1.5625rem !default; // 25/26
+$html-pad-spacing-portable: 0 calc(10px + 4%) !default;
+
+html.pad {
+    padding: 0 $html-pad-spacing;
+  }
+  
+@media screen and #{$media-portable} {
+    html.pad {
+        padding: $html-pad-spacing-portable;
+    }
+}

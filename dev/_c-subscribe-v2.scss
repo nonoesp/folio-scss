@@ -1,0 +1,79 @@
+// ███████╗    ██╗   ██╗    ██████╗     ███████╗     ██████╗    ██████╗     ██╗    ██████╗     ███████╗
+// ██╔════╝    ██║   ██║    ██╔══██╗    ██╔════╝    ██╔════╝    ██╔══██╗    ██║    ██╔══██╗    ██╔════╝
+// ███████╗    ██║   ██║    ██████╔╝    ███████╗    ██║         ██████╔╝    ██║    ██████╔╝    █████╗  
+// ╚════██║    ██║   ██║    ██╔══██╗    ╚════██║    ██║         ██╔══██╗    ██║    ██╔══██╗    ██╔══╝  
+// ███████║    ╚██████╔╝    ██████╔╝    ███████║    ╚██████╗    ██║  ██║    ██║    ██████╔╝    ███████╗
+// ╚══════╝     ╚═════╝     ╚═════╝     ╚══════╝     ╚═════╝    ╚═╝  ╚═╝    ╚═╝    ╚═════╝     ╚══════╝
+
+$subscribe-tag: '.c-subscribe-v2' !default;
+
+#{$subscribe-tag}__detail-text,
+#{$subscribe-tag}__text {
+  font-size: var(--font-xs);
+  color: var(--color-mid);
+}
+
+#{$subscribe-tag}__text {
+  font-size: var(--font-default);
+  margin-bottom: 0.5rem;
+}
+
+#{$subscribe-tag}__text.flash {
+  font-size: var(--font-default);
+  font-weight: 600;
+  color: var(--color-base);
+}
+
+#{$subscribe-tag}__form {
+  // transition: transform 0.7s, opacity 0.7s;
+  transition: all 0.55s;
+}
+
+#{$subscribe-tag}.flash {
+  
+  #{$subscribe-tag}__form,
+  #{$subscribe-tag}__detail-text {
+    transform: scale(1.05);
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+}
+
+#{$subscribe-tag} input[type=email],
+#{$subscribe-tag} input[type=submit] {
+  font-size: var(--font-s);
+  background-color: transparent;
+  border-color: var(--color-dim);
+  color: var(--color-base);
+}
+
+#{$subscribe-tag} input[type=email]::placeholder {
+  color: var(--color-mid);
+  opacity: 0.6;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  #{$subscribe-tag} input[type=email],
+  #{$subscribe-tag} input[type=submit] {
+    color: var(--color-mid);
+  }
+}
+
+#{$subscribe-tag}__text.flash::after {
+  content: ' 🥳';
+}
+
+#{$subscribe-tag}__detail-text {
+  font-size: var(--font-xxs);
+  color: var(--color-mid);
+}
+
+#{$subscribe-tag}__detail-text a {
+  color: var(--color-mid);
+}
+
+#{$subscribe-tag}__detail-text a:hover {
+  color: var(--color-base);
+}

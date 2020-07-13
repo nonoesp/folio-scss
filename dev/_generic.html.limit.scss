@@ -1,0 +1,32 @@
+$html-limit-max-width: 1400px !default;
+$html-limit-body-margin: 8px !default;
+
+html.limit {
+    max-width: $html-limit-max-width;
+    margin: 0 auto;
+}
+
+html.limit body {
+    // margin: $html-limit-body-margin;
+    padding: calc(0.5rem + 3vh) calc(0.5rem + 4vw);
+
+    @media all and (min-width: 1000px) {
+        & {
+            margin: 0 5rem;
+        }
+    }
+}
+
+/* A class to use on elements when <html> is full width */
+html.limit .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+@media all and #{$media-portable} {
+    html.limit .o-notification {
+        margin-top: - $html-limit-body-margin;
+        margin-left: - $html-limit-body-margin;
+        width: calc(100% + 2 * #{$html-limit-body-margin});
+    }
+}

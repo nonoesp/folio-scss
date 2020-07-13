@@ -18,7 +18,7 @@ $typecsset-base-font-size: 16px;
 $typecsset-base-line-height: 27px;
 $typecsset-show-baseline: false;
 // [ 2. Global variables ]
-$link-color: $color-black !default;
+$link-color: var(--color-base) !default;
 $link-color-hover: $color-red !default;
 // [ 3. Component-specific variables ]
 $type-font-family: BlinkMacSystemFont,

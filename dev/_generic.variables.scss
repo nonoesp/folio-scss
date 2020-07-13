@@ -1,0 +1,98 @@
+// ██╗   ██╗     █████╗     ██████╗     ███████╗
+// ██║   ██║    ██╔══██╗    ██╔══██╗    ██╔════╝
+// ██║   ██║    ███████║    ██████╔╝    ███████╗
+// ╚██╗ ██╔╝    ██╔══██║    ██╔══██╗    ╚════██║
+//  ╚████╔╝     ██║  ██║    ██║  ██║    ███████║
+//   ╚═══╝      ╚═╝  ╚═╝    ╚═╝  ╚═╝    ╚══════╝
+
+// Base
+$use-dark-mode: false !default;
+$font-feature-settings: '' !default;
+
+// Font
+$font-serif: 'Crimson Text', 'Source Serif Pro',Card,Times,Times New Roman,Charter,Palatino,Georgia,serif !default;
+$font-sans: Inter,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji !default;
+$font-mono: Consolas,Liberation Mono,Menlo,monospace !default;
+
+// Font size
+$font-default: 100% !default;
+$font-xxs: 0.6rem !default;
+$font-xs: 0.75rem !default;
+$font-s: 0.83rem !default;
+$font-l: 2.0rem !default;
+$font-xl: 2.5rem !default;
+$font-xxl: 3.25rem !default;
+$font-line-height: 1.4 !default;
+
+// Spacing
+$spacing-s: 0.25rem !default;
+$spacing-m: 1rem !default;
+$spacing-l: 2rem !default;
+$spacing-xl: 4rem !default;
+$spacing-max-width: 35rem !default;
+
+// Color
+$color-base: #21272A !default;
+$color-mid: #878E97 !default;
+$color-dim: #DEE3E8 !default;
+$color-link: #444 !default;
+$color-bg: #fff !default;
+
+$color-base-dark: #E9EDF0 !default;
+$color-mid-dark: $color-mid !default;
+$color-dim-dark: #2A3135 !default;
+$color-link-dark: #8F9EA5 !default;
+$color-bg-dark: #191E20 !default;
+
+:root {
+
+  --font-serif: #{$font-serif};
+  --font-sans: #{$font-sans};
+  --font-mono: #{$font-mono};
+  
+  --font-default: #{$font-default};
+  --font-xxs: #{$font-xxs};
+  --font-xs: #{$font-xs};
+  --font-s: #{$font-s};
+  --font-l: #{$font-l};
+  --font-xl: #{$font-xl};
+  --font-xxl: #{$font-xxl};
+  --font-line-height: #{$font-line-height};
+  
+  --spacing-s: #{$spacing-s};
+  --spacing-m: #{$spacing-m};
+  --spacing-l: #{$spacing-l};
+  --spacing-xl: #{$spacing-xl};
+  --spacing-max-width: #{$spacing-max-width};
+
+}
+
+//  ██████╗     ██████╗     ██╗          ██████╗     ██████╗ 
+// ██╔════╝    ██╔═══██╗    ██║         ██╔═══██╗    ██╔══██╗
+// ██║         ██║   ██║    ██║         ██║   ██║    ██████╔╝
+// ██║         ██║   ██║    ██║         ██║   ██║    ██╔══██╗
+// ╚██████╗    ╚██████╔╝    ███████╗    ╚██████╔╝    ██║  ██║
+//  ╚═════╝     ╚═════╝     ╚══════╝     ╚═════╝     ╚═╝  ╚═╝
+
+html {
+  --color-base: #{$color-base};
+  --color-mid: #{$color-mid};
+  --color-dim: #{$color-dim};
+  --color-link: #{$color-link};
+  --color-bg: #{$color-bg};
+}
+
+@if $use-dark-mode == true {
+
+  /* Dark mode (only applied if no specific template exists) */
+  @media screen and (prefers-color-scheme: dark) {
+    html {
+      --color-base: #{$color-base-dark};
+      --color-mid: #{$color-mid-dark};
+      --color-dim: #{$color-dim-dark};
+      --color-link: #{$color-link-dark};
+      --color-bg: #{$color-bg-dark};
+    }
+  }
+
+}

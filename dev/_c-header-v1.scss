@@ -1,0 +1,53 @@
+// ██╗  ██╗    ███████╗     █████╗     ██████╗     ███████╗    ██████╗ 
+// ██║  ██║    ██╔════╝    ██╔══██╗    ██╔══██╗    ██╔════╝    ██╔══██╗
+// ███████║    █████╗      ███████║    ██║  ██║    █████╗      ██████╔╝
+// ██╔══██║    ██╔══╝      ██╔══██║    ██║  ██║    ██╔══╝      ██╔══██╗
+// ██║  ██║    ███████╗    ██║  ██║    ██████╔╝    ███████╗    ██║  ██║
+// ╚═╝  ╚═╝    ╚══════╝    ╚═╝  ╚═╝    ╚═════╝     ╚══════╝    ╚═╝  ╚═╝
+
+$header-tag: 'header.header-v1' !default;
+
+#{$header-tag} > nav[role=navigation] {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: var(--spacing-m) 0;
+  border-bottom: 1px solid var(--color-dim);
+}
+
+#{$header-tag} > nav[role=navigation] .logo svg {
+  display: block;
+  width: 2.7em;
+  fill: var(--color-base);
+}
+
+#{$header-tag} > nav[role=navigation] .logo:hover {
+  transform: scale(1.03);
+}
+
+#{$header-tag} > nav[role=navigation] a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+#{$header-tag} > nav[role=navigation] a.link {
+  color: var(--color-base);
+}
+
+#{$header-tag} > nav[role=navigation] a.link:hover {
+  color: var(--color-mid);
+}
+
+#{$header-tag}:not(.flip) > nav[role=navigation] a.link:not(:last-of-type) {
+  margin-right: 0.9rem;
+}
+
+// Flip modifier
+
+#{$header-tag}.flip > nav[role=navigation] {
+  flex-direction: row;
+}
+
+#{$header-tag}.flip > nav[role=navigation] a.link:not(:first-of-type) {
+  margin-left: 0.9rem;
+}

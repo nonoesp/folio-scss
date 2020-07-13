@@ -8,13 +8,13 @@ html, :root {
     // font-size: $html-font-size;
 }
 
-:root {
-  font-size: $html-font-size;  
-}
+// :root {
+  //font-size: $html-font-size;  
+// }
 
-html:not(.limit) {
-  font-size: $html-font-size;
-}
+// html:not(.limit) {
+//   font-size: $html-font-size;
+// }
 
 *, *:before, *:after {
   -moz-box-sizing: border-box;

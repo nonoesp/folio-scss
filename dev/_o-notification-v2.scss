@@ -1,0 +1,68 @@
+// ███╗   ██╗  ██████╗  ████████╗ ██╗ ███████╗ ██╗  ██████╗  █████╗  ████████╗ ██╗  ██████╗  ███╗   ██╗
+// ████╗  ██║ ██╔═══██╗ ╚══██╔══╝ ██║ ██╔════╝ ██║ ██╔════╝ ██╔══██╗ ╚══██╔══╝ ██║ ██╔═══██╗ ████╗  ██║
+// ██╔██╗ ██║ ██║   ██║    ██║    ██║ █████╗   ██║ ██║      ███████║    ██║    ██║ ██║   ██║ ██╔██╗ ██║
+// ██║╚██╗██║ ██║   ██║    ██║    ██║ ██╔══╝   ██║ ██║      ██╔══██║    ██║    ██║ ██║   ██║ ██║╚██╗██║
+// ██║ ╚████║ ╚██████╔╝    ██║    ██║ ██║      ██║ ╚██████╗ ██║  ██║    ██║    ██║ ╚██████╔╝ ██║ ╚████║
+// ╚═╝  ╚═══╝  ╚═════╝     ╚═╝    ╚═╝ ╚═╝      ╚═╝  ╚═════╝ ╚═╝  ╚═╝    ╚═╝    ╚═╝  ╚═════╝  ╚═╝  ╚═══╝
+
+// Settings
+
+$o-notification-tag: '.o-notification' !default;
+$o-notification-color: #fff !default;
+$o-notification-background-color: rgba(0, 0, 0, 0.2) !default;
+$o-notification-opacity: .9 !default;
+$o-notification-border-bottom: 1px solid rgba(0, 0, 0, 0.05) !default;
+$o-notification-font-size: var(--font-xs) !default;
+$o-notification-height: auto !default;
+$o-notification-padding: 0.2rem 0 !default;
+
+#{$o-notification-tag} {
+    position: relative;
+    width: 100%;
+    height: $o-notification-height;
+    line-height: $o-notification-height;
+    text-align: center;
+    font-size: $o-notification-font-size;
+    opacity: $o-notification-opacity;
+    color: $o-notification-color;
+    background-color: $o-notification-background-color;
+    padding: $o-notification-padding;
+}
+
+#{$o-notification-tag}--s {
+  font-size: var(--font-s);
+  padding: 0.4rem 0;
+}
+
+#{$o-notification-tag}--yellow {
+  background-color: #fce8b8;
+  color: #bfaa78
+}
+
+#{$o-notification-tag}--transparent-light {
+    background-color: transparent;
+    color: #fff;
+    border-bottom: $o-notification-border-bottom;
+}
+
+#{$o-notification-tag}--transparent-dark {
+    background-color: transparent;
+    color: #222;
+}
+
+#{$o-notification-tag}--gray {
+  background-color: #fafafa;
+  color: #222;
+}
+
+#{$o-notification-tag}--light {
+  background-color: transparent;
+  background-color: #fce8b8;
+  color: var(--color-base);
+  opacity: 0.4;
+}
+
+#{$o-notification-tag}--dark {
+    background-color: #222;
+    color: #fafafa;
+}

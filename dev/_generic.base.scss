@@ -1,0 +1,30 @@
+// ██████╗      █████╗     ███████╗    ███████╗
+// ██╔══██╗    ██╔══██╗    ██╔════╝    ██╔════╝
+// ██████╔╝    ███████║    ███████╗    █████╗  
+// ██╔══██╗    ██╔══██║    ╚════██║    ██╔══╝  
+// ██████╔╝    ██║  ██║    ███████║    ███████╗
+// ╚═════╝     ╚═╝  ╚═╝    ╚══════╝    ╚══════╝
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--color-bg);
+  font-size: var(--font-default);
+  line-height: var(--font-line-height);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: greyscale;
+  font-feature-settings: $font-feature-settings;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-base);
+  background-color: var(--color-bg);
+}

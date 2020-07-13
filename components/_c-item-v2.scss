@@ -52,7 +52,7 @@ $c-item-v2-font-header: $c-item-v2-font-a !default;
 $c-item-v2-font-tag: $c-item-v2-font-c !default;
 $c-item-v2-footnotes-font-family: $c-item-v2-font-a !default;
 $c-item-v2-footnote-color: $c-item-v2-link-color !default;
-$c-item-v2-footnotes-color: rgba(0, 0, 0, 0.5) !default;
+$c-item-v2-footnotes-color: var(--color-mid) !default;
 $c-item-v2-footnote-ref-font-family: $c-item-v2-font-c !default;
 $c-item-v2-footnote-ref-color: $c-item-v2-link-color-hover !default;
 $c-item-v2-gutter: 27px !default;
@@ -184,7 +184,7 @@ $_c-item-v2-wrap-width: 30em;
 
 .c-item-v2 .footnotes.small ul a,
 .c-item-v2 .footnotes.small ol a {
-    box-shadow: inset 0 -1.5px 0 white, inset 0 -2.5px 0 lighten($c-item-v2-footnotes-color, 60%);
+    box-shadow: inset 0 -1.5px 0 white, inset 0 -2.5px 0 $c-item-v2-footnotes-color;
 }
 
 // [ 4. Horizontal Rules ]
@@ -777,6 +777,7 @@ a.c-item-v2__link--accent:hover {
 
 .c-item-v2 a .is-external::after {
     content: "➝";
+    color: var(--color-base);
     display: inline-block;
     font-size: 0.85em;
     margin-left: -5px;
