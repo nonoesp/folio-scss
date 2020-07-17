@@ -13,12 +13,6 @@ $o-item-card-padding: 0.5rem;
 #{$o-collection-tag} {
   width: calc(100% + 2 * #{$o-item-card-padding});
   margin-left: - $o-item-card-padding;
-
-  @media screen and #{$media-desk} {
-    & {
-      max-width: calc(var(--spacing-max-width) + 2 * #{$o-item-card-padding});
-    }
-  }
 }
 #{$o-collection-tag} ul#{$o-item-wrap-tag} {
   max-width: none;
@@ -55,7 +49,7 @@ $o-item-card-padding: 0.5rem;
   & li a {
     display: block;
     text-decoration: none;
-    font-size: var(--font-s);
+    font-size: var(--font-default);
   }
 
   & li a:hover {

@@ -11,12 +11,12 @@ $article-tag: 'article.item-v3' !default;
   display: flex;
   flex-direction: column;
   max-width: var(--spacing-max-width);
-  margin: 20vh auto;
+  margin: 10vh 0;
 }
 
-// #{$article-tag}>header.border-bottom {
-//   border-bottom: 1px solid var(--color-dim);
-// }
+#{$article-tag}>header.border-bottom {
+  border-bottom: 1px solid var(--color-dim);
+}
 
 #{$article-tag}>header h1 {
   width: 100%;
@@ -32,6 +32,10 @@ $article-tag: 'article.item-v3' !default;
   font-family: var(--font-serif);
   color: var(--color-mid);
   margin-block-start: 0.2rem;
+}
+
+#{$article-tag}>header.headline {
+  margin: 20vh auto;
 }
 
 #{$article-tag}>header.hero {
@@ -75,24 +79,25 @@ $article-tag: 'article.item-v3' !default;
   margin-block-end: 1.2rem;
 }
 
-#{$article-tag}>.body>ul,
-#{$article-tag}>.body>ol {
-  margin-left: 0;
-  padding-left: 30px;
+// #{$article-tag}>.body>ul,
+// #{$article-tag}>.body>ol {
+  // margin-left: 0;
+  // padding-left: 30px;
+// }
+
+// #{$article-tag}>.body>ul {
+//   list-style-type: none;
+// }
+
+#{$article-tag}>.body>ol,
+#{$article-tag}>.body>*:not(.footnotes) ol {
+  // list-style-position: inside;
+  border: 1px solid #eaeaea;
 }
 
-#{$article-tag}>.body>ul {
-  list-style-type: none;
-}
-
-#{$article-tag}>.body>ol {
-  list-style-position: inside;
-}
-
-#{$article-tag}>.body>ul>li:before,
-#{$article-tag}>.body>ul>ol:before {
-  content: "– ";
-}
+// #{$article-tag}>.body ul>li:before {
+//   content: "– ";
+// }
 
 /*End: Crimson Text*/
 
@@ -170,6 +175,11 @@ $article-tag: 'article.item-v3' !default;
   }
 }
 
+#{$article-tag}.center>header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #{$article-tag}.center {
   h1,
   h2,
@@ -185,6 +195,7 @@ $article-tag: 'article.item-v3' !default;
   time,
   footer,
   .limit {
+    max-width: var(--spacing-max-width);
     margin-left: auto;
     margin-right: auto;
   }
@@ -250,7 +261,7 @@ $article-tag: 'article.item-v3' !default;
   }  
 }
 
-#{$article-tag}.center figure {
+#{$article-tag}.center>.body>figure {
   margin: 5rem auto;
 }
 
@@ -276,6 +287,7 @@ $article-tag: 'article.item-v3' !default;
 #{$article-tag} figure.limit {
   // max-width: none;
   margin: var(--spacing-l) 0;
+  margin-left: 0;
   width: clamp(10rem,100%,15rem);
   // @media all and #{$media-desk} {
     // max-width: var(--spacing-max-width);
@@ -332,7 +344,7 @@ $article-tag: 'article.item-v3' !default;
 }
 
 #{$article-tag} blockquote {
-  quotes: "\201C" "\201D";
+  quotes: none;
   margin: 0;
 }
 
