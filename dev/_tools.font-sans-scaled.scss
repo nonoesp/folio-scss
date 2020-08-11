@@ -1,0 +1,8 @@
+// @mixin font-size-scaled($font-size, $factor: $font-sans-scale) {
+//     font-size: calc(#{$font-size} * #{$factor});
+// }
+
+@mixin font-sans-scaled($font-size: var(--font-default), $factor: $font-sans-scale) {
+    font-family: var(--font-sans);
+    font-size: calc(#{$font-size} * #{$factor});
+}

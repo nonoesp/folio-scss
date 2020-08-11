@@ -1,0 +1,9 @@
+@mixin invert-when-dark($factor: 1) {
+    @if $use-dark-mode == true {
+        @media screen and (prefers-color-scheme: dark) {
+            & {
+                filter: invert($factor);
+            }
+        }
+    }
+}

@@ -47,5 +47,5 @@ $c-item-cover-media-negative-margin: false;
 // inputs
 $input-font-family: $type-font-family !default;
 $input-font-size: 14px !default;
-$type-link-color: #000 !default;
+$type-link-color: var(--color-base) !default;
 $type-link-text-decoration: underline !default;

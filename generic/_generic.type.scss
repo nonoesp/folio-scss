@@ -8,7 +8,7 @@
 
 // Font Variables
 $type-font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif !default;
-$type-font-color: #222 !default;
+$type-font-color: var(--color-base) !default;
 
 // Link Variables
 $type-link-color: auto !default;

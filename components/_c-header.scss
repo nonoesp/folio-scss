@@ -90,7 +90,7 @@ $c-header-background-color: transparent !default;
             }
         }
         .navigation-link--active {
-            color: #000 !important;
+            color: var(--color-base) !important;
         }
     }
 

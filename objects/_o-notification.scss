@@ -25,16 +25,16 @@ $o-notification-height: 20px !default;
 
 .o-notification--transparent-dark {
     background-color: transparent;
-    color: #222;
+    color: var(--color-base);
 }
 
 .o-notification--light {
     background-color: #fafafa;
-    color: #222;
+    color: var(--color-base);
     border-bottom: $o-notification-border-bottom;
 }
 
 .o-notification--dark {
-    background-color: #222;
+    background-color: var(--color-base);
     color: #fafafa;
 }

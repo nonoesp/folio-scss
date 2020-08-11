@@ -17,23 +17,23 @@
 /* link--icon */
 
 a.link--icon {
-  color:#000;
+  color:var(--color-base);
   text-decoration:none;
 }
 
 a.link--icon:hover {
-  color:#000;
+  color:var(--color-base);
   text-decoration:none;
 }
 
 .link--icon { cursor:pointer;}
 
 .m-icon-wrapper--white .m-icon {
-  fill: #fff;
+  fill: var(--color-bg)
 }
 
 .m-icon-wrapper--black .m-icon {
-  fill: #222;
+  fill: var(--color-base);
 }
 
 .m-icon-wrapper--green .m-icon {

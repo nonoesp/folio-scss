@@ -1,7 +1,7 @@
-$gwern-links-parent-class: '.c-item-v2__body' !default;
+$gwern-links-parent-class: ".c-item-v2__body" !default;
 $gwern-links-link-opacity: 0.8;
 $gwern-links-link-hover-opacity: 0.75;
-$gwern-links-icons-path: '/folio/icons' !default;
+$gwern-links-icons-path: "/folio/icons" !default;
 
 /*=-----------------------------------------=*/
 /*= Code from https://www.gwern.net/        =*/
@@ -13,965 +13,1129 @@ $gwern-links-icons-path: '/folio/icons' !default;
 
 /*  Within-page (anchor) links.
     */
-    #{$gwern-links-parent-class} section > :not(:first-child) a[href^='#']::after,
-    #{$gwern-links-parent-class} p a[href^='#']::after {
-        content: "\00B6";
-        margin: 0 1px 0 3px;
-        font-size: 0.75em;
-        vertical-align: baseline;
-        position: relative;
-        bottom: 0.45em;
-        opacity: $gwern-links-link-opacity;
-    }
-    #{$gwern-links-parent-class} section > :not(:first-child) a[href^='#'].footnote-ref::after,
-    #{$gwern-links-parent-class} p a[href^='#'].footnote-ref::after,
-    #{$gwern-links-parent-class} section > :not(:first-child) a[href^='#'].footnote-back::after,
-    #{$gwern-links-parent-class} p a[href^='#'].footnote-back::after {
-        content: none;
-    }
-    
-    /*  Internal (within-site) links. Avoid 'G' icons on hosted documents, local images, and infrastructure, which aren't formal writings.
+#{$gwern-links-parent-class} section > :not(:first-child) a[href^="#"]::after,
+#{$gwern-links-parent-class} p a[href^="#"]::after {
+    @include invert-when-dark;
+
+    content: "\00B6";
+    margin: 0 1px 0 3px;
+    font-size: 0.75em;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.45em;
+    opacity: $gwern-links-link-opacity;
+}
+#{$gwern-links-parent-class} section > :not(:first-child) a[href^="#"].footnote-ref::after,
+#{$gwern-links-parent-class} p a[href^="#"].footnote-ref::after,
+#{$gwern-links-parent-class} section > :not(:first-child) a[href^="#"].footnote-back::after,
+#{$gwern-links-parent-class} p a[href^="#"].footnote-back::after {
+    @include invert-when-dark;
+
+    content: none;
+}
+
+/*  Internal (within-site) links. Avoid 'G' icons on hosted documents, local images, and infrastructure, which aren't formal writings.
      */
-    #{$gwern-links-parent-class} a[href^="."]:not([href*="/docs/"]):not([href*="/images/"]):not([href*="/"]):not([href$=".hs"]):not([href$=".sh"]):not([href$=".R"])::after,
-    #{$gwern-links-parent-class} a[href^="https://www.gwern.net/"]:not([href*="/docs/"]):not([href*="/images/"]):not([href*="/"]):not([href$=".hs"]):not([href$=".sh"]):not([href$=".R"])::after {
-        content: "\1D50A"; /* Gothic G */
-        margin: 0 0 0 2px;
-        vertical-align: baseline;
-        position: relative;
-        bottom: 0.15em;
-        opacity: 0.55;
-    }
-    
-    /* TEXTUAL PER-DOMAIN LINK ICONS: */
-    /* Common style */
-    #{$gwern-links-parent-class} a[href*="17th-angel.tumblr.com"]::after,
-    #{$gwern-links-parent-class} a[href*="andrewgelman.com"]::after,
-    #{$gwern-links-parent-class} a[href*="animenewsnetwork.com"]::after,
-    #{$gwern-links-parent-class} a[href*="arstechnica.com"]::after,
-    #{$gwern-links-parent-class} a[href*="arxiv.org"]::after,
-    #{$gwern-links-parent-class} a[href*="bbc.com"]::after,
-    #{$gwern-links-parent-class} a[href*="bbc.co.uk"]::after,
-    #{$gwern-links-parent-class} a[href*="www.cdc.gov"]::after,
-    #{$gwern-links-parent-class} a[href*="www.vox.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.vanityfair.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.motherjones.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.edge.org"]::after,
-    #{$gwern-links-parent-class} a[href*="bitcointalk.org"]::after,
-    #{$gwern-links-parent-class} a[href*="bitcoin.t"]::after,
-    #{$gwern-links-parent-class} a[href*="bloomberg.com"]::after,
-    #{$gwern-links-parent-class} a[href*="bmj.com"]::after,
-    #{$gwern-links-parent-class} a[href*="economist.com"]::after,
-    #{$gwern-links-parent-class} a[href*="evageeks.org"]::after,
-    #{$gwern-links-parent-class} a[href*="evamonkey.com"]::after,
-    #{$gwern-links-parent-class} a[href*="evaotaku.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.fanfiction.net"]::after,
-    #{$gwern-links-parent-class} a[href*="fda.gov"]::after,
-    #{$gwern-links-parent-class} a[href*="filfre.net"]::after,
-    #{$gwern-links-parent-class} a[href*="gainax.co.jp"]::after,
-    #{$gwern-links-parent-class} a[href*="goodreads.com"]::after,
-    #{$gwern-links-parent-class} a[href*="haskell.org"]::after,
-    #{$gwern-links-parent-class} a[href*="harney.com"]::after,
-    #{$gwern-links-parent-class} a[href*="justice.gov"]::after,
-    #{$gwern-links-parent-class} a[href*="khara.co.jp"]::after,
-    #{$gwern-links-parent-class} a[href*="kk.org"]::after,
-    #{$gwern-links-parent-class} a[href*="lesswrong.com"]::after,
-    #{$gwern-links-parent-class} a[href*="longbets.org"]::after,
-    #{$gwern-links-parent-class} a[href*="longnow.org"]::after,
-    #{$gwern-links-parent-class} a[href*="marginalrevolution.com"]::after,
-    #{$gwern-links-parent-class} a[href*="medium.com"]::after,
-    #{$gwern-links-parent-class} a[href*="myanimelist.net"]::after,
-    #{$gwern-links-parent-class} a[href*="nature.com"]::after,
-    #{$gwern-links-parent-class} a[href*="onegeek.org"]::after,
-    #{$gwern-links-parent-class} a[href*="overcomingbias.com"]::after,
-    #{$gwern-links-parent-class} a[href*="pnas.org"]::after,
-    #{$gwern-links-parent-class} a[href*="poniesatdawn.bandcamp.com"]::after,
-    #{$gwern-links-parent-class} a[href*="predictionbook.com"]::after,
-    #{$gwern-links-parent-class} a[href*="r-project.org"]::after,
-    #{$gwern-links-parent-class} a[href*="rosettaproject.org"]::after,
-    #{$gwern-links-parent-class} a[href*="rstudio.com"]::after,
-    #{$gwern-links-parent-class} a[href*="salon.com"]::after,
-    #{$gwern-links-parent-class} a[href*="sciencemag.org"]::after,
-    #{$gwern-links-parent-class} a[href*="sciencedirect.com"]::after,
-    #{$gwern-links-parent-class} a[href*="scholars-stage.blogspot.com"]::after,
-    #{$gwern-links-parent-class} a[href*="slate.com"]::after,
-    #{$gwern-links-parent-class} a[href*="slatestarcodex"]::after,
-    #{$gwern-links-parent-class} a[href*="statmodeling.stat.columbia.edu"]::after,
-    #{$gwern-links-parent-class} a[href*="t.umblr.com"]::after,
-    #{$gwern-links-parent-class} a[href*="technologyreview.com"]::after,
-    #{$gwern-links-parent-class} a[href*="theatlantic.com"]::after,
-    #{$gwern-links-parent-class} a[href*="theinterval.org"]::after,
-    #{$gwern-links-parent-class} a[href*="theparisreview.org"]::after,
-    #{$gwern-links-parent-class} a[href*="tinyletter.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.mail-archive.com"]::after,
-    #{$gwern-links-parent-class} a[href*="groups.google.com"]::after,
-    #{$gwern-links-parent-class} a[href*="tumblr.com"]::after,
-    #{$gwern-links-parent-class} a[href*="tvtropes.org"]::after,
-    #{$gwern-links-parent-class} a[href*="urth.net"]::after,
-    #{$gwern-links-parent-class} a[href*="www.nber.org"]::after,
-    #{$gwern-links-parent-class} a[href*="mlp.fandom.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.wsj.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.google.com"]::after,
-    #{$gwern-links-parent-class} a[href*="wiley.com"]::after,
-    #{$gwern-links-parent-class} a[href*="yunnansourcing.com"]::after,
-    #{$gwern-links-parent-class} a[href*="yvain"]::after,
-    #{$gwern-links-parent-class} a[href*="unsongbook.com"]::after,
-    #{$gwern-links-parent-class} a[href*="groups.yahoo.com"]::after,
-    #{$gwern-links-parent-class} a[href*="publicdomainreview.org"]::after,
-    #{$gwern-links-parent-class} a[href*="meltingasphalt.com"]::after,
-    #{$gwern-links-parent-class} a[href*="neweva.blog103.fc2.com"]::after {
-        font-size: 0.8em;
-        font-weight: 600;
-        margin: 0 0 0 2px;
-        vertical-align: baseline;
-        position: relative;
-        bottom: 0.2em;
-        opacity: 0.6;
-    }
-    /* MR: cheaper to abuse Unicode */
-    // #{$gwern-links-parent-class} a[href*="marginalrevolution.com"]::after {
-    //     content: "M𝐑"; }
-    
-    /* likewise */
-    #{$gwern-links-parent-class} a[href*="medium.com"]::after {
-        content: "𝐌"; }
-    
-    /* Kevin Kelly */
-    #{$gwern-links-parent-class} a[href*="kk.org"]::after {
-        font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-        content: "KK"; }
-    
-    /* Google searches, other tools; note that there are many Google subdomains, so we narrow down with just 'www' */
-    #{$gwern-links-parent-class} a[href*="www.google.com"]::after {
-        content: "𝐆"; }
-    
-    /* Wiley & Sons's 'W' unfortunately overlaps with the WP 'W' but if we sans it, maybe that'll help */
-    #{$gwern-links-parent-class} a[href*="wiley.com"]::after {
-        font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-        content: "W"; }
-    
-    /* PNAS: they don't have a real logo, but their favicon does a nice little compact square, and we can replicate that in CSS: */
-    // #{$gwern-links-parent-class} a[href*="pnas.org"]::after {
-    //   content: "PNAS";
-    //   font-size: 0.5em;
-    //   width: 1.4em;
-    //   display: inline-block;
-    //   overflow-wrap: break-word;
-    //   font-family: Baskerville;
-    //   line-height: 0.7;
-    //   text-align: center;
-    //   position: relative;
-    //   bottom: 0.3em;
-    //   left: 0.1em; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.nber.org"]:not([href$=".pdf"])::after {
-    //   content: "NBER";
-    //   font-size: 0.5em;
-    //   width: 1.35em;
-    //   display: inline-block;
-    //   overflow-wrap: break-word;
-    //   font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //   font-style: italic;
-    //   line-height: 0.7;
-    //   text-align: center;
-    //   position: relative;
-    //   bottom: 0.3em;
-    //   left: 0.1em; }
-    
-    // #{$gwern-links-parent-class} a[href*="mlp.fandom.com"]::after {
-    //   content: "MLPW";
-    //   font-size: 0.5em;
-    //   width: 1.35em;
-    //   display: inline-block;
-    //   overflow-wrap: break-word;
-    //   font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //   font-style: italic;
-    //   line-height: 0.7;
-    //   text-align: center;
-    //   position: relative;
-    //   bottom: 0.3em;
-    //   left: 0.1em; }
-    
-    // #{$gwern-links-parent-class} a[href*="publicdomainreview.org"]::after {
-    //   content: "TPDR";
-    //   font-size: 0.5em;
-    //   width: 1.6em;
-    //   display: inline-block;
-    //   overflow-wrap: break-word;
-    //   font-family: Baskerville;
-    //   line-height: 0.8em;
-    //   text-align: center;
-    //   position: relative;
-    //   bottom: 0.3em;
-    //   left: 0.1em; }
-    
-    // #{$gwern-links-parent-class} a[href*="meltingasphalt.com"]::after {
-    //     content: "▲▲△"; }
-    
-    /* Bitcoin Talk: close enough! */
-    // #{$gwern-links-parent-class} a[href*="bitcointalk.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="bitcoin.it"]::after {
-    //     content: "₿⃝"; }
-    
-    // #{$gwern-links-parent-class} a[href*="salon.com"]::after {
-    //     content: "s"; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.vox.com"]::after {
-    //     font-style: italic;
-    //     content: "Vox"; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.vanityfair.com"]::after {
-    //     content: "VF"; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.motherjones.com"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "MJ"; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.edge.org"]::after {
-    //     font-style: italic;
-    //     content: "E"; }
-    
-    /* The Harney & Sons logo is too fancy to scale down reasonably */
-    // #{$gwern-links-parent-class} a[href*="harney.com"]::after {
-    //     content: "H"; }
-    
-    /* The FF.net logo is pretty crazy, and I don't think anyone would recognize it in monochrome */
-    // #{$gwern-links-parent-class} a[href*="www.fanfiction.net"]::after {
-    //     content: "FF"; }
-    
-    // #{$gwern-links-parent-class} a[href*="poniesatdawn.bandcamp.com"]::after {
-    //     content: "P@D"; }
-    
-    // #{$gwern-links-parent-class} a[href*="yunnansourcing.com"]::after {
-        // content: "Ê¸â‚›"; }
-    
-    /* Avoid the unfortunate connotations of 'SS' */
-    // #{$gwern-links-parent-class} a[href*="scholars-stage.blogspot.com"]::after {
-        // content: "Ss"; }
-    
-    /* Ars is an orange box, not usable */
-    // #{$gwern-links-parent-class} a[href*="arstechnica.com"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "ars"; }
-    
-    /* British Medical Journal or just 'bmj' */
-    // #{$gwern-links-parent-class} a[href*="bmj.com"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "bmj"; }
-    
-    /* Science is just typeset in red */
-    // #{$gwern-links-parent-class} a[href*="sciencemag.org"]::after {
-    //     content: "S"; }
-    
-    /* SSC logo too bad to use */
-    // #{$gwern-links-parent-class} a[href*="yvain"]::after,
-    // #{$gwern-links-parent-class} a[href*="slatestarcodex"]::after {
-    //     content: "SSC"; }
-    /* SSC's book */
-    // #{$gwern-links-parent-class} a[href*="unsongbook.com"]::after {
-        // content: "×"; }
-    
-    /* OB logo too bad to use */
-    // #{$gwern-links-parent-class} a[href*="overcomingbias.com"]::after {
-    //     content: "OB"; }
-    
-    /* LW logo is just a colored 'LW', so no point in converting */
-    #{$gwern-links-parent-class} a[href*="lesswrong.com"]::after {
-        content: "LW"; }
-    
-    /* PB logo is confusing. A purple question mark...? */
-    // #{$gwern-links-parent-class} a[href*="predictionbook.com"]::after {
-    //     content: "\FE56"; }
-    
-    /* GoodReads: logo doesn't make sense as a grayscale */
-    #{$gwern-links-parent-class} a[href*="goodreads.com"]::after {
-        content: "GR"; }
-    
-    /* Long Now Foundation projects: */
-    // #{$gwern-links-parent-class} a[href*="longbets.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="longnow.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="rosettaproject.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="theinterval.org"]::after {
-    //     content: "X";
-    //     text-decoration: overline; }
-    
-    /* ArXiv: Chi (their logo is too bad to use) */
-    #{$gwern-links-parent-class} a[href*="arxiv.org"]::after {
-        content: "\1D6D8"; }
-    
-    /* Technology Review (their logo has a little slash in it which you probably can't see at low-res) but is otherwise just a 'T' so meh */
-    // #{$gwern-links-parent-class} a[href*="technologyreview.com"]::after {
-    //     content: "T";
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
-    
-    /* Economist: logo is just 'Economist'... */
-    // #{$gwern-links-parent-class} a[href*="economist.com"]::after {
-    //     content: "E";
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
-    
-    /* Elsevier/Sciencedirect.com: also an 'E' */
-    // #{$gwern-links-parent-class} a[href*="sciencedirect.com"]::after {
-    //     content: "E";
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
-    
-    /* Favicon is a little normal distribution/histogram */
-    // #{$gwern-links-parent-class} a[href*="andrewgelman.com"]::after,
-    // #{$gwern-links-parent-class} a[href*="statmodeling.stat.columbia.edu"]::after {
-    //     content: "▅▇▃";
-    //     font-size: 0.6em; }
-    
-    /* Bloomberg: no usable logo, just an inset-B */
-    #{$gwern-links-parent-class} a[href*="bloomberg.com"]::after {
-        content: "𝐁"; }
-    
-    /* BBC: no usable logo */
-    #{$gwern-links-parent-class} a[href*="bbc.com"]::after,
-    #{$gwern-links-parent-class} a[href*="bbc.co.uk"]::after {
-        font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-        content: "BBC"; }
-    
-    /* R: at this point R Studio has taken over a lot of control, so might as well treat them as official too... */
-    // #{$gwern-links-parent-class} a[href*="r-project.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="rstudio.com"]::after {
-    //     content: "R";
-    // }
-    
-    /* Haskell: simplify logo; the double-lambda is too busy when used for link icons */
-    #{$gwern-links-parent-class} a[href*="haskell.org"]::after {
-        content: "𝛌"; }
-    
-    /* MAL: the blue of their logo doesn't work, so just text */
-    // #{$gwern-links-parent-class} a[href*="myanimelist.net"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "MAL"; }
-    
-    /* Gene Wolfe mailing list; no logo */
-    // #{$gwern-links-parent-class} a[href*="urth.net"]::after {
-    //     content: "U"; }
-    
-    /* TinyLetter's icon, without color, isn't memorable enough; throw in the other email services */
-    #{$gwern-links-parent-class} a[href*="tinyletter.com"]::after,
-    #{$gwern-links-parent-class} a[href*="groups.google.com"]::after,
-    #{$gwern-links-parent-class} a[href*="groups.yahoo.com"]::after,
-    #{$gwern-links-parent-class} a[href*="www.mail-archive.com"]::after {
-        content: "✉"; }
-    
-    /* Tumblr: turns out there's a Unicode equivalent to their curly-T which can be used instead */
-    #{$gwern-links-parent-class} a[href*="tumblr.com"]::after,
-    #{$gwern-links-parent-class} a[href*="t.umblr.com"]::after {
-        content: "ʈˆ"; }
-    
-    /* The Atlantic: replicate sloping by italics */
-    // #{$gwern-links-parent-class} a[href*="theatlantic.com"]::after {
-    //     font-style: italic;
-    //     content: "A"; }
-    
-    /* Filfre.net/The Digital Antiquarian has no logo or usable substitue... */
-    // #{$gwern-links-parent-class} a[href*="filfre.net"]::after {
-    //     content: "F"; }
-    
-    /* ANN */
-    // #{$gwern-links-parent-class} a[href*="animenewsnetwork.com"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "ANN"; }
-    
-    /* TV Tropes: their lampshade icon is unrecognizable & hard to see small */
-    // #{$gwern-links-parent-class} a[href*="tvtropes.org"]::after {
-    //     content: "TV"; }
-    
-    // #{$gwern-links-parent-class} a[href*="www.cdc.gov"]::after {
-    //     content: "CDC"; }
-    
-    /* US federal Department of Justice */
-    // #{$gwern-links-parent-class} a[href*="justice.gov"]::after {
-    //     content: "DoJ"; }
-    
-    /* FDA/Food & Drug Agency */
-    // #{$gwern-links-parent-class} a[href*="fda.gov"]::after {
-    //     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
-    //     content: "FDA"; }
-    
-    /* The Paris Review: not even going to try to make their weird bird logo work */
-    // #{$gwern-links-parent-class} a[href*="theparisreview.org"]::after {
-    //     content: "PR"; }
-    
-    /* The Wall Street Journal */
-    #{$gwern-links-parent-class} a[href*="www.wsj.com"]::after {
-        content: "WSJ"; }
-    
-    /* Slate */
-    #{$gwern-links-parent-class} a[href*="slate.com"]::after {
-        content: "S"; }
-    
-    /* Nature */
-    #{$gwern-links-parent-class} a[href*="nature.com"]::after {
-        content: "n"; }
-    
-    /* Evangelion: we'll split this into EGF-related and other NGE sites */
-    // #{$gwern-links-parent-class} a[href*="evageeks.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="evamonkey.com"]::after {
-    //     content: "EG"; }
-    // #{$gwern-links-parent-class} a[href*="onegeek.org"]::after,
-    // #{$gwern-links-parent-class} a[href*="evaotaku.com"]::after,
-    // #{$gwern-links-parent-class} a[href*="khara.co.jp"]::after,
-    // #{$gwern-links-parent-class} a[href*="gainax.co.jp"]::after,
-    // #{$gwern-links-parent-class} a[href*="17th-angel.tumblr.com"]::after,
-    // #{$gwern-links-parent-class} a[href*="neweva.blog103.fc2.com"]::after {
-    //     content: "NGE"; }
-    
-    /* IMAGE-BASED PER-DOMAIN LINK ICONS: */
-    /* BioRxiv (custom icon: italic Chi with DNA cross-strands) */
-    // #{$gwern-links-parent-class} a[href*='biorxiv.org']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/chi-dna.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='biorxiv.org']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='biorxiv.org']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1em;
-    //     width: 0.9em;
-    //     margin: 0 0 0 2px;
-    //     opacity: 0.60;
-    // }
-    
-    /* Google Scholar */
-    #{$gwern-links-parent-class} a[href*='scholar.google.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/google-scholar.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='scholar.google.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='scholar.google.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1em;
-        width: 1em;
-        margin: 0 0 0 2px;
-        opacity: 0.60;
-    }
-    
-    /* PLOS ONE in all their domain permutations... */
-    // #{$gwern-links-parent-class} a[href*='plosone.org']::after,
-    // #{$gwern-links-parent-class} a[href*='plos.org']::after,
-    // #{$gwern-links-parent-class} a[href*='www.plos']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/plos.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='plosone.org']:hover::after,
-    // #{$gwern-links-parent-class} a[href*='plos.org']:hover::after,
-    // #{$gwern-links-parent-class} a[href*='www.plos']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='plosone.org']::after,
-    // #{$gwern-links-parent-class} a[href*='plos.org']::after,
-    // #{$gwern-links-parent-class} a[href*='www.plos']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1.1em;
-    //     width: 1em;
-    //     margin: 0 0 1px 3px;
-    //     opacity: 0.50;
-    // }
-    
-    /* Patreon: used the old one (https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg) because I don't like the new one */
-    #{$gwern-links-parent-class} a[href*='patreon.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/patreon.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='patreon.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='patreon.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1.1em;
-        width: 1em;
-        margin: 0 0 0 2px;
-        opacity: $gwern-links-link-opacity;
-    }
-    
-    /* Upton Tea */
-    // #{$gwern-links-parent-class} a[href*='uptontea.com']::after {
-    //               background-image: url(#{$gwern-links-icons-path}/uptontea.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='uptontea.com']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='uptontea.com']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1.1em;
-    //     width: 1em;
-    //     margin: 0 0 0 2px;
-    //     opacity: 0.60;}
-    
-    /* Wired */
-    #{$gwern-links-parent-class} a[href*='wired.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/wired.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='wired.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='wired.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 3px;
-        opacity: 0.50;
-    }
-    
-    /* The Washington Post: truncated their blackletter to 'WP' */
-    #{$gwern-links-parent-class} a[href*='washingtonpost.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/washingtonpost.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='washingtonpost.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='washingtonpost.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1em;
-        width: 1em;
-        margin: 0 0 0px 3px;
-        opacity: 0.60;
-    }
-    
-    /* The New York Times: reduction of full SVG logo to just the 'T' they use as an icon */
-    #{$gwern-links-parent-class} a[href*='nytimes.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/newyorktimes.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='nytimes.com']:hover::after {
-        opacity: 0.45;
-    }
-    #{$gwern-links-parent-class} a[href*='nytimes.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1em;
-        width: 0.8em;
-        margin:0 0 2px 3px;
-        opacity: 0.60;
-    }
-    
-    /* NCBI/Pubmed: simplification of their logo (https://upload.wikimedia.org/wikipedia/commons/0/07/US-NLM-NCBI-Logo.svg) */
-    // #{$gwern-links-parent-class} a[href*='nlm.nih.gov']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/nlm-ncbi.svg);
-    //     }
-    // #{$gwern-links-parent-class} a[href*='nlm.nih.gov']:hover::after {
-    //     opacity: 0.45;
-    // }
-    // #{$gwern-links-parent-class} a[href*='nlm.nih.gov']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1em;
-    //     width: 0.8em;
-    //     margin:0 0 2px 3px;
-    //     opacity: 0.60;
-    // }
-    
-    /* The New Yorker: the Dandy SVG, simplified & rotated more vertically */
-    #{$gwern-links-parent-class} a[href*='newyorker.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/thenewyorker.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='newyorker.com']:hover::after {
-        opacity: 0.45;
-    }
-    #{$gwern-links-parent-class} a[href*='newyorker.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1.3em;
-        width: 0.9em;
-        margin: 0 0 0px 2px;
-        opacity: 0.60;
-    }
-    
-    /* El Grauniad */
-    #{$gwern-links-parent-class} a[href*='theguardian.com']::after,
-    #{$gwern-links-parent-class} a[href*='www.guardian.co.uk']::after {
-        background-image: url(#{$gwern-links-icons-path}/theguardian.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='theguardian.com']:hover::after,
-    #{$gwern-links-parent-class} a[href*='www.guardian.co.uk']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='theguardian.com']::after,
-    #{$gwern-links-parent-class} a[href*='www.guardian.co.uk']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1.1em;
-        width: 1em;
-        margin: 0 0 0 2px;
-        opacity: 0.60;
-    }
-    
-    /* Reddit */
-    #{$gwern-links-parent-class} a[href*='reddit.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/reddit.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='reddit.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='reddit.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 3px;
-        opacity: 0.50;
-    }
-    
-    /* PG/HN/YC (shared logo): */
-    // #{$gwern-links-parent-class} a[href*='paulgraham.com']::after,
-    #{$gwern-links-parent-class} a[href*='ycombinator.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/hn.svg);
-    }
-    // #{$gwern-links-parent-class} a[href*='paulgraham.com']:hover::after,
-    #{$gwern-links-parent-class} a[href*='ycombinator.com']:hover::after {
-        opacity: 0.4;
-    }
-    // #{$gwern-links-parent-class} a[href*='paulgraham.com']::after,
-    #{$gwern-links-parent-class} a[href*='ycombinator.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 0 4px;
-        opacity: 0.60;
-    }
-    
-    /* MIRI/intelligence.org */
-    // #{$gwern-links-parent-class} a[href*='intelligence.org']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/miri.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='intelligence.org']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='intelligence.org']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1em;
-    //     width: 1em;
-    //     margin: 0 0 0 2px;
-    //     opacity: 0.60;
-    // }
-    
-    /* DeepMind; match articles or anchors about DM too */
-    #{$gwern-links-parent-class} a[href*='deepmind']::after {
-        background-image: url(#{$gwern-links-icons-path}/deepmind.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='deepmind']:hover::after {
-        opacity: 0.5;
-    }
-    #{$gwern-links-parent-class} a[href*='deepmind']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1.1em;
-        width: 1.1em;
-        margin: 0 0 1px 4px;
-        opacity: 0.60;
-    }
-    
-    #{$gwern-links-parent-class} a[href*='openai']::after {
-        background-image: url(#{$gwern-links-icons-path}/openai.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='openai']:hover::after {
-        opacity: 0.5;
-    }
-    #{$gwern-links-parent-class} a[href*='openai']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1.1em;
-        width: 1em;
-        margin: 0 0 0px 3px;
-        opacity: 0.60;
-    }
-    
-    /* Twitter */
-    #{$gwern-links-parent-class} a[href*='twitter.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/twitter.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='twitter.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='twitter.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 4px;
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    
-    /* Erowid */
-    // #{$gwern-links-parent-class} a[href*='erowid.org']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/erowid.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='erowid.org']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='erowid.org']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 1em;
-    //     width: 1em;
-    //     margin: 0 0 0 2px;
-    //     opacity: 0.60;
-    // }
-    
-    /* Wikipedia */
-    #{$gwern-links-parent-class} a[href*="wikipedia.org"]::after,
-    #{$gwern-links-parent-class} a[href*="wikimedia.org"]::after,
-    #{$gwern-links-parent-class} a[href*="wikimediafoundation.org"]::after,
-    #{$gwern-links-parent-class} a[href*="wikisource.org"]::after {
-        content: "";
-        /* WP is used on almost every page, so make an exception and inline it */
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBkPSJNNjQwIDUxLjJsLS4zIDEyLjJjLTI4LjEuOC00NSAxNS44LTU1LjggNDAuMy0yNSA1Ny44LTEwMy4zIDI0MC0xNTUuMyAzNTguNkg0MTVsLTgxLjktMTkzLjFjLTMyLjUgNjMuNi02OC4zIDEzMC05OS4yIDE5My4xLS4zLjMtMTUgMC0xNS0uM0MxNzIgMzUyLjMgMTIyLjggMjQzLjQgNzUuOCAxMzMuNCA2NC40IDEwNi43IDI2LjQgNjMuNC4yIDYzLjdjMC0zLjEtLjMtMTAtLjMtMTQuMmgxNjEuOXYxMy45Yy0xOS4yIDEuMS01Mi44IDEzLjMtNDMuMyAzNC4yIDIxLjkgNDkuNyAxMDMuNiAyNDAuMyAxMjUuNiAyODguNiAxNS0yOS43IDU3LjgtMTA5LjIgNzUuMy0xNDIuOC0xMy45LTI4LjMtNTguNi0xMzMuOS03Mi44LTE2MC05LjctMTcuOC0zNi4xLTE5LjQtNTUuOC0xOS43VjQ5LjhsMTQyLjUuM3YxMy4xYy0xOS40LjYtMzguMSA3LjgtMjkuNCAyNi4xIDE4LjkgNDAgMzAuNiA2OC4xIDQ4LjEgMTA0LjcgNS42LTEwLjggMzQuNy02OS40IDQ4LjEtMTAwLjggOC45LTIwLjYtMy45LTI4LjYtMzguNi0yOS40LjMtMy42IDAtMTAuMy4zLTEzLjYgNDQuNC0uMyAxMTEuMS0uMyAxMjMuMS0uNnYxMy42Yy0yMi41LjgtNDUuOCAxMi44LTU4LjEgMzEuN2wtNTkuMiAxMjIuOGM2LjQgMTYuMSA2My4zIDE0Mi44IDY5LjIgMTU2LjdMNTU5LjIgOTEuOGMtOC42LTIzLjEtMzYuNC0yOC4xLTQ3LjItMjguM1Y0OS42bDEyNy44IDEuMS4yLjV6Ii8+PC9zdmc+');
-        background-repeat: no-repeat;
-        background-size: 0.75em;
-        background-position: right 1px top;
-        width: 0.825em;
-        height: 0.825em;
-        display: inline-block;
-        vertical-align: baseline;
-        opacity: 0.825;
-    }
-    #{$gwern-links-parent-class} a[href*="wikipedia.org"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="wikimedia.org"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="wikimediafoundation.org"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="wikisource.org"]:hover::after {
-        opacity: 0.825;
-    }
-    
-    /* YouTube links */
-    /* https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg */
-    #{$gwern-links-parent-class} a[href*='youtube.com']::after,
-    #{$gwern-links-parent-class} a[href*='youtu.be']::after {
-        background-image: url('#{$gwern-links-icons-path}/youtube.svg');
-    }
-    /* Bandcamp/SoundCloud links */
-    #{$gwern-links-parent-class} a[href*='soundcloud.com']::after,
-    #{$gwern-links-parent-class} a[href*='bandcamp.com']::after {
-        background-image: url('#{$gwern-links-icons-path}/video.svg');
-    }
-    #{$gwern-links-parent-class} a[href*='youtube.com']:hover::after,
-    #{$gwern-links-parent-class} a[href*='youtu.be']:hover::after,
-    #{$gwern-links-parent-class} a[href*='soundcloud.com']:hover::after,
-    #{$gwern-links-parent-class} a[href*='bandcamp.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='youtube.com']::after,
-    #{$gwern-links-parent-class} a[href*='youtu.be']::after,
-    #{$gwern-links-parent-class} a[href*='soundcloud.com']::after,
-    #{$gwern-links-parent-class} a[href*='bandcamp.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 1em;
-        width: 1em;
-        margin: 0 0 0 3px;
-        opacity: 0.60;
-    }
-    
-    /* The *Exchange/*Overflow family of websites: */
-    #{$gwern-links-parent-class} a[href*="overflow.net"]::after,
-    #{$gwern-links-parent-class} a[href*="overflow.com"]::after,
-    #{$gwern-links-parent-class} a[href*="stackexchange.com"]::after {
-        content: "";
-        background-image: url(#{$gwern-links-icons-path}/stackexchange.svg);
-        background-repeat: no-repeat;
-        background-size: 0.75em;
-        background-position: right 1px top;
-        width: 0.85em;
-        height: 0.85em;
-        display: inline-block;
-        vertical-align: baseline;
-        opacity: 0.85;
-    }
-    #{$gwern-links-parent-class} a[href*="overflow.net"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="overflow.com"]::after,
-    #{$gwern-links-parent-class} a[href*="stackexchange.com"]:hover::after {
-        opacity: 0.6;
-    }
-    
-    /* Amazon */
-    #{$gwern-links-parent-class} a[href*="amazon.com"]::after,
-    #{$gwern-links-parent-class} a[href*="amazon.es"]::after,
-    #{$gwern-links-parent-class} a[href*="amazon.co."]::after,
-    #{$gwern-links-parent-class} a[href*="amzn.to"]::after,
-    #{$gwern-links-parent-class} a[href*="a.co"]::after,
-    #{$gwern-links-parent-class} a[href*="amzn.com"]::after {
-        content: "";
-        background-image: url(#{$gwern-links-icons-path}/amazon.svg);
-        background-repeat: no-repeat;
-        background-size: 0.75em;
-        background-position: right 1px top;
-        width: 1em;
-        height: 0.8em;
-        display: inline-block;
-        vertical-align: baseline;
-        opacity: 0.81;
-    }
-    #{$gwern-links-parent-class} a[href*="amazon.com"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="amazon.es"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="amazon.co."]:hover::after,
-    #{$gwern-links-parent-class} a[href*="amzn.to"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="a.co"]:hover::after,
-    #{$gwern-links-parent-class} a[href*="amzn.com"]:hover::after {
-        opacity: 0.6;
-    }
-    
-    /* Github; I exclude github.io because that's blogs */
-    #{$gwern-links-parent-class} a[href*='github.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/github.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='github.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='github.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 3px;
-        opacity: 0.60;
-    }
-    
-    /* Dropbox: old file-host, deprecated since they've started killing inactive accounts */
-    #{$gwern-links-parent-class} a[href*='dropbox.com']::after,
-    #{$gwern-links-parent-class} a[href*='dropboxusercontent.com']::after {
-        background-image: url(#{$gwern-links-icons-path}/dropbox.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='dropbox.com']:hover::after,
-    #{$gwern-links-parent-class} a[href*='dropboxusercontent.com']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='dropbox.com']::after,
-    #{$gwern-links-parent-class} a[href*='dropboxusercontent.com']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 3px;
-        opacity: 0.50;
-    }
-    
-    /* MegaUpload/Mega: filesharing (used for big files) */
-    // #{$gwern-links-parent-class} a[href*='mega.nz']::after {
-    //     background-image: url(#{$gwern-links-icons-path}/mega.svg);
-    // }
-    // #{$gwern-links-parent-class} a[href*='mega.nz']:hover::after {
-    //     opacity: $gwern-links-link-hover-opacity;
-    // }
-    // #{$gwern-links-parent-class} a[href*='mega.nz']::after {
-    //     content: "";
-    //     display: inline-block;
-    //     position: static;
-    //     background-repeat: no-repeat;
-    //     background-position: bottom center;
-    //     height: 0.75em;
-    //     width: 0.75em;
-    //     margin: 0 0 2px 3px;
-    //     opacity: 0.60;
-    // }
-    
-    #{$gwern-links-parent-class} a[href*='archive.org']::after,
-    #{$gwern-links-parent-class} a[href*='archive-it.org']::after,
-    #{$gwern-links-parent-class} a[href*='archiveteam.org']::after,
-    #{$gwern-links-parent-class} a[href*='waybackmachine.org']::after {
-        background-image: url(#{$gwern-links-icons-path}/internetarchive.svg);
-    }
-    #{$gwern-links-parent-class} a[href*='archive.org']:hover::after,
-    #{$gwern-links-parent-class} a[href*='archive-it.org']:hover::after,
-    #{$gwern-links-parent-class} a[href*='archiveteam.org']:hover::after,
-    #{$gwern-links-parent-class} a[href*='waybackmachine.org']:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    #{$gwern-links-parent-class} a[href*='archive.org']::after,
-    #{$gwern-links-parent-class} a[href*='archive-it.org']::after,
-    #{$gwern-links-parent-class} a[href*='archiveteam.org']::after,
-    #{$gwern-links-parent-class} a[href*='waybackmachine.org']::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 2px 3px;
-        opacity: 0.60;
-    }
-    
-    /*=--------------------------------------------=*/
-    /*= Icons for certain link types: by file type =*/
-    /*=--------------------------------------------=*/
-    /*  Note: some file extension link types have are selected additionally by
+#{$gwern-links-parent-class} a[href^="."]:not([href*="/docs/"]):not([href*="/images/"]):not([href*="/"]):not([href$=".hs"]):not([href$=".sh"]):not([href$=".R"])::after,
+    #{$gwern-links-parent-class} a[href^="https://www.gwern.net/"]:not([href*="/docs/"]):not([href*="/images/"]):not([href*="/"]):not([href$=".hs"]):not([href$=".sh"]):not([href$=".R"])::after
+{
+    @include invert-when-dark;
+
+    content: "\1D50A"; /* Gothic G */
+    margin: 0 0 0 2px;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.15em;
+    opacity: 0.55;
+}
+
+/* TEXTUAL PER-DOMAIN LINK ICONS: */
+/* Common style */
+#{$gwern-links-parent-class} a[href*="17th-angel.tumblr.com"]::after,
+#{$gwern-links-parent-class} a[href*="andrewgelman.com"]::after,
+#{$gwern-links-parent-class} a[href*="animenewsnetwork.com"]::after,
+#{$gwern-links-parent-class} a[href*="arstechnica.com"]::after,
+#{$gwern-links-parent-class} a[href*="arxiv.org"]::after,
+#{$gwern-links-parent-class} a[href*="bbc.com"]::after,
+#{$gwern-links-parent-class} a[href*="bbc.co.uk"]::after,
+#{$gwern-links-parent-class} a[href*="www.cdc.gov"]::after,
+#{$gwern-links-parent-class} a[href*="www.vox.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.vanityfair.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.motherjones.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.edge.org"]::after,
+#{$gwern-links-parent-class} a[href*="bitcointalk.org"]::after,
+#{$gwern-links-parent-class} a[href*="bitcoin.t"]::after,
+#{$gwern-links-parent-class} a[href*="bloomberg.com"]::after,
+#{$gwern-links-parent-class} a[href*="bmj.com"]::after,
+#{$gwern-links-parent-class} a[href*="economist.com"]::after,
+#{$gwern-links-parent-class} a[href*="evageeks.org"]::after,
+#{$gwern-links-parent-class} a[href*="evamonkey.com"]::after,
+#{$gwern-links-parent-class} a[href*="evaotaku.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.fanfiction.net"]::after,
+#{$gwern-links-parent-class} a[href*="fda.gov"]::after,
+#{$gwern-links-parent-class} a[href*="filfre.net"]::after,
+#{$gwern-links-parent-class} a[href*="gainax.co.jp"]::after,
+#{$gwern-links-parent-class} a[href*="goodreads.com"]::after,
+#{$gwern-links-parent-class} a[href*="haskell.org"]::after,
+#{$gwern-links-parent-class} a[href*="harney.com"]::after,
+#{$gwern-links-parent-class} a[href*="justice.gov"]::after,
+#{$gwern-links-parent-class} a[href*="khara.co.jp"]::after,
+#{$gwern-links-parent-class} a[href*="kk.org"]::after,
+#{$gwern-links-parent-class} a[href*="lesswrong.com"]::after,
+#{$gwern-links-parent-class} a[href*="longbets.org"]::after,
+#{$gwern-links-parent-class} a[href*="longnow.org"]::after,
+#{$gwern-links-parent-class} a[href*="marginalrevolution.com"]::after,
+#{$gwern-links-parent-class} a[href*="medium.com"]::after,
+#{$gwern-links-parent-class} a[href*="myanimelist.net"]::after,
+#{$gwern-links-parent-class} a[href*="nature.com"]::after,
+#{$gwern-links-parent-class} a[href*="onegeek.org"]::after,
+#{$gwern-links-parent-class} a[href*="overcomingbias.com"]::after,
+#{$gwern-links-parent-class} a[href*="pnas.org"]::after,
+#{$gwern-links-parent-class} a[href*="poniesatdawn.bandcamp.com"]::after,
+#{$gwern-links-parent-class} a[href*="predictionbook.com"]::after,
+#{$gwern-links-parent-class} a[href*="r-project.org"]::after,
+#{$gwern-links-parent-class} a[href*="rosettaproject.org"]::after,
+#{$gwern-links-parent-class} a[href*="rstudio.com"]::after,
+#{$gwern-links-parent-class} a[href*="salon.com"]::after,
+#{$gwern-links-parent-class} a[href*="sciencemag.org"]::after,
+#{$gwern-links-parent-class} a[href*="sciencedirect.com"]::after,
+#{$gwern-links-parent-class} a[href*="scholars-stage.blogspot.com"]::after,
+#{$gwern-links-parent-class} a[href*="slate.com"]::after,
+#{$gwern-links-parent-class} a[href*="slatestarcodex"]::after,
+#{$gwern-links-parent-class} a[href*="statmodeling.stat.columbia.edu"]::after,
+#{$gwern-links-parent-class} a[href*="t.umblr.com"]::after,
+#{$gwern-links-parent-class} a[href*="technologyreview.com"]::after,
+#{$gwern-links-parent-class} a[href*="theatlantic.com"]::after,
+#{$gwern-links-parent-class} a[href*="theinterval.org"]::after,
+#{$gwern-links-parent-class} a[href*="theparisreview.org"]::after,
+#{$gwern-links-parent-class} a[href*="tinyletter.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.mail-archive.com"]::after,
+#{$gwern-links-parent-class} a[href*="groups.google.com"]::after,
+#{$gwern-links-parent-class} a[href*="tumblr.com"]::after,
+#{$gwern-links-parent-class} a[href*="tvtropes.org"]::after,
+#{$gwern-links-parent-class} a[href*="urth.net"]::after,
+#{$gwern-links-parent-class} a[href*="www.nber.org"]::after,
+#{$gwern-links-parent-class} a[href*="mlp.fandom.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.wsj.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.google.com"]::after,
+#{$gwern-links-parent-class} a[href*="wiley.com"]::after,
+#{$gwern-links-parent-class} a[href*="yunnansourcing.com"]::after,
+#{$gwern-links-parent-class} a[href*="yvain"]::after,
+#{$gwern-links-parent-class} a[href*="unsongbook.com"]::after,
+#{$gwern-links-parent-class} a[href*="groups.yahoo.com"]::after,
+#{$gwern-links-parent-class} a[href*="publicdomainreview.org"]::after,
+#{$gwern-links-parent-class} a[href*="meltingasphalt.com"]::after,
+#{$gwern-links-parent-class} a[href*="neweva.blog103.fc2.com"]::after {
+    @include invert-when-dark;
+
+    font-size: 0.8em;
+    font-weight: 600;
+    margin: 0 0 0 2px;
+    vertical-align: baseline;
+    position: relative;
+    bottom: 0.2em;
+    opacity: 0.6;
+}
+/* MR: cheaper to abuse Unicode */
+// #{$gwern-links-parent-class} a[href*="marginalrevolution.com"]::after {
+//     content: "M𝐑"; }
+
+/* likewise */
+#{$gwern-links-parent-class} a[href*="medium.com"]::after {
+    @include invert-when-dark;
+
+    content: "𝐌";
+}
+
+/* Kevin Kelly */
+#{$gwern-links-parent-class} a[href*="kk.org"]::after {
+    @include invert-when-dark;
+
+    font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+    content: "KK";
+}
+
+/* Google searches, other tools; note that there are many Google subdomains, so we narrow down with just 'www' */
+#{$gwern-links-parent-class} a[href*="www.google.com"]::after {
+    @include invert-when-dark;
+
+    content: "𝐆";
+}
+
+/* Wiley & Sons's 'W' unfortunately overlaps with the WP 'W' but if we sans it, maybe that'll help */
+#{$gwern-links-parent-class} a[href*="wiley.com"]::after {
+    @include invert-when-dark;
+
+    font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+    content: "W";
+}
+
+/* PNAS: they don't have a real logo, but their favicon does a nice little compact square, and we can replicate that in CSS: */
+// #{$gwern-links-parent-class} a[href*="pnas.org"]::after {
+//   content: "PNAS";
+//   font-size: 0.5em;
+//   width: 1.4em;
+//   display: inline-block;
+//   overflow-wrap: break-word;
+//   font-family: Baskerville;
+//   line-height: 0.7;
+//   text-align: center;
+//   position: relative;
+//   bottom: 0.3em;
+//   left: 0.1em; }
+
+// #{$gwern-links-parent-class} a[href*="www.nber.org"]:not([href$=".pdf"])::after {
+//   content: "NBER";
+//   font-size: 0.5em;
+//   width: 1.35em;
+//   display: inline-block;
+//   overflow-wrap: break-word;
+//   font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//   font-style: italic;
+//   line-height: 0.7;
+//   text-align: center;
+//   position: relative;
+//   bottom: 0.3em;
+//   left: 0.1em; }
+
+// #{$gwern-links-parent-class} a[href*="mlp.fandom.com"]::after {
+//   content: "MLPW";
+//   font-size: 0.5em;
+//   width: 1.35em;
+//   display: inline-block;
+//   overflow-wrap: break-word;
+//   font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//   font-style: italic;
+//   line-height: 0.7;
+//   text-align: center;
+//   position: relative;
+//   bottom: 0.3em;
+//   left: 0.1em; }
+
+// #{$gwern-links-parent-class} a[href*="publicdomainreview.org"]::after {
+//   content: "TPDR";
+//   font-size: 0.5em;
+//   width: 1.6em;
+//   display: inline-block;
+//   overflow-wrap: break-word;
+//   font-family: Baskerville;
+//   line-height: 0.8em;
+//   text-align: center;
+//   position: relative;
+//   bottom: 0.3em;
+//   left: 0.1em; }
+
+// #{$gwern-links-parent-class} a[href*="meltingasphalt.com"]::after {
+//     content: "▲▲△"; }
+
+/* Bitcoin Talk: close enough! */
+// #{$gwern-links-parent-class} a[href*="bitcointalk.org"]::after,
+// #{$gwern-links-parent-class} a[href*="bitcoin.it"]::after {
+//     content: "₿⃝"; }
+
+// #{$gwern-links-parent-class} a[href*="salon.com"]::after {
+//     content: "s"; }
+
+// #{$gwern-links-parent-class} a[href*="www.vox.com"]::after {
+//     font-style: italic;
+//     content: "Vox"; }
+
+// #{$gwern-links-parent-class} a[href*="www.vanityfair.com"]::after {
+//     content: "VF"; }
+
+// #{$gwern-links-parent-class} a[href*="www.motherjones.com"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "MJ"; }
+
+// #{$gwern-links-parent-class} a[href*="www.edge.org"]::after {
+//     font-style: italic;
+//     content: "E"; }
+
+/* The Harney & Sons logo is too fancy to scale down reasonably */
+// #{$gwern-links-parent-class} a[href*="harney.com"]::after {
+//     content: "H"; }
+
+/* The FF.net logo is pretty crazy, and I don't think anyone would recognize it in monochrome */
+// #{$gwern-links-parent-class} a[href*="www.fanfiction.net"]::after {
+//     content: "FF"; }
+
+// #{$gwern-links-parent-class} a[href*="poniesatdawn.bandcamp.com"]::after {
+//     content: "P@D"; }
+
+// #{$gwern-links-parent-class} a[href*="yunnansourcing.com"]::after {
+// content: "Ê¸â‚›"; }
+
+/* Avoid the unfortunate connotations of 'SS' */
+// #{$gwern-links-parent-class} a[href*="scholars-stage.blogspot.com"]::after {
+// content: "Ss"; }
+
+/* Ars is an orange box, not usable */
+// #{$gwern-links-parent-class} a[href*="arstechnica.com"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "ars"; }
+
+/* British Medical Journal or just 'bmj' */
+// #{$gwern-links-parent-class} a[href*="bmj.com"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "bmj"; }
+
+/* Science is just typeset in red */
+// #{$gwern-links-parent-class} a[href*="sciencemag.org"]::after {
+//     content: "S"; }
+
+/* SSC logo too bad to use */
+// #{$gwern-links-parent-class} a[href*="yvain"]::after,
+// #{$gwern-links-parent-class} a[href*="slatestarcodex"]::after {
+//     content: "SSC"; }
+/* SSC's book */
+// #{$gwern-links-parent-class} a[href*="unsongbook.com"]::after {
+// content: "×"; }
+
+/* OB logo too bad to use */
+// #{$gwern-links-parent-class} a[href*="overcomingbias.com"]::after {
+//     content: "OB"; }
+
+/* LW logo is just a colored 'LW', so no point in converting */
+#{$gwern-links-parent-class} a[href*="lesswrong.com"]::after {
+    @include invert-when-dark;
+
+    content: "LW";
+}
+
+/* PB logo is confusing. A purple question mark...? */
+// #{$gwern-links-parent-class} a[href*="predictionbook.com"]::after {
+//     content: "\FE56"; }
+
+/* GoodReads: logo doesn't make sense as a grayscale */
+#{$gwern-links-parent-class} a[href*="goodreads.com"]::after {
+    @include invert-when-dark;
+
+    content: "GR";
+}
+
+/* Long Now Foundation projects: */
+// #{$gwern-links-parent-class} a[href*="longbets.org"]::after,
+// #{$gwern-links-parent-class} a[href*="longnow.org"]::after,
+// #{$gwern-links-parent-class} a[href*="rosettaproject.org"]::after,
+// #{$gwern-links-parent-class} a[href*="theinterval.org"]::after {
+//     content: "X";
+//     text-decoration: overline; }
+
+/* ArXiv: Chi (their logo is too bad to use) */
+#{$gwern-links-parent-class} a[href*="arxiv.org"]::after {
+    @include invert-when-dark;
+
+    content: "\1D6D8";
+}
+
+/* Technology Review (their logo has a little slash in it which you probably can't see at low-res) but is otherwise just a 'T' so meh */
+// #{$gwern-links-parent-class} a[href*="technologyreview.com"]::after {
+//     content: "T";
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
+
+/* Economist: logo is just 'Economist'... */
+// #{$gwern-links-parent-class} a[href*="economist.com"]::after {
+//     content: "E";
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
+
+/* Elsevier/Sciencedirect.com: also an 'E' */
+// #{$gwern-links-parent-class} a[href*="sciencedirect.com"]::after {
+//     content: "E";
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif; }
+
+/* Favicon is a little normal distribution/histogram */
+// #{$gwern-links-parent-class} a[href*="andrewgelman.com"]::after,
+// #{$gwern-links-parent-class} a[href*="statmodeling.stat.columbia.edu"]::after {
+//     content: "▅▇▃";
+//     font-size: 0.6em; }
+
+/* Bloomberg: no usable logo, just an inset-B */
+#{$gwern-links-parent-class} a[href*="bloomberg.com"]::after {
+    @include invert-when-dark;
+
+    content: "𝐁";
+}
+
+/* BBC: no usable logo */
+#{$gwern-links-parent-class} a[href*="bbc.com"]::after,
+#{$gwern-links-parent-class} a[href*="bbc.co.uk"]::after {
+    @include invert-when-dark;
+
+    font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+    content: "BBC";
+}
+
+/* R: at this point R Studio has taken over a lot of control, so might as well treat them as official too... */
+// #{$gwern-links-parent-class} a[href*="r-project.org"]::after,
+// #{$gwern-links-parent-class} a[href*="rstudio.com"]::after {
+//     content: "R";
+// }
+
+/* Haskell: simplify logo; the double-lambda is too busy when used for link icons */
+#{$gwern-links-parent-class} a[href*="haskell.org"]::after {
+    @include invert-when-dark;
+
+    content: "𝛌";
+}
+
+/* MAL: the blue of their logo doesn't work, so just text */
+// #{$gwern-links-parent-class} a[href*="myanimelist.net"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "MAL"; }
+
+/* Gene Wolfe mailing list; no logo */
+// #{$gwern-links-parent-class} a[href*="urth.net"]::after {
+//     content: "U"; }
+
+/* TinyLetter's icon, without color, isn't memorable enough; throw in the other email services */
+#{$gwern-links-parent-class} a[href*="tinyletter.com"]::after,
+#{$gwern-links-parent-class} a[href*="groups.google.com"]::after,
+#{$gwern-links-parent-class} a[href*="groups.yahoo.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.mail-archive.com"]::after {
+    @include invert-when-dark;
+
+    content: "✉";
+}
+
+/* Tumblr: turns out there's a Unicode equivalent to their curly-T which can be used instead */
+#{$gwern-links-parent-class} a[href*="tumblr.com"]::after,
+#{$gwern-links-parent-class} a[href*="t.umblr.com"]::after {
+    @include invert-when-dark;
+
+    content: "ʈˆ";
+}
+
+/* The Atlantic: replicate sloping by italics */
+// #{$gwern-links-parent-class} a[href*="theatlantic.com"]::after {
+//     font-style: italic;
+//     content: "A"; }
+
+/* Filfre.net/The Digital Antiquarian has no logo or usable substitue... */
+// #{$gwern-links-parent-class} a[href*="filfre.net"]::after {
+//     content: "F"; }
+
+/* ANN */
+// #{$gwern-links-parent-class} a[href*="animenewsnetwork.com"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "ANN"; }
+
+/* TV Tropes: their lampshade icon is unrecognizable & hard to see small */
+// #{$gwern-links-parent-class} a[href*="tvtropes.org"]::after {
+//     content: "TV"; }
+
+// #{$gwern-links-parent-class} a[href*="www.cdc.gov"]::after {
+//     content: "CDC"; }
+
+/* US federal Department of Justice */
+// #{$gwern-links-parent-class} a[href*="justice.gov"]::after {
+//     content: "DoJ"; }
+
+/* FDA/Food & Drug Agency */
+// #{$gwern-links-parent-class} a[href*="fda.gov"]::after {
+//     font-family: "Lucida Sans Unicode", "Source Sans Pro", Helvetica, "Trebuchet MS", sans-serif;
+//     content: "FDA"; }
+
+/* The Paris Review: not even going to try to make their weird bird logo work */
+// #{$gwern-links-parent-class} a[href*="theparisreview.org"]::after {
+//     content: "PR"; }
+
+/* The Wall Street Journal */
+#{$gwern-links-parent-class} a[href*="www.wsj.com"]::after {
+    @include invert-when-dark;
+
+    content: "WSJ";
+}
+
+/* Slate */
+#{$gwern-links-parent-class} a[href*="slate.com"]::after {
+    @include invert-when-dark;
+
+    content: "S";
+}
+
+/* Nature */
+#{$gwern-links-parent-class} a[href*="nature.com"]::after {
+    @include invert-when-dark;
+
+    content: "n";
+}
+
+/* Evangelion: we'll split this into EGF-related and other NGE sites */
+// #{$gwern-links-parent-class} a[href*="evageeks.org"]::after,
+// #{$gwern-links-parent-class} a[href*="evamonkey.com"]::after {
+//     content: "EG"; }
+// #{$gwern-links-parent-class} a[href*="onegeek.org"]::after,
+// #{$gwern-links-parent-class} a[href*="evaotaku.com"]::after,
+// #{$gwern-links-parent-class} a[href*="khara.co.jp"]::after,
+// #{$gwern-links-parent-class} a[href*="gainax.co.jp"]::after,
+// #{$gwern-links-parent-class} a[href*="17th-angel.tumblr.com"]::after,
+// #{$gwern-links-parent-class} a[href*="neweva.blog103.fc2.com"]::after {
+//     content: "NGE"; }
+
+/* IMAGE-BASED PER-DOMAIN LINK ICONS: */
+/* BioRxiv (custom icon: italic Chi with DNA cross-strands) */
+// #{$gwern-links-parent-class} a[href*='biorxiv.org']::after {
+//     background-image: url(#{$gwern-links-icons-path}/chi-dna.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='biorxiv.org']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='biorxiv.org']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1em;
+//     width: 0.9em;
+//     margin: 0 0 0 2px;
+//     opacity: 0.60;
+// }
+
+/* Google Scholar */
+#{$gwern-links-parent-class} a[href*="scholar.google.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/google-scholar.svg);
+}
+#{$gwern-links-parent-class} a[href*="scholar.google.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="scholar.google.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1em;
+    width: 1em;
+    margin: 0 0 0 2px;
+    opacity: 0.6;
+}
+
+/* PLOS ONE in all their domain permutations... */
+// #{$gwern-links-parent-class} a[href*='plosone.org']::after,
+// #{$gwern-links-parent-class} a[href*='plos.org']::after,
+// #{$gwern-links-parent-class} a[href*='www.plos']::after {
+//     background-image: url(#{$gwern-links-icons-path}/plos.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='plosone.org']:hover::after,
+// #{$gwern-links-parent-class} a[href*='plos.org']:hover::after,
+// #{$gwern-links-parent-class} a[href*='www.plos']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='plosone.org']::after,
+// #{$gwern-links-parent-class} a[href*='plos.org']::after,
+// #{$gwern-links-parent-class} a[href*='www.plos']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1.1em;
+//     width: 1em;
+//     margin: 0 0 1px 3px;
+//     opacity: 0.50;
+// }
+
+/* Patreon: used the old one (https://upload.wikimedia.org/wikipedia/commons/9/94/Patreon_logo.svg) because I don't like the new one */
+#{$gwern-links-parent-class} a[href*="patreon.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/patreon.svg);
+}
+#{$gwern-links-parent-class} a[href*="patreon.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="patreon.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1.1em;
+    width: 1em;
+    margin: 0 0 0 2px;
+    opacity: $gwern-links-link-opacity;
+}
+
+/* Upton Tea */
+// #{$gwern-links-parent-class} a[href*='uptontea.com']::after {
+//               background-image: url(#{$gwern-links-icons-path}/uptontea.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='uptontea.com']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='uptontea.com']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1.1em;
+//     width: 1em;
+//     margin: 0 0 0 2px;
+//     opacity: 0.60;}
+
+/* Wired */
+#{$gwern-links-parent-class} a[href*="wired.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/wired.svg);
+}
+#{$gwern-links-parent-class} a[href*="wired.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="wired.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 3px;
+    opacity: 0.5;
+}
+
+/* The Washington Post: truncated their blackletter to 'WP' */
+#{$gwern-links-parent-class} a[href*="washingtonpost.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/washingtonpost.svg);
+}
+#{$gwern-links-parent-class} a[href*="washingtonpost.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="washingtonpost.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1em;
+    width: 1em;
+    margin: 0 0 0px 3px;
+    opacity: 0.6;
+}
+
+/* The New York Times: reduction of full SVG logo to just the 'T' they use as an icon */
+#{$gwern-links-parent-class} a[href*="nytimes.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/newyorktimes.svg);
+}
+#{$gwern-links-parent-class} a[href*="nytimes.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.45;
+}
+#{$gwern-links-parent-class} a[href*="nytimes.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1em;
+    width: 0.8em;
+    margin: 0 0 2px 3px;
+    opacity: 0.6;
+}
+
+/* NCBI/Pubmed: simplification of their logo (https://upload.wikimedia.org/wikipedia/commons/0/07/US-NLM-NCBI-Logo.svg) */
+// #{$gwern-links-parent-class} a[href*='nlm.nih.gov']::after {
+//     background-image: url(#{$gwern-links-icons-path}/nlm-ncbi.svg);
+//     }
+// #{$gwern-links-parent-class} a[href*='nlm.nih.gov']:hover::after {
+//     opacity: 0.45;
+// }
+// #{$gwern-links-parent-class} a[href*='nlm.nih.gov']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1em;
+//     width: 0.8em;
+//     margin:0 0 2px 3px;
+//     opacity: 0.60;
+// }
+
+/* The New Yorker: the Dandy SVG, simplified & rotated more vertically */
+#{$gwern-links-parent-class} a[href*="newyorker.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/thenewyorker.svg);
+}
+#{$gwern-links-parent-class} a[href*="newyorker.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.45;
+}
+#{$gwern-links-parent-class} a[href*="newyorker.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1.3em;
+    width: 0.9em;
+    margin: 0 0 0px 2px;
+    opacity: 0.6;
+}
+
+/* El Grauniad */
+#{$gwern-links-parent-class} a[href*="theguardian.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.guardian.co.uk"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/theguardian.svg);
+}
+#{$gwern-links-parent-class} a[href*="theguardian.com"]:hover::after,
+#{$gwern-links-parent-class} a[href*="www.guardian.co.uk"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="theguardian.com"]::after,
+#{$gwern-links-parent-class} a[href*="www.guardian.co.uk"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1.1em;
+    width: 1em;
+    margin: 0 0 0 2px;
+    opacity: 0.6;
+}
+
+/* Reddit */
+#{$gwern-links-parent-class} a[href*="reddit.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/reddit.svg);
+}
+#{$gwern-links-parent-class} a[href*="reddit.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="reddit.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 3px;
+    opacity: 0.5;
+}
+
+/* PG/HN/YC (shared logo): */
+// #{$gwern-links-parent-class} a[href*='paulgraham.com']::after,
+#{$gwern-links-parent-class} a[href*="ycombinator.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/hn.svg);
+}
+// #{$gwern-links-parent-class} a[href*='paulgraham.com']:hover::after,
+#{$gwern-links-parent-class} a[href*="ycombinator.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.4;
+}
+// #{$gwern-links-parent-class} a[href*='paulgraham.com']::after,
+#{$gwern-links-parent-class} a[href*="ycombinator.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 0 4px;
+    opacity: 0.6;
+}
+
+/* MIRI/intelligence.org */
+// #{$gwern-links-parent-class} a[href*='intelligence.org']::after {
+//     background-image: url(#{$gwern-links-icons-path}/miri.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='intelligence.org']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='intelligence.org']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1em;
+//     width: 1em;
+//     margin: 0 0 0 2px;
+//     opacity: 0.60;
+// }
+
+/* DeepMind; match articles or anchors about DM too */
+#{$gwern-links-parent-class} a[href*="deepmind"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/deepmind.svg);
+}
+#{$gwern-links-parent-class} a[href*="deepmind"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.5;
+}
+#{$gwern-links-parent-class} a[href*="deepmind"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1.1em;
+    width: 1.1em;
+    margin: 0 0 1px 4px;
+    opacity: 0.6;
+}
+
+#{$gwern-links-parent-class} a[href*="openai"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/openai.svg);
+}
+#{$gwern-links-parent-class} a[href*="openai"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.5;
+}
+#{$gwern-links-parent-class} a[href*="openai"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1.1em;
+    width: 1em;
+    margin: 0 0 0px 3px;
+    opacity: 0.6;
+}
+
+/* Twitter */
+#{$gwern-links-parent-class} a[href*="twitter.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/twitter.svg);
+}
+#{$gwern-links-parent-class} a[href*="twitter.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="twitter.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 4px;
+    opacity: $gwern-links-link-hover-opacity;
+}
+
+/* Erowid */
+// #{$gwern-links-parent-class} a[href*='erowid.org']::after {
+//     background-image: url(#{$gwern-links-icons-path}/erowid.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='erowid.org']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='erowid.org']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 1em;
+//     width: 1em;
+//     margin: 0 0 0 2px;
+//     opacity: 0.60;
+// }
+
+/* Wikipedia */
+#{$gwern-links-parent-class} a[href*="wikipedia.org"]::after,
+#{$gwern-links-parent-class} a[href*="wikimedia.org"]::after,
+#{$gwern-links-parent-class} a[href*="wikimediafoundation.org"]::after,
+#{$gwern-links-parent-class} a[href*="wikisource.org"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    /* WP is used on almost every page, so make an exception and inline it */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48cGF0aCBkPSJNNjQwIDUxLjJsLS4zIDEyLjJjLTI4LjEuOC00NSAxNS44LTU1LjggNDAuMy0yNSA1Ny44LTEwMy4zIDI0MC0xNTUuMyAzNTguNkg0MTVsLTgxLjktMTkzLjFjLTMyLjUgNjMuNi02OC4zIDEzMC05OS4yIDE5My4xLS4zLjMtMTUgMC0xNS0uM0MxNzIgMzUyLjMgMTIyLjggMjQzLjQgNzUuOCAxMzMuNCA2NC40IDEwNi43IDI2LjQgNjMuNC4yIDYzLjdjMC0zLjEtLjMtMTAtLjMtMTQuMmgxNjEuOXYxMy45Yy0xOS4yIDEuMS01Mi44IDEzLjMtNDMuMyAzNC4yIDIxLjkgNDkuNyAxMDMuNiAyNDAuMyAxMjUuNiAyODguNiAxNS0yOS43IDU3LjgtMTA5LjIgNzUuMy0xNDIuOC0xMy45LTI4LjMtNTguNi0xMzMuOS03Mi44LTE2MC05LjctMTcuOC0zNi4xLTE5LjQtNTUuOC0xOS43VjQ5LjhsMTQyLjUuM3YxMy4xYy0xOS40LjYtMzguMSA3LjgtMjkuNCAyNi4xIDE4LjkgNDAgMzAuNiA2OC4xIDQ4LjEgMTA0LjcgNS42LTEwLjggMzQuNy02OS40IDQ4LjEtMTAwLjggOC45LTIwLjYtMy45LTI4LjYtMzguNi0yOS40LjMtMy42IDAtMTAuMy4zLTEzLjYgNDQuNC0uMyAxMTEuMS0uMyAxMjMuMS0uNnYxMy42Yy0yMi41LjgtNDUuOCAxMi44LTU4LjEgMzEuN2wtNTkuMiAxMjIuOGM2LjQgMTYuMSA2My4zIDE0Mi44IDY5LjIgMTU2LjdMNTU5LjIgOTEuOGMtOC42LTIzLjEtMzYuNC0yOC4xLTQ3LjItMjguM1Y0OS42bDEyNy44IDEuMS4yLjV6Ii8+PC9zdmc+");
+    background-repeat: no-repeat;
+    background-size: 0.75em;
+    background-position: right 1px top;
+    width: 0.825em;
+    height: 0.825em;
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0.825;
+}
+#{$gwern-links-parent-class} a[href*="wikipedia.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="wikimedia.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="wikimediafoundation.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="wikisource.org"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.825;
+}
+
+/* YouTube links */
+/* https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg */
+#{$gwern-links-parent-class} a[href*="youtube.com"]::after,
+#{$gwern-links-parent-class} a[href*="youtu.be"]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/youtube.svg");
+}
+/* Bandcamp/SoundCloud links */
+#{$gwern-links-parent-class} a[href*="soundcloud.com"]::after,
+#{$gwern-links-parent-class} a[href*="bandcamp.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/video.svg");
+}
+#{$gwern-links-parent-class} a[href*="youtube.com"]:hover::after,
+#{$gwern-links-parent-class} a[href*="youtu.be"]:hover::after,
+#{$gwern-links-parent-class} a[href*="soundcloud.com"]:hover::after,
+#{$gwern-links-parent-class} a[href*="bandcamp.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="youtube.com"]::after,
+#{$gwern-links-parent-class} a[href*="youtu.be"]::after,
+#{$gwern-links-parent-class} a[href*="soundcloud.com"]::after,
+#{$gwern-links-parent-class} a[href*="bandcamp.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 1em;
+    width: 1em;
+    margin: 0 0 0 3px;
+    opacity: 0.6;
+}
+
+/* The *Exchange/*Overflow family of websites: */
+#{$gwern-links-parent-class} a[href*="overflow.net"]::after,
+#{$gwern-links-parent-class} a[href*="overflow.com"]::after,
+#{$gwern-links-parent-class} a[href*="stackexchange.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    background-image: url(#{$gwern-links-icons-path}/stackexchange.svg);
+    background-repeat: no-repeat;
+    background-size: 0.75em;
+    background-position: right 1px top;
+    width: 0.85em;
+    height: 0.85em;
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0.85;
+}
+#{$gwern-links-parent-class} a[href*="overflow.net"]:hover::after,
+#{$gwern-links-parent-class} a[href*="overflow.com"]::after,
+#{$gwern-links-parent-class} a[href*="stackexchange.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.6;
+}
+
+/* Amazon */
+#{$gwern-links-parent-class} a[href*="amazon.com"]::after,
+#{$gwern-links-parent-class} a[href*="amazon.es"]::after,
+#{$gwern-links-parent-class} a[href*="amazon.co."]::after,
+#{$gwern-links-parent-class} a[href*="amzn.to"]::after,
+#{$gwern-links-parent-class} a[href*="a.co"]::after,
+#{$gwern-links-parent-class} a[href*="amzn.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    background-image: url(#{$gwern-links-icons-path}/amazon.svg);
+    background-repeat: no-repeat;
+    background-size: 0.75em;
+    background-position: right 1px top;
+    width: 1em;
+    height: 0.8em;
+    display: inline-block;
+    vertical-align: baseline;
+    opacity: 0.81;
+}
+#{$gwern-links-parent-class} a[href*="amazon.com"]:hover::after,
+#{$gwern-links-parent-class} a[href*="amazon.es"]:hover::after,
+#{$gwern-links-parent-class} a[href*="amazon.co."]:hover::after,
+#{$gwern-links-parent-class} a[href*="amzn.to"]:hover::after,
+#{$gwern-links-parent-class} a[href*="a.co"]:hover::after,
+#{$gwern-links-parent-class} a[href*="amzn.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: 0.6;
+}
+
+/* Github; I exclude github.io because that's blogs */
+#{$gwern-links-parent-class} a[href*="github.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/github.svg);
+}
+#{$gwern-links-parent-class} a[href*="github.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="github.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 3px;
+    opacity: 0.6;
+}
+
+/* Dropbox: old file-host, deprecated since they've started killing inactive accounts */
+#{$gwern-links-parent-class} a[href*="dropbox.com"]::after,
+#{$gwern-links-parent-class} a[href*="dropboxusercontent.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/dropbox.svg);
+}
+#{$gwern-links-parent-class} a[href*="dropbox.com"]:hover::after,
+#{$gwern-links-parent-class} a[href*="dropboxusercontent.com"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="dropbox.com"]::after,
+#{$gwern-links-parent-class} a[href*="dropboxusercontent.com"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 3px;
+    opacity: 0.5;
+}
+
+/* MegaUpload/Mega: filesharing (used for big files) */
+// #{$gwern-links-parent-class} a[href*='mega.nz']::after {
+//     background-image: url(#{$gwern-links-icons-path}/mega.svg);
+// }
+// #{$gwern-links-parent-class} a[href*='mega.nz']:hover::after {
+//     opacity: $gwern-links-link-hover-opacity;
+// }
+// #{$gwern-links-parent-class} a[href*='mega.nz']::after {
+//     content: "";
+//     display: inline-block;
+//     position: static;
+//     background-repeat: no-repeat;
+//     background-position: bottom center;
+//     height: 0.75em;
+//     width: 0.75em;
+//     margin: 0 0 2px 3px;
+//     opacity: 0.60;
+// }
+
+#{$gwern-links-parent-class} a[href*="archive.org"]::after,
+#{$gwern-links-parent-class} a[href*="archive-it.org"]::after,
+#{$gwern-links-parent-class} a[href*="archiveteam.org"]::after,
+#{$gwern-links-parent-class} a[href*="waybackmachine.org"]::after {
+    @include invert-when-dark;
+
+    background-image: url(#{$gwern-links-icons-path}/internetarchive.svg);
+}
+#{$gwern-links-parent-class} a[href*="archive.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="archive-it.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="archiveteam.org"]:hover::after,
+#{$gwern-links-parent-class} a[href*="waybackmachine.org"]:hover::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+#{$gwern-links-parent-class} a[href*="archive.org"]::after,
+#{$gwern-links-parent-class} a[href*="archive-it.org"]::after,
+#{$gwern-links-parent-class} a[href*="archiveteam.org"]::after,
+#{$gwern-links-parent-class} a[href*="waybackmachine.org"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 2px 3px;
+    opacity: 0.6;
+}
+
+/*=--------------------------------------------=*/
+/*= Icons for certain link types: by file type =*/
+/*=--------------------------------------------=*/
+/*  Note: some file extension link types have are selected additionally by
         origin on gwern.net, because they frequently appear at the ends of ordinary
         web page URLs.
         */
-    
-    /*  PDFs */
-    #{$gwern-links-parent-class} a[href$='.pdf' i]::after,
+
+/*  PDFs */
+#{$gwern-links-parent-class} a[href$='.pdf' i]::after,
     #{$gwern-links-parent-class} a[href$='/pdf' i]::after,
     #{$gwern-links-parent-class} a[href$='type=pdf' i]::after,
     #{$gwern-links-parent-class} a[href*='.pdf#' i]::after,
@@ -1035,18 +1199,20 @@ $gwern-links-icons-path: '/folio/icons' !default;
     #{$gwern-links-parent-class} a[href$='.mdb' i]::after,
     #{$gwern-links-parent-class} a[href$='.mht' i]::after,
     #{$gwern-links-parent-class} a[href$='.ttf' i]::after {
-        content: "";
-        display: inline-block;
-        position: static;
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        height: 0.75em;
-        width: 0.75em;
-        margin: 0 0 0 2px;
-        opacity: 0.55;
-    }
-    /*  PDFs */
-    #{$gwern-links-parent-class} a[href$='.pdf' i]:hover::after,
+    @include invert-when-dark;
+
+    content: "";
+    display: inline-block;
+    position: static;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    height: 0.75em;
+    width: 0.75em;
+    margin: 0 0 0 2px;
+    opacity: 0.55;
+}
+/*  PDFs */
+#{$gwern-links-parent-class} a[href$='.pdf' i]:hover::after,
     #{$gwern-links-parent-class} a[href$='/pdf' i]:hover::after,
     #{$gwern-links-parent-class} a[href$='type=pdf' i]:hover::after,
     #{$gwern-links-parent-class} a[href*='.pdf#' i]:hover::after,
@@ -1110,134 +1276,160 @@ $gwern-links-icons-path: '/folio/icons' !default;
     #{$gwern-links-parent-class} a[href$='.mdb' i]:hover::after,
     #{$gwern-links-parent-class} a[href$='.mht' i]:hover::after,
     #{$gwern-links-parent-class} a[href$='.ttf' i]:hover::after {
-        opacity: $gwern-links-link-hover-opacity;
-    }
-    
-    /*  PDFs.
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-hover-opacity;
+}
+
+/*  PDFs.
         */
-    #{$gwern-links-parent-class} a[href$='.pdf' i]::after,
-    #{$gwern-links-parent-class} a[href$='/pdf' i]::after,
-    #{$gwern-links-parent-class} a[href$='type=pdf' i]::after,
-    #{$gwern-links-parent-class} a[href*='.pdf#' i]::after,
-    #{$gwern-links-parent-class} a[href$='.epub' i]::after,
-    #{$gwern-links-parent-class} a[href*='pdfs.semanticscholar.org' i]::after,
-    #{$gwern-links-parent-class} a[href*='citeseerx.ist.psu.edu' i]::after,
-    #{$gwern-links-parent-class} a[href*='eprint.iacr.org' i]::after {
-        opacity: $gwern-links-link-opacity;
-        /* PDFs are linked on every page, so make another exception */
-        background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBkPSJNMTgxLjkgMjU2LjFjLTUtMTYtNC45LTQ2LjktMi00Ni45IDguNCAwIDcuNiAzNi45IDIgNDYuOXptLTEuNyA0Ny4yYy03LjcgMjAuMi0xNy4zIDQzLjMtMjguNCA2Mi43IDE4LjMtNyAzOS0xNy4yIDYyLjktMjEuOS0xMi43LTkuNi0yNC45LTIzLjQtMzQuNS00MC44ek04Ni4xIDQyOC4xYzAgLjggMTMuMi01LjQgMzQuOS00MC4yLTYuNyA2LjMtMjkuMSAyNC41LTM0LjkgNDAuMnpNMjQ4IDE2MGgxMzZ2MzI4YzAgMTMuMy0xMC43IDI0LTI0IDI0SDI0Yy0xMy4zIDAtMjQtMTAuNy0yNC0yNFYyNEMwIDEwLjcgMTAuNyAwIDI0IDBoMjAwdjEzNmMwIDEzLjIgMTAuOCAyNCAyNCAyNHptLTggMTcxLjhjLTIwLTEyLjItMzMuMy0yOS00Mi43LTUzLjggNC41LTE4LjUgMTEuNi00Ni42IDYuMi02NC4yLTQuNy0yOS40LTQyLjQtMjYuNS00Ny44LTYuOC01IDE4LjMtLjQgNDQuMSA4LjEgNzctMTEuNiAyNy42LTI4LjcgNjQuNi00MC44IDg1LjgtLjEgMC0uMS4xLS4yLjEtMjcuMSAxMy45LTczLjYgNDQuNS01NC41IDY4IDUuNiA2LjkgMTYgMTAgMjEuNSAxMCAxNy45IDAgMzUuNy0xOCA2MS4xLTYxLjggMjUuOC04LjUgNTQuMS0xOS4xIDc5LTIzLjIgMjEuNyAxMS44IDQ3LjEgMTkuNSA2NCAxOS41IDI5LjIgMCAzMS4yLTMyIDE5LjctNDMuNC0xMy45LTEzLjYtNTQuMy05LjctNzMuNi03LjJ6TTM3NyAxMDVMMjc5IDdjLTQuNS00LjUtMTAuNi03LTE3LTdoLTZ2MTI4aDEyOHYtNi4xYzAtNi4zLTIuNS0xMi40LTctMTYuOXptLTc0LjEgMjU1LjNjNC4xLTIuNy0yLjUtMTEuOS00Mi44LTkgMzcuMSAxNS44IDQyLjggOSA0Mi44IDl6Ii8+PC9zdmc+');
-    }
-    
-    /*  Textfiles.
+#{$gwern-links-parent-class} a[href$=".pdf" i]::after,
+#{$gwern-links-parent-class} a[href$="/pdf" i]::after,
+#{$gwern-links-parent-class} a[href$="type=pdf" i]::after,
+#{$gwern-links-parent-class} a[href*=".pdf#" i]::after,
+#{$gwern-links-parent-class} a[href$=".epub" i]::after,
+#{$gwern-links-parent-class} a[href*="pdfs.semanticscholar.org" i]::after,
+#{$gwern-links-parent-class} a[href*="citeseerx.ist.psu.edu" i]::after,
+#{$gwern-links-parent-class} a[href*="eprint.iacr.org" i]::after {
+    @include invert-when-dark;
+
+    opacity: $gwern-links-link-opacity;
+    /* PDFs are linked on every page, so make another exception */
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzODQgNTEyIj48cGF0aCBkPSJNMTgxLjkgMjU2LjFjLTUtMTYtNC45LTQ2LjktMi00Ni45IDguNCAwIDcuNiAzNi45IDIgNDYuOXptLTEuNyA0Ny4yYy03LjcgMjAuMi0xNy4zIDQzLjMtMjguNCA2Mi43IDE4LjMtNyAzOS0xNy4yIDYyLjktMjEuOS0xMi43LTkuNi0yNC45LTIzLjQtMzQuNS00MC44ek04Ni4xIDQyOC4xYzAgLjggMTMuMi01LjQgMzQuOS00MC4yLTYuNyA2LjMtMjkuMSAyNC41LTM0LjkgNDAuMnpNMjQ4IDE2MGgxMzZ2MzI4YzAgMTMuMy0xMC43IDI0LTI0IDI0SDI0Yy0xMy4zIDAtMjQtMTAuNy0yNC0yNFYyNEMwIDEwLjcgMTAuNyAwIDI0IDBoMjAwdjEzNmMwIDEzLjIgMTAuOCAyNCAyNCAyNHptLTggMTcxLjhjLTIwLTEyLjItMzMuMy0yOS00Mi43LTUzLjggNC41LTE4LjUgMTEuNi00Ni42IDYuMi02NC4yLTQuNy0yOS40LTQyLjQtMjYuNS00Ny44LTYuOC01IDE4LjMtLjQgNDQuMSA4LjEgNzctMTEuNiAyNy42LTI4LjcgNjQuNi00MC44IDg1LjgtLjEgMC0uMS4xLS4yLjEtMjcuMSAxMy45LTczLjYgNDQuNS01NC41IDY4IDUuNiA2LjkgMTYgMTAgMjEuNSAxMCAxNy45IDAgMzUuNy0xOCA2MS4xLTYxLjggMjUuOC04LjUgNTQuMS0xOS4xIDc5LTIzLjIgMjEuNyAxMS44IDQ3LjEgMTkuNSA2NCAxOS41IDI5LjIgMCAzMS4yLTMyIDE5LjctNDMuNC0xMy45LTEzLjYtNTQuMy05LjctNzMuNi03LjJ6TTM3NyAxMDVMMjc5IDdjLTQuNS00LjUtMTAuNi03LTE3LTdoLTZ2MTI4aDEyOHYtNi4xYzAtNi4zLTIuNS0xMi40LTctMTYuOXptLTc0LjEgMjU1LjNjNC4xLTIuNy0yLjUtMTEuOS00Mi44LTkgMzcuMSAxNS44IDQyLjggOSA0Mi44IDl6Ii8+PC9zdmc+");
+}
+
+/*  Textfiles.
         */
-    #{$gwern-links-parent-class} a[href$='.opml' i]::after,
-    #{$gwern-links-parent-class} a[href$='.page' i]::after,
-    #{$gwern-links-parent-class} a[href$='.txt' i]::after,
-    #{$gwern-links-parent-class} a[href$='.xml' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/txt.svg');
-    }
-    
-    /*  Code, scripts, etc.
+#{$gwern-links-parent-class} a[href$=".opml" i]::after,
+#{$gwern-links-parent-class} a[href$=".page" i]::after,
+#{$gwern-links-parent-class} a[href$=".txt" i]::after,
+#{$gwern-links-parent-class} a[href$=".xml" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/txt.svg");
+}
+
+/*  Code, scripts, etc.
         */
-    #{$gwern-links-parent-class} a[href$='.css' i]::after,
-    #{$gwern-links-parent-class} a[href$='.hs' i]::after,
-    #{$gwern-links-parent-class} a[href$='.js' i]::after,
-    #{$gwern-links-parent-class} a[href$='.json' i]::after,
-    #{$gwern-links-parent-class} a[href$='.R' i]::after,
-    #{$gwern-links-parent-class} a[href$='.diff' i]::after,
-    #{$gwern-links-parent-class} a[href$='.patch' i]::after,
-    #{$gwern-links-parent-class} a[href^="."][href$='.php' i]::after,
-    #{$gwern-links-parent-class} a[href$='.sh' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/code.svg');
-    }
-    
-    /*  Word (& compatible) documents.
+#{$gwern-links-parent-class} a[href$=".css" i]::after,
+#{$gwern-links-parent-class} a[href$=".hs" i]::after,
+#{$gwern-links-parent-class} a[href$=".js" i]::after,
+#{$gwern-links-parent-class} a[href$=".json" i]::after,
+#{$gwern-links-parent-class} a[href$=".R" i]::after,
+#{$gwern-links-parent-class} a[href$=".diff" i]::after,
+#{$gwern-links-parent-class} a[href$=".patch" i]::after,
+#{$gwern-links-parent-class} a[href^="."][href$=".php" i]::after,
+#{$gwern-links-parent-class} a[href$=".sh" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/code.svg");
+}
+
+/*  Word (& compatible) documents.
         */
-    #{$gwern-links-parent-class} a[href$='.doc' i]::after,
-    #{$gwern-links-parent-class} a[href$='.docx' i]::after,
-    #{$gwern-links-parent-class} a[href*='docs.google.com' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/worddoc.svg');
-    }
-    
-    /*  Excel (& compatible) documents.
+#{$gwern-links-parent-class} a[href$=".doc" i]::after,
+#{$gwern-links-parent-class} a[href$=".docx" i]::after,
+#{$gwern-links-parent-class} a[href*="docs.google.com" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/worddoc.svg");
+}
+
+/*  Excel (& compatible) documents.
         */
-    #{$gwern-links-parent-class} a[href$='.xls' i]::after,
-    #{$gwern-links-parent-class} a[href$='.ods' i]::after,
-    #{$gwern-links-parent-class} a[href$='.xlsx' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/spreadsheet.svg');
-    }
-    
-    /*  CSV files.
+#{$gwern-links-parent-class} a[href$=".xls" i]::after,
+#{$gwern-links-parent-class} a[href$=".ods" i]::after,
+#{$gwern-links-parent-class} a[href$=".xlsx" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/spreadsheet.svg");
+}
+
+/*  CSV files.
         */
-    #{$gwern-links-parent-class} a[href$='.csv' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/csv.svg');
-    }
-    
-    /*  Images.
+#{$gwern-links-parent-class} a[href$=".csv" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/csv.svg");
+}
+
+/*  Images.
         */
-    #{$gwern-links-parent-class} a[href$='.gif' i]::after,
-    #{$gwern-links-parent-class} a[href$='.bmp' i]::after,
-    #{$gwern-links-parent-class} a[href$='.ico' i]::after,
-    #{$gwern-links-parent-class} a[href$='.jpg' i]::after,
-    #{$gwern-links-parent-class} a[href$='.jpeg' i]::after,
-    #{$gwern-links-parent-class} a[href$='.png' i]::after,
-    #{$gwern-links-parent-class} a[href$='.svg' i]::after,
-    #{$gwern-links-parent-class} a[href$='.xcf' i]::after,
-    #{$gwern-links-parent-class} a[href*='imgur.com']::after {
-        background-image: url('#{$gwern-links-icons-path}/image.svg');
-    }
-    
-    /*  Audio files.
+#{$gwern-links-parent-class} a[href$=".gif" i]::after,
+#{$gwern-links-parent-class} a[href$=".bmp" i]::after,
+#{$gwern-links-parent-class} a[href$=".ico" i]::after,
+#{$gwern-links-parent-class} a[href$=".jpg" i]::after,
+#{$gwern-links-parent-class} a[href$=".jpeg" i]::after,
+#{$gwern-links-parent-class} a[href$=".png" i]::after,
+#{$gwern-links-parent-class} a[href$=".svg" i]::after,
+#{$gwern-links-parent-class} a[href$=".xcf" i]::after,
+#{$gwern-links-parent-class} a[href*="imgur.com"]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/image.svg");
+}
+
+/*  Audio files.
         */
-    #{$gwern-links-parent-class} a[href$='.mp3' i]::after,
-    #{$gwern-links-parent-class} a[href$='.wav' i]::after,
-    #{$gwern-links-parent-class} a[href$='.flac' i]::after,
-    #{$gwern-links-parent-class} a[href$='.rm' i]::after,
-    #{$gwern-links-parent-class} a[href$='.ogg' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/audio.svg');
-    }
-    
-    /*  Video files.
+#{$gwern-links-parent-class} a[href$=".mp3" i]::after,
+#{$gwern-links-parent-class} a[href$=".wav" i]::after,
+#{$gwern-links-parent-class} a[href$=".flac" i]::after,
+#{$gwern-links-parent-class} a[href$=".rm" i]::after,
+#{$gwern-links-parent-class} a[href$=".ogg" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/audio.svg");
+}
+
+/*  Video files.
      */
-    #{$gwern-links-parent-class} a[href$='.swf' i]::after,
-    #{$gwern-links-parent-class} a[href$='.avi' i]::after,
-    #{$gwern-links-parent-class} a[href$='.mp4' i]::after,
-    #{$gwern-links-parent-class} a[href$='.webm' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/video.svg');
-    }
-    
-    /*  Archive files.
+#{$gwern-links-parent-class} a[href$=".swf" i]::after,
+#{$gwern-links-parent-class} a[href$=".avi" i]::after,
+#{$gwern-links-parent-class} a[href$=".mp4" i]::after,
+#{$gwern-links-parent-class} a[href$=".webm" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/video.svg");
+}
+
+/*  Archive files.
         */
-    #{$gwern-links-parent-class} a[href$='.tar' i]::after,
-    #{$gwern-links-parent-class} a[href$='.zip' i]::after,
-    #{$gwern-links-parent-class} a[href$='.zip' i]::after,
-    #{$gwern-links-parent-class} a[href$='.img' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/archive.svg');
-    }
-    
-    /*  Miscellaneous files (for which there is no specific icon).
+#{$gwern-links-parent-class} a[href$=".tar" i]::after,
+#{$gwern-links-parent-class} a[href$=".zip" i]::after,
+#{$gwern-links-parent-class} a[href$=".zip" i]::after,
+#{$gwern-links-parent-class} a[href$=".img" i]::after {
+    @include invert-when-dark;
+
+    background-image: url("#{$gwern-links-icons-path}/archive.svg");
+}
+
+/*  Miscellaneous files (for which there is no specific icon).
         */
-    #{$gwern-links-parent-class} a[href$='.ebt' i]::after,
-    #{$gwern-links-parent-class} a[href$='.mdb' i]::after,
-    #{$gwern-links-parent-class} a[href$='.mht' i]::after,
-    #{$gwern-links-parent-class} a[href$='.ttf' i]::after {
-        background-image: url('#{$gwern-links-icons-path}/misc.svg');
-    }
-    
-    /*=-----------------------------------------=*/
-    /*= Override opacity in footnotes           =*/
-    /*=-----------------------------------------=*/
+#{$gwern-links-parent-class} a[href$=".ebt" i]::after,
+#{$gwern-links-parent-class} a[href$=".mdb" i]::after,
+#{$gwern-links-parent-class} a[href$=".mht" i]::after,
+#{$gwern-links-parent-class} a[href$=".ttf" i]::after {
+    @include invert-when-dark;
 
-    .footnotes a::after,
-    .footnotes a:hover::after {
-        opacity: 0.5 !important;
-    }
+    background-image: url("#{$gwern-links-icons-path}/misc.svg");
+}
 
-    /*=-----------------------------------------=*/
-    /*= Remove link icons from image links      =*/
-    /*=-----------------------------------------=*/
+/*=-----------------------------------------=*/
+/*= Override opacity in footnotes           =*/
+/*=-----------------------------------------=*/
 
-    #{$gwern-links-parent-class} a[style*='background']::after {
-        content: '';
-        background-image: none;
-    }
+.footnotes a::after,
+.footnotes a:hover::after {
+    opacity: 0.5 !important;
+}
+
+/*=-----------------------------------------=*/
+/*= Remove link icons from image links      =*/
+/*=-----------------------------------------=*/
+
+#{$gwern-links-parent-class} a[style*="background"]::after {
+    @include invert-when-dark;
+
+    content: "";
+    background-image: none;
+}

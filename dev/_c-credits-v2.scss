@@ -8,7 +8,7 @@
 $credits-tag: '.c-credits-v2' !default;
 
 #{$credits-tag} {
-  font-size: var(--font-s);
+  @include font-sans-scaled(var(--font-s));
   color: var(--color-mid);
 }
 
@@ -17,6 +17,6 @@ $credits-tag: '.c-credits-v2' !default;
 }
 
 #{$credits-tag} a:hover {
-  color: var(--color-link);
-  text-decoration-color: var(--color-link);
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
 }

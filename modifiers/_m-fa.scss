@@ -2,15 +2,25 @@
 $m-fa-link-color: $link-color !default;
 $m-fa-link-color-hover: $link-color-hover !default;
 
-.m-fa {
+$m-fa-icon-padding: 5px !default;
+
+.c-social__wrapper.c-social__wrapper--left,
+article.item-v3.center>header>.c-social__wrapper.c-social__wrapper--left {
+    margin-left: - $m-fa-icon-padding;
+}
+
+article.item-v3.center>header>.c-social__wrapper.c-social__wrapper--left {
+    margin-block-start: 1rem;
+}
+
+.c-social.m-fa {
     font-size: 18px;
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
 }
 
 // Font Awesome modifiers
 .m-fa .fa--social {
-    margin: 0 6px 0 0;
+    padding: 0 $m-fa-icon-padding;
 }
 
 .fa-facebook.fa--social {

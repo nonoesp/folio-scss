@@ -9,17 +9,20 @@ $subscribe-tag: '.c-subscribe-v2' !default;
 
 #{$subscribe-tag}__detail-text,
 #{$subscribe-tag}__text {
-  font-size: var(--font-xs);
   color: var(--color-mid);
 }
 
+#{$subscribe-tag}__detail-text {
+  @include font-sans-scaled(var(--font-s));
+}
+
 #{$subscribe-tag}__text {
-  font-size: var(--font-default);
+  @include font-sans-scaled(var(--font-default));
   margin-bottom: 0.5rem;
 }
 
 #{$subscribe-tag}__text.flash {
-  font-size: var(--font-default);
+  @include font-sans-scaled(var(--font-default));
   font-weight: 600;
   color: var(--color-base);
 }
@@ -43,7 +46,7 @@ $subscribe-tag: '.c-subscribe-v2' !default;
 
 #{$subscribe-tag} input[type=email],
 #{$subscribe-tag} input[type=submit] {
-  font-size: var(--font-s);
+  @include font-sans-scaled(var(--font-s));
   background-color: transparent;
   border-color: var(--color-dim);
   color: var(--color-base);
@@ -54,11 +57,15 @@ $subscribe-tag: '.c-subscribe-v2' !default;
   opacity: 0.6;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-  #{$subscribe-tag} input[type=email],
-  #{$subscribe-tag} input[type=submit] {
-    color: var(--color-mid);
+@if $use-dark-mode == true {
+
+  @media screen and (prefers-color-scheme: dark) {
+    #{$subscribe-tag} input[type=email],
+    #{$subscribe-tag} input[type=submit] {
+      color: var(--color-mid);
+    }
   }
+
 }
 
 #{$subscribe-tag}__text.flash::after {
@@ -66,7 +73,7 @@ $subscribe-tag: '.c-subscribe-v2' !default;
 }
 
 #{$subscribe-tag}__detail-text {
-  font-size: var(--font-xxs);
+  @include font-sans-scaled(var(--font-xs));
   color: var(--color-mid);
 }
 

@@ -1,12 +1,5 @@
-$selection-background-color: $color-grey !default;
-$selection-color: $color-white !default;
 
 ::selection {
-  color: $selection-color;
-  background: $selection-background-color; /* WebKit/Blink Browsers */
-}
-
-::-moz-selection {
-  color: $selection-color;
-  background: $selection-background-color; /* Gecko Browsers */
+  color: var(--color-selection-text);
+  background: var(--color-selection-bg);
 }

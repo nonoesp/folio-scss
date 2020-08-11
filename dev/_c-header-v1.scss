@@ -1,53 +1,74 @@
-// ██╗  ██╗    ███████╗     █████╗     ██████╗     ███████╗    ██████╗ 
+// ██╗  ██╗    ███████╗     █████╗     ██████╗     ███████╗    ██████╗
 // ██║  ██║    ██╔════╝    ██╔══██╗    ██╔══██╗    ██╔════╝    ██╔══██╗
 // ███████║    █████╗      ███████║    ██║  ██║    █████╗      ██████╔╝
 // ██╔══██║    ██╔══╝      ██╔══██║    ██║  ██║    ██╔══╝      ██╔══██╗
 // ██║  ██║    ███████╗    ██║  ██║    ██████╔╝    ███████╗    ██║  ██║
 // ╚═╝  ╚═╝    ╚══════╝    ╚═╝  ╚═╝    ╚═════╝     ╚══════╝    ╚═╝  ╚═╝
 
-$header-tag: 'header.header-v1' !default;
+$header-tag: "header.header-v1" !default;
+$header-link-style: mono !default; // mono, accent
 
-#{$header-tag} > nav[role=navigation] {
+#{$header-tag} > nav[role="navigation"] {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: space-between;
   padding: var(--spacing-m) 0;
   border-bottom: 1px solid var(--color-dim);
+
+  @media all and #{$media-portable} {
+    & {
+      flex-direction: column;
+    }
+  }
 }
 
-#{$header-tag} > nav[role=navigation] .logo svg {
+#{$header-tag} > nav[role="navigation"] .logo {
+  @media all and #{$media-portable} {
+    & {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+#{$header-tag} > nav[role="navigation"] .logo svg {
   display: block;
   width: 2.7em;
   fill: var(--color-base);
 }
 
-#{$header-tag} > nav[role=navigation] .logo:hover {
-  transform: scale(1.03);
+#{$header-tag} > nav[role="navigation"] a.link:hover,
+#{$header-tag} > nav[role="navigation"] .logo:hover svg {
+  @if $header-link-style == accent {
+    fill: var(--color-accent);
+    color: var(--color-accent);
+  } @else if $header-link-style == mono {
+    fill: var(--color-mid);
+    color: var(--color-mid);
+  }
 }
 
-#{$header-tag} > nav[role=navigation] a {
+#{$header-tag} > nav[role="navigation"] a {
   text-decoration: none;
   display: inline-block;
 }
 
-#{$header-tag} > nav[role=navigation] a.link {
+#{$header-tag} > nav[role="navigation"] a.link {
   color: var(--color-base);
+  @include font-sans-scaled(var(--font-default));
 }
 
-#{$header-tag} > nav[role=navigation] a.link:hover {
-  color: var(--color-mid);
-}
-
-#{$header-tag}:not(.flip) > nav[role=navigation] a.link:not(:last-of-type) {
+#{$header-tag}:not(.flip) > nav[role="navigation"] a.link:not(:last-of-type) {
   margin-right: 0.9rem;
 }
 
 // Flip modifier
 
-#{$header-tag}.flip > nav[role=navigation] {
-  flex-direction: row;
-}
+@media all and #{$media-desk} {
+  #{$header-tag}.flip > nav[role="navigation"] {
+    flex-direction: row-reverse;
+  }
 
-#{$header-tag}.flip > nav[role=navigation] a.link:not(:first-of-type) {
-  margin-left: 0.9rem;
+  #{$header-tag}.flip > nav[role="navigation"] a.link:not(:first-of-type) {
+    margin-left: 0.9rem;
+  }
 }

@@ -47,12 +47,12 @@ $o-notification-padding: 0.2rem 0 !default;
 
 #{$o-notification-tag}--transparent-dark {
     background-color: transparent;
-    color: #222;
+    color: var(--color-base);
 }
 
 #{$o-notification-tag}--gray {
   background-color: #fafafa;
-  color: #222;
+  color: var(--color-base);
 }
 
 #{$o-notification-tag}--light {
@@ -63,6 +63,6 @@ $o-notification-padding: 0.2rem 0 !default;
 }
 
 #{$o-notification-tag}--dark {
-    background-color: #222;
+    background-color: var(--color-base);
     color: #fafafa;
 }

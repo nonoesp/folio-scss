@@ -22,6 +22,16 @@
     color: var(--color-base);
 }
 
+@if $use-dark-mode == true {
+
+    @media screen and (prefers-color-scheme: dark) {
+        .u-is-external-v2::after {
+            filter: invert(1);
+        }
+    }
+
+}
+
 .u-is-external--top-right::after {
     transform: translateX(13px) translateY(0px + 3px) rotate(-45deg);
 }

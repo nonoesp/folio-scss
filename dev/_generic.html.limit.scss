@@ -10,7 +10,7 @@ html.limit body {
     // margin: $html-limit-body-margin;
     padding: calc(0.5rem + 3vh) calc(0.5rem + 4vw);
 
-    @media all and (min-width: 1000px) {
+    @media all and #{$media-desk} {
         & {
             margin: 0 5rem;
         }

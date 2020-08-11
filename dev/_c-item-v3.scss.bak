@@ -1,0 +1,401 @@
+//  █████╗     ██████╗     ████████╗    ██╗     ██████╗    ██╗         ███████╗
+// ██╔══██╗    ██╔══██╗    ╚══██╔══╝    ██║    ██╔════╝    ██║         ██╔════╝
+// ███████║    ██████╔╝       ██║       ██║    ██║         ██║         █████╗  
+// ██╔══██║    ██╔══██╗       ██║       ██║    ██║         ██║         ██╔══╝  
+// ██║  ██║    ██║  ██║       ██║       ██║    ╚██████╗    ███████╗    ███████╗
+// ╚═╝  ╚═╝    ╚═╝  ╚═╝       ╚═╝       ╚═╝     ╚═════╝    ╚══════╝    ╚══════╝
+           
+$article-tag: 'article.item-v3' !default;
+
+#{$article-tag}>header {
+  display: flex;
+  flex-direction: column;
+  max-width: var(--spacing-max-width);
+  margin: 10vh 0;
+}
+
+#{$article-tag}>header.border-bottom {
+  border-bottom: 1px solid var(--color-dim);
+}
+
+#{$article-tag}>header h1 {
+  width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+#{$article-tag}>header p {
+  width: 100%;
+  margin: 0;
+  font-size: var(--font-default);
+  font-family: var(--font-serif);
+  color: var(--color-mid);
+  margin-block-start: 0.2rem;
+}
+
+#{$article-tag}>header.headline {
+  margin: 20vh auto;
+}
+
+#{$article-tag}>header.hero {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.045em;
+    text-align: center;
+
+    @media all and #{$media-lap} {
+      font-size: 2rem;
+    }
+    @media all and #{$media-palm} {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    font-family: var(--font-sans);
+    font-size: var(--font-default);
+    text-align: center;
+    margin-block-start: 1rem;
+    letter-spacing: -0.03em;
+  }
+}
+
+
+#{$article-tag}>header time {
+  width: 100%;
+  display: block;
+  line-height: 2;
+}
+
+/*Start: Crimson Text*/
+
+#{$article-tag}>.body>p
+#{$article-tag}>.body>ul,
+#{$article-tag}>.body>ol {
+  font-size: var(--font-size);//115%;
+  line-height: calc(1em + 6px);
+  letter-spacing: -0.008em;
+  margin-block-start: 1.2rem;
+  margin-block-end: 1.2rem;
+}
+
+// #{$article-tag}>.body>ul,
+// #{$article-tag}>.body>ol {
+  // margin-left: 0;
+  // padding-left: 30px;
+// }
+
+// #{$article-tag}>.body>ul {
+//   list-style-type: none;
+// }
+
+#{$article-tag}>.body>ol,
+#{$article-tag}>.body>*:not(.footnotes) ol {
+  // list-style-position: inside;
+  border: 1px solid #eaeaea;
+}
+
+// #{$article-tag}>.body ul>li:before {
+//   content: "– ";
+// }
+
+/*End: Crimson Text*/
+
+#{$article-tag}>.body>p,
+#{$article-tag}>.body>ul,
+#{$article-tag}>.body>ol {
+  font-family: var(--font-serif);
+}
+
+#{$article-tag}>.body>p code {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  padding: 0.15rem 0.25rem;
+  background-color: #fafafa;
+  border-radius: 3px;
+  color: #444;
+}
+
+#{$article-tag} .footnotes p {
+  margin: 0.7rem auto;
+}
+
+#{$article-tag} .footnotes ol {
+  margin-left: 0;
+}
+
+@media all and #{$media-portable} {
+  #{$article-tag} .footnotes ol {
+    margin-left: 1rem;
+  }
+}
+
+#{$article-tag} .footnotes p,
+#{$article-tag} .footnotes li {
+  font-size: var(--font-xs);
+  font-family: var(--font-sans);
+}
+
+#{$article-tag} .footnotes,
+#{$article-tag} .footnotes a {
+  color: var(--color-mid);
+}
+
+#{$article-tag} .footnotes a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
+}
+
+#{$article-tag} sup {
+  line-height: 0;
+}
+
+#{$article-tag} time {
+  color: var(--color-mid);
+  font-size: var(--font-default);
+}
+
+#{$article-tag} {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul,
+  blockquote,
+  hr,
+  time,
+  footer,
+  .limit {
+    display: block;
+    max-width: var(--spacing-max-width);
+  }
+}
+
+#{$article-tag}.center>header {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#{$article-tag}.center {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ol,
+  ul,
+  blockquote,
+  hr,
+  time,
+  footer,
+  .limit {
+    max-width: var(--spacing-max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+#{$article-tag} {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+  }
+}
+
+#{$article-tag} h1 {
+  font-size: 1.7rem;
+  line-height: 1.1;
+}
+
+#{$article-tag} h2 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+}
+
+#{$article-tag} h3 {
+  font-size: 0.95rem;
+}
+
+#{$article-tag} .body > img {
+  margin: 5rem auto;
+  display: block;
+  width: 100%;
+  // border: 1px solid #dadada;
+  max-width: calc(10rem + var(--spacing-max-width));
+  max-width: var(--spacing-max-width);
+}
+
+#{$article-tag} p.aside {
+  font-family: var(--font-sans);
+  font-size: var(--font-s);
+  color: var(--color-mid);
+  line-height: var(--font-line-height);
+
+//   @media screen and #{$media-desk} {
+//     & {
+//       float: right;
+//       width: calc(33.3333% - 1.5rem);
+//       margin-left: 3rem;
+//     }
+//   }
+}
+
+#{$article-tag} figure {
+  margin: 5rem 0;
+  max-width: none;
+  @media screen and #{$media-desk} {
+    & {
+      max-width: var(--spacing-max-width);
+    }
+  }  
+}
+
+#{$article-tag}.center>.body>figure {
+  margin: 5rem auto;
+}
+
+// Cover figure
+#{$article-tag} figure.cover {
+  max-width:50rem;
+  margin-top:0;
+}
+
+// Figure faded (to differentiate from background)
+#{$article-tag} figure.fade {
+  filter:brightness(0.97);
+}
+
+#{$article-tag} figure img {
+  width: 100%;
+}
+
+#{$article-tag} figure.full {
+  max-width: none;
+}
+
+#{$article-tag} figure.limit {
+  // max-width: none;
+  margin: var(--spacing-l) 0;
+  margin-left: 0;
+  width: clamp(10rem,100%,15rem);
+  // @media all and #{$media-desk} {
+    // max-width: var(--spacing-max-width);
+  // }
+}
+
+#{$article-tag} figure.limit img {
+  max-width: 15rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#{$article-tag} figure.limit figcaption {
+  max-width: 15rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .5rem;
+}
+
+#{$article-tag} figure.center figcaption,
+#{$article-tag} figure.center img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#{$article-tag} figure figcaption {
+  margin-top: .25rem;
+  font-size: var(--font-s);
+  color: var(--color-mid);
+}
+
+#{$article-tag} figure figcaption a {
+  color: var(--color-mid);
+}
+
+#{$article-tag} a {
+  color: var(--color-base);
+  text-decoration-color: var(--color-mid);
+  text-decoration-thickness: 0.1rem;
+}
+
+#{$article-tag} a:hover,
+#{$article-tag} figure figcaption a:hover {
+  color: var(--color-mid);
+  text-decoration-color: var(--color-mid);
+}
+
+#{$article-tag} sup a {
+  text-decoration: none;
+}
+
+#{$article-tag} blockquote {
+  quotes: none;
+  margin: 0;
+}
+
+#{$article-tag} blockquote sup a {
+  color: var(--color-mid);
+}
+
+#{$article-tag} blockquote a {
+  color: var(--color-mid);
+}
+
+#{$article-tag} blockquote p {
+  max-width: none;
+  border-left: 1px solid var(--color-dim);
+  padding-left: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: var(--font-default);
+  color: var(--color-mid);
+}
+
+#{$article-tag} hr {
+  margin: var(--spacing-xl) 0;
+  max-width: none;
+  border: none;
+
+  @media screen and #{$media-desk} {
+    & {
+      max-width:var(--spacing-max-width);
+    }
+  }  
+}
+
+#{$article-tag} hr::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  height: 0;
+  width: 10rem;
+  border-bottom: 1px solid var(--color-dim);
+}
+
+#{$article-tag}.center hr {
+  margin: var(--spacing-xl) auto;
+}
+
+// Modifier - big font
+
+#{$article-tag}.sans>.body>p {
+  font-family: var(--font-sans);
+}
+
+#{$article-tag}.zoom>header>h1 {
+  font-size: 2.5rem;
+}

@@ -13,7 +13,7 @@
 .c-item-v2 .sld-image:after {
     content: '';
     margin: 4em auto;
-    border: 1px solid $color-grey-light;
+    border: 1px solid var(--color-dim);
     display: block;
     width: 6em;
 }
@@ -23,7 +23,7 @@
 .c-item-v2 .sld-image a:visited {
     color: inherit;
     padding-bottom: 1px;
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.20);
+    box-shadow: inset 0 -1px 0 var(--color-dim);
 }
 
 // NEW: SECTION
@@ -48,17 +48,27 @@
 
 // section title
 .c-item-v2 .c-item-v2__section-title {
-    background-color: #fafafa;
+    background-color: var(--color-bg);
     @extend .c-item-v2__section;
     font-family: $type-font-family;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-dim);
     border-left: none;
     border-right: none;
+}
+
+//section white broken
+@if $use-dark-mode == true {
+    @media screen and (prefers-color-scheme: dark) {
+        .u-background-white-broken {
+            background-color: var(--color-bg);
+        }
+    }
 }
 
 //section black
 .c-item-v2__section-black,
 .c-item-v2__section .section-black {
+    @include invert-when-dark;
     @extend .c-item-v2__section;
     background-color: var(--color-base);
     color: var(--color-mid);
@@ -75,8 +85,8 @@
 .c-item-v2__section-black a,
 .c-item-v2__section-black a:hover,
 .c-item-v2__section-black a:visited {
-    color: white;
-    $_c: rgba(255, 255, 255, 0.5);
+    color: var(--color-bg);
+    $_c: var(--color-mid);
     box-shadow: inset 0 -1px 0 $_c;
 }
 
@@ -133,7 +143,7 @@
 .c-item-v2__section.foreword a:hover,
 .c-item-v2__section.foreword a:visited {
     color: var(--color-base);
-    box-shadow: inset 0 -1px 0 var(--color-mid);
+    box-shadow: inset 0 -1px 0 var(--color-base);
 }
 
 // .foreword.light
@@ -151,8 +161,8 @@
 .c-item-v2__section.foreword a,
 .c-item-v2__section.foreword a:hover,
 .c-item-v2__section.foreword a:visited {
-    color: #222;
-    $_c: rgba(0, 0, 0, 0.15);
+    color: var(--color-base);
+    $_c: var(--color-dim);
     box-shadow: inset 0 -1px 0 $_c;
 }
 
@@ -173,7 +183,7 @@
 .c-item-v2 p.aside {
     font-family: $type-font-sans;
     @include c-item-v2-font ($_c-item-v2-wrap-width, 0.6);
-    color: rgba(0, 0, 0, 0.55);
+    color: var(--color-mid);
 }
 
 .c-item-v2 span.aside,
@@ -249,6 +259,21 @@
     margin: 3em auto;
 }
 
+// pad transparent PNGs and add white background
+
+@if $use-dark-mode == true {
+
+    @media screen and (prefers-color-scheme: dark) {
+
+        .c-item-v2 .white-pad {
+            background-color: white;
+            padding: 15px;
+        }
+
+    }
+
+}
+
 // statement
 .c-item-v2 .statement {
     @include c-item-v2-font ($_c-item-v2-wrap-width, 2);
@@ -259,14 +284,14 @@
     transition: none;
     color: $c-item-v2-link-color;
     @if $c-item-v2-link-underline==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $color-red;
+        box-shadow: inset 0 -2px 0 var(--color-bg), inset 0 -3px 0 $color-red;
     }
 }
 
 .c-item-v2--link-red a:hover {
     color: $color-red;
     @if $c-item-v2-link-underline-hover==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $color-red;
+        box-shadow: inset 0 -2px 0 var(--color-bg), inset 0 -3px 0 $color-red;
     }
     @else {
         box-shadow: none;
@@ -278,14 +303,14 @@
     transition: none;
     color: $c-item-v2-link-color;
     @if $c-item-v2-link-underline==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $color-green;
+        box-shadow: inset 0 -2px 0 var(--color-bg), inset 0 -3px 0 $color-green;
     }
 }
 
 .c-item-v2--link-green a:hover {
     color: $color-green;
     @if $c-item-v2-link-underline-hover==true {
-        box-shadow: inset 0 -2px 0 white, inset 0 -3px 0 $color-green;
+        box-shadow: inset 0 -2px 0 var(--color-bg), inset 0 -3px 0 $color-green;
     }
     @else {
         box-shadow: none;
@@ -359,7 +384,7 @@
         color: var(--color-mid);
     }
     .c-item-v2__meta a:hover {
-        border-color: var(--color-base);
+        border-color: var(--color-mid);
         border-width: 0 0 1px 0;
         border-style: none none solid none;
     }
@@ -418,5 +443,44 @@
     }
     .c-item-v2__body pre>code {
         font-size: .7em;
+    }
+
+    @if $use-dark-mode == true {
+
+        @media screen and (prefers-color-scheme: dark) {
+
+            .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+                color: var(--color-mid);
+            }
+
+            .hljs-section, .hljs-title {
+                color: var(--color-mid);
+                font-weight: 700;
+            }
+
+            .hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-code {
+                color: var(--color-accent);
+            }
+
+            .hljs-link, .hljs-regexp, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-symbol, .hljs-template-variable, .hljs-variable {
+                color: var(--color-accent);
+            }
+
+            .hljs-literal {
+                color: var(--color-mid);
+                font-weight: 700;
+            }
+        }
+        
+    }
+
+}
+
+// suggestive drawing
+@if $use-dark-mode == true {
+    @media screen and (prefers-color-scheme: dark) {
+        .c-veil.c-veil--darkable {
+            background-color: #1c1c1c;
+        }
     }
 }

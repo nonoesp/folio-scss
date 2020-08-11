@@ -1,3 +1,5 @@
+@use "sass:color";
+
 // ██╗   ██╗     █████╗     ██████╗     ███████╗
 // ██║   ██║    ██╔══██╗    ██╔══██╗    ██╔════╝
 // ██║   ██║    ███████║    ██████╔╝    ███████╗
@@ -12,17 +14,18 @@ $font-feature-settings: '' !default;
 // Font
 $font-serif: "'Crimson Text', 'Source Serif Pro',Card,Times,Times New Roman,Charter,Palatino,Georgia,serif" !default;
 $font-sans: Inter,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji !default;
-$font-mono: Consolas,Liberation Mono,Menlo,monospace !default;
+$font-mono: "Consolas,'Liberation Mono',Menlo,monospace" !default;
 
 // Font size
 $font-default: 100% !default;
 $font-xxs: 0.6rem !default;
 $font-xs: 0.75rem !default;
-$font-s: 0.83rem !default;
+$font-s: 0.87rem !default;
 $font-l: 2.0rem !default;
 $font-xl: 2.5rem !default;
 $font-xxl: 3.25rem !default;
 $font-line-height: 1.4 !default;
+$font-sans-scale: 1.0 !default;
 
 // Spacing
 $spacing-s: 0.25rem !default;
@@ -31,18 +34,28 @@ $spacing-l: 2rem !default;
 $spacing-xl: 4rem !default;
 $spacing-max-width: 35rem !default;
 
-// Color
+// Color - light mode
 $color-base: #21272A !default;
 $color-mid: #878E97 !default;
 $color-dim: #DEE3E8 !default;
-$color-link: #444 !default;
+$color-accent: #444 !default;
 $color-bg: #fff !default;
 
+$color-selection-bg: color.adjust($color-accent, $lightness: +6%, $alpha: -0.75) !default;
+$color-selection-text: var(--color-base) !default;
+$color-highlight: rgba(255, 200, 0, 0.15) !default;
+
+
+// Color - dark mode
 $color-base-dark: #E9EDF0 !default;
 $color-mid-dark: $color-mid !default;
 $color-dim-dark: #2A3135 !default;
-$color-link-dark: #8F9EA5 !default;
+$color-accent-dark: #8F9EA5 !default;
 $color-bg-dark: #191E20 !default;
+
+$color-selection-bg-dark: color.adjust($color-accent-dark, $lightness: +6%, $alpha: -0.75) !default;
+$color-selection-text-dark: $color-selection-text !default;
+$color-highlight-dark: $color-highlight !default;
 
 :root {
 
@@ -78,8 +91,12 @@ html {
   --color-base: #{$color-base};
   --color-mid: #{$color-mid};
   --color-dim: #{$color-dim};
-  --color-link: #{$color-link};
+  --color-accent: #{$color-accent};
   --color-bg: #{$color-bg};
+
+  --color-selection-bg: #{$color-selection-bg};
+  --color-selection-text: #{$color-selection-text};
+  --color-highlight: #{$color-highlight};
 }
 
 @if $use-dark-mode == true {
@@ -90,8 +107,12 @@ html {
       --color-base: #{$color-base-dark};
       --color-mid: #{$color-mid-dark};
       --color-dim: #{$color-dim-dark};
-      --color-link: #{$color-link-dark};
+      --color-accent: #{$color-accent-dark};
       --color-bg: #{$color-bg-dark};
+
+      --color-selection-bg: #{$color-selection-bg-dark};
+      --color-selection-text: #{$color-selection-text-dark};  
+      --color-highlight: #{$color-highlight-dark};    
     }
   }
 

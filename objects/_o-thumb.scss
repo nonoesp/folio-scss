@@ -85,8 +85,8 @@
   bottom: 0;
   right: 0;
   left: 0;
-  color: #222;
-  background-color:rgba(1,1,1,0.05);
+  color: var(--color-base);
+  background-color: var(--color-dim);
   background-size: cover;
   background-position: center;
   z-index: $zIndex-1;
@@ -124,7 +124,7 @@
 }
 
 .o-thumb__link:hover .o-thumb__veil {
-  background-color: rgba(255,255,255,1.0);
+  background-color: var(--color-bg);
   transition: all 0.25s ease-in-out;
 }
 
@@ -141,7 +141,7 @@
   height: 50px;
   font-size: 21px;
   text-align: center;
-  color: #222;
+  color: var(--color-base);
   text-transform:uppercase;
   //font-weight:600;
 }

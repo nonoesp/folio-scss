@@ -7,15 +7,15 @@
 
 .o-icon-prototype__svg:hover {
   //opacity:0.9;
-  color: #222;
-  color: #222;
+  color: var(--color-base);
+  color: var(--color-base);
 }
 
 // MODIFIERS: COLOR
 
 .o-icon-prototype--color-white .o-icon-prototype__svg {
-  color:#fff;
-  fill:#fff;
+  color: var(--color-bg);
+  fill:var(--color-bg);
 }
 
 .o-icon-prototype--color-dark-grey .o-icon-prototype__svg {

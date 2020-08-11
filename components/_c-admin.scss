@@ -174,7 +174,7 @@ $c-admin-font-size: 16px !default;
 }
 
 // ------------------------------
-$color-a: #000;
+$color-a: var(--color-base);
 $color-b: #bababa;
 $admin-list-primary-font-size: 17px;
 $admin-list-secondary-font-size: 14px;
