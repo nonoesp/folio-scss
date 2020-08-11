@@ -16,6 +16,8 @@ article.item-v3.center>header>.c-social__wrapper.c-social__wrapper--left {
 .c-social.m-fa {
     font-size: 18px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 // Font Awesome modifiers
@@ -31,6 +33,10 @@ article.item-v3.center>header>.c-social__wrapper.c-social__wrapper--left {
 .fa-linkedin.fa--social {
     font-size: 90%;
     font-weight: 400!important;
+}
+
+.m-fa .fa__link--twitter {
+    padding-right: calc( #{$m-fa-icon-padding} * 0.5);
 }
 
 // m-fa model
