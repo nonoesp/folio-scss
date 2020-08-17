@@ -12,10 +12,11 @@ $o-item-card-padding: 0.5rem;
 
 #{$o-collection-tag} {
   width: calc(100% + 2 * #{$o-item-card-padding});
-  margin-left: - $o-item-card-padding;
+  margin-left: - $o-item-card-padding !important;
+  max-width: none !important;
 }
 #{$o-collection-tag} ul#{$o-item-wrap-tag} {
-  max-width: none;
+  max-width: none !important;
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
@@ -58,7 +59,9 @@ $o-item-card-padding: 0.5rem;
 }
 
 #{$o-item-card-tag} {
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 #{$o-item-card-tag} img {
