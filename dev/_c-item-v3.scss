@@ -80,6 +80,28 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   color: var(--color-mid);
 }
 
+#{$article-tag}>header.hero {
+  h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.045em;
+    text-align: center;
+
+    @media all and #{$media-lap} {
+      font-size: 2rem;
+    }
+    @media all and #{$media-palm} {
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    font-family: var(--font-sans);
+    font-size: var(--font-default);
+    text-align: center;
+    margin-block-start: 1rem;
+    letter-spacing: -0.03em;
+  }
+}
+
 /* Headers */
 
 #{$article-tag} {
