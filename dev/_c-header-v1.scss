@@ -36,8 +36,9 @@ $header-link-style: mono !default; // mono, accent
   fill: var(--color-base);
 }
 
-#{$header-tag} > nav[role="navigation"] a.link:hover,
-#{$header-tag} > nav[role="navigation"] .logo:hover svg {
+#{$header-tag} > nav[role="navigation"] .item:hover,
+#{$header-tag} > nav[role="navigation"] .logo:hover svg,
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown a.dropdown__link:hover {
   @if $header-link-style == accent {
     fill: var(--color-accent);
     color: var(--color-accent);
@@ -47,17 +48,18 @@ $header-link-style: mono !default; // mono, accent
   }
 }
 
-#{$header-tag} > nav[role="navigation"] a {
+#{$header-tag} > nav[role="navigation"] .item,
+#{$header-tag} > nav[role="navigation"] .item a {
   text-decoration: none;
   display: inline-block;
 }
 
-#{$header-tag} > nav[role="navigation"] a.link {
+#{$header-tag} > nav[role="navigation"] .item {
   color: var(--color-base);
   @include font-sans-scaled(var(--font-default));
 }
 
-#{$header-tag}:not(.flip) > nav[role="navigation"] a.link:not(:last-of-type) {
+#{$header-tag}:not(.flip) > nav[role="navigation"] .item:not(:last-child) {
   margin-right: 0.9rem;
 }
 
@@ -68,7 +70,46 @@ $header-link-style: mono !default; // mono, accent
     flex-direction: row-reverse;
   }
 
-  #{$header-tag}.flip > nav[role="navigation"] a.link:not(:first-of-type) {
+  #{$header-tag}.flip > nav[role="navigation"] .item:not(:first-child) {
     margin-left: 0.9rem;
   }
+}
+
+/* Dropdown */
+
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown {
+  position: relative;
+}
+
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown:hover .dropdown {
+  display: block;
+}
+
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown a.link {
+  position: relative;
+  z-index: $zIndex-1;
+}
+
+#{$header-tag} > nav[role="navigation"] .dropdown {
+  position: absolute;
+  display: none;
+  background-color: var(--color-bg);
+  top: -12px;
+  left: -10px;
+  right: -10px;
+  text-align: center;
+  border-radius: 3px;
+  padding: 0.3rem 0;
+  padding-top: 2.15rem;
+  box-shadow: 0px 1px 3px rgb(0, 0, 0, 0.08);
+}
+
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown .dropdown__link {
+  padding: 0.3rem 0;
+  @include font-sans-scaled(var(--font-s));
+  width: 100%;
+}
+
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown .dropdown__link span {
+  color: var(--color-mid);
 }
