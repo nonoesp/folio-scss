@@ -995,7 +995,7 @@ $gwern-links-icons-path: "/folio/icons" !default;
 #{$gwern-links-parent-class} a[href*="amazon.es"]::after,
 #{$gwern-links-parent-class} a[href*="amazon.co."]::after,
 #{$gwern-links-parent-class} a[href*="amzn.to"]::after,
-#{$gwern-links-parent-class} a[href*="a.co"]::after,
+#{$gwern-links-parent-class} a[href*="/a.co"]::after,
 #{$gwern-links-parent-class} a[href*="amzn.com"]::after {
     @include invert-when-dark;
 
@@ -1014,7 +1014,7 @@ $gwern-links-icons-path: "/folio/icons" !default;
 #{$gwern-links-parent-class} a[href*="amazon.es"]:hover::after,
 #{$gwern-links-parent-class} a[href*="amazon.co."]:hover::after,
 #{$gwern-links-parent-class} a[href*="amzn.to"]:hover::after,
-#{$gwern-links-parent-class} a[href*="a.co"]:hover::after,
+#{$gwern-links-parent-class} a[href*="/a.co"]:hover::after,
 #{$gwern-links-parent-class} a[href*="amzn.com"]:hover::after {
     @include invert-when-dark;
 
