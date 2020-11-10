@@ -61,7 +61,7 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   width: 100%;
   font-size: 1rem;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.005em;
 }
 
 #{$article-tag} > header p {
@@ -107,7 +107,7 @@ $article-link-style: mono !default; // mono, accent, or accent-all
 #{$article-tag} {
   h1,
   h2 {
-    font-weight: 700;
+    font-weight: 600;
   }
 
   h1,
@@ -371,7 +371,7 @@ $article-link-style: mono !default; // mono, accent, or accent-all
 #{$article-tag} sup {
   line-height: 0;
   @include font-sans-scaled(var(--font-xs));
-  font-weight: 700;
+  font-weight: 600;
 }
 
 #{$article-tag} sup a {
@@ -414,7 +414,7 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   content: counter(item) " ";
   position: absolute;
   vertical-align: super;
-  font-weight: 700;
+  font-weight: 600;
   font-size: var(--font-xxs);
   font-feature-settings: "zero", "ss01"; // Inter
   color: var(--color-accent);
