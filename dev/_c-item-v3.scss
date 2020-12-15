@@ -372,7 +372,6 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   line-height: 0;
   @include font-sans-scaled(var(--font-xs));
   font-weight: 600;
-  padding: 0 0.2rem 0 0;
 }
 
 #{$article-tag} sup a {
