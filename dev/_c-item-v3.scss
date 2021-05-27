@@ -353,19 +353,26 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   text-align: center;
 }
 
-// $article-image-full-overflow: 6.5rem;
+$article-image-full-overflow: 6.5rem;
 
-// #{$article-tag} figure.full {
-//   // max-width: 100%;
-//   width: calc( var(--spacing-max-width) + #{$article-image-full-overflow} * 2 );
-//   margin-left: - $article-image-full-overflow;
-// }
+@media all and #{$media-desk} {
 
-// #{$article-tag} figure.full figcaption {
-//   margin-left: 0;
-//   width: calc( var(--spacing-max-width) + #{$article-image-full-overflow} * 2 );
-//   max-width: 100%;
-// }
+  #{$article-tag} figure.full {
+    max-width: none;
+    width: calc( var(--spacing-max-width) + #{$article-image-full-overflow} * 2 );
+  }
+
+  #{$article-tag} figure.full figcaption {
+    margin-left: 0;
+    width: calc( var(--spacing-max-width) + #{$article-image-full-overflow} * 2 );
+    max-width: 100%;
+  }
+
+  #{$article-tag}.center figure.full {
+    margin-left: - $article-image-full-overflow;
+  }
+
+}
 
 // this seems to be repeated
 // #{$article-tag}.center>.body>figure {
