@@ -340,7 +340,7 @@ $article-link-style: mono !default; // mono, accent, or accent-all
 // figure.fade - adds contrast with background
 
 #{$article-tag} figure.fade {
-  filter:brightness(0.97);
+  filter: brightness(0.97);
 }
 
 // figure.center
