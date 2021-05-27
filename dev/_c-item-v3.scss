@@ -286,8 +286,14 @@ $article-link-style: mono !default; // mono, accent, or accent-all
   }
 }
 
-#{$article-tag} figure img {
+#{$article-tag} figure img,
+#{$article-tag} figure video {
   width: 100%;
+}
+
+#{$article-tag} figure.border img,
+#{$article-tag} figure.border video {
+  border: 1px solid #eaeaea;
 }
 
 #{$article-tag} figure figcaption {
