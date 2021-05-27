@@ -12,11 +12,11 @@ $article-link-style: mono !default; // mono, accent, or accent-all
 
 /* Children */
 
-#{$article-tag} *:not(.full):not(img):not(video):not(audio) {
+#{$article-tag} *:not(.full):not(img):not(video):not(audio):not(li) {
   max-width: var(--spacing-max-width);
 }
 
-#{$article-tag}.center *:not(.full):not(video):not(audio) {
+#{$article-tag}.center *:not(.full):not(video):not(audio):not(li) {
   margin-left: auto;
   margin-right: auto;
 }
@@ -381,6 +381,16 @@ $article-link-style: mono !default; // mono, accent, or accent-all
 
 #{$article-tag} sup a:hover {
   color: var(--color-mid);
+}
+
+/* Lists */
+
+#{$article-tag} .body ul > li > ul {
+  padding-left: 20px;
+}
+
+#{$article-tag} .body ul > li > ul li {
+  list-style-type:circle
 }
 
 /* Footnotes */
