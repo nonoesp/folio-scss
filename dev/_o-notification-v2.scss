@@ -29,6 +29,10 @@ $o-notification-padding: 0.2rem 0 !default;
     padding: $o-notification-padding;
 }
 
+#{$o-notification-tag} a {
+  color: $o-notification-color;
+}
+
 #{$o-notification-tag}--s {
   font-size: var(--font-s);
   padding: 0.4rem 0;
@@ -36,6 +40,10 @@ $o-notification-padding: 0.2rem 0 !default;
 
 #{$o-notification-tag}--yellow {
   background-color: #fce8b8;
+  color: #bfaa78
+}
+
+#{$o-notification-tag}--yellow a {
   color: #bfaa78
 }
 
@@ -61,6 +69,10 @@ $o-notification-padding: 0.2rem 0 !default;
   opacity: 0.4;
 }
 
+#{$o-notification-tag}--light {
+  color: var(--color-base);
+}
+
 @media screen and (prefers-color-scheme: dark) {
 
   #{$o-notification-tag}--light {
@@ -69,9 +81,17 @@ $o-notification-padding: 0.2rem 0 !default;
     opacity: 0.4;
   }
 
+  #{$o-notification-tag}--light a {
+    color: var(--color-mid);
+  }
+
 }
 
 #{$o-notification-tag}--dark {
     background-color: var(--color-base);
     color: #fafafa;
+}
+
+#{$o-notification-tag}--dark a {
+  color: #fafafa;
 }
