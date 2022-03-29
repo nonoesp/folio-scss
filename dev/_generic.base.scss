@@ -5,6 +5,8 @@
 // ██████╔╝    ██║  ██║    ███████║    ███████╗
 // ╚═════╝     ╚═╝  ╚═╝    ╚══════╝    ╚══════╝
 
+$html-font-family: var(--font-sans) !default;
+
 *,
 *:before,
 *:after {
@@ -16,7 +18,7 @@ html {
   background-color: var(--color-bg);
   font-size: var(--font-default);
   line-height: var(--font-line-height);
-  font-family: var(--font-sans);
+  font-family: $html-font-family;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: greyscale;
   font-feature-settings: $font-feature-settings;
@@ -24,7 +26,7 @@ html {
 
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: $html-font-family;
   color: var(--color-base);
   background-color: var(--color-bg);
 }

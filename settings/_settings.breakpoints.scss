@@ -11,6 +11,8 @@ $breakpoints: (
   "wide" "(min-width: 1500px)"
 ) !default;
 
+$breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk', 'wide') !default;
+
 $media-palm: nth(nth($breakpoints, 1), 2) !default;
 $media-lap: nth(nth($breakpoints, 2), 2) !default;
 $media-portable: nth(nth($breakpoints, 3), 2) !default;
