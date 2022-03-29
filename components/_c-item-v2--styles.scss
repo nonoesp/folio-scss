@@ -368,9 +368,21 @@
         font-family: system-ui, "Helvetica", serif;
         @include c-item-v2-font ($_c-item-v2-wrap-width, 0.9);
     }
+    .c-item-v2__body>ul,
+    .c-item-v2__body>ol {
+        padding-left: 2.2rem;
+    }
+    .c-item-v2__body ul {
+        list-style-type: unset;
+    }
     .c-item-v2__body ul li,
     .c-item-v2__body ol li {
         font-family: system-ui, "Helvetica", serif;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+    .c-item-v2__body ul li::before {
+        content: none;
     }
     .c-item-v2__body p.no-text {
         display: block;
