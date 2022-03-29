@@ -1,10 +1,17 @@
-$font-sans-scale: 1rem !default;
+$font-base-scale: 1rem !default;
+$font-sans-scale: $font-base-scale !default;
 
 // @mixin font-size-scaled($font-size, $factor: $font-sans-scale) {
 //     font-size: calc(#{$font-size} * #{$factor});
 // }
 
 @mixin font-sans-scaled($font-size: var(--font-default), $factor: $font-sans-scale) {
+    @include font-base-scaled($font-size, $font-sans-scale);
+}
+
+// Added 2021.06.24 to superseed @mixin font-sans-scaled in the future
+// as the base font does not need to be sans (it could be serif or mono as well)
+@mixin font-base-scaled($font-size: var(--font-default), $factor: $font-base-scale) {
     font-family: var(--font-sans);
     font-size: calc(#{$font-size} * #{$factor});
 }
