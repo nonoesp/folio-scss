@@ -321,6 +321,13 @@
 /*Themes*/
 
 .c-item-v2--editorial {
+    code,
+    pre {
+        font-family: var(--font-mono);
+        letter-spacing: -0.03em;
+        font-feature-settings: "dlig", "calt", "clig";
+        tab-size: 2;
+    }
     .c-item-v2__title {
         font-family: var(--font-sans);
         text-align: left;
@@ -457,34 +464,34 @@
         font-size: .7em;
     }
 
-    @if $use-dark-mode == true {
+    // @if $use-dark-mode == true {
 
-        @media screen and (prefers-color-scheme: dark) {
+    //     @media screen and (prefers-color-scheme: dark) {
 
-            .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
-                color: var(--color-mid);
-            }
+    //         .hljs-type, .hljs-string, .hljs-number, .hljs-selector-id, .hljs-selector-class, .hljs-quote, .hljs-template-tag, .hljs-deletion {
+    //             color: var(--color-mid);
+    //         }
 
-            .hljs-section, .hljs-title {
-                color: var(--color-mid);
-                font-weight: 700;
-            }
+    //         .hljs-section, .hljs-title {
+    //             color: var(--color-mid);
+    //             font-weight: 700;
+    //         }
 
-            .hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-code {
-                color: var(--color-accent);
-            }
+    //         .hljs-addition, .hljs-built_in, .hljs-bullet, .hljs-code {
+    //             color: var(--color-accent);
+    //         }
 
-            .hljs-link, .hljs-regexp, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-symbol, .hljs-template-variable, .hljs-variable {
-                color: var(--color-accent);
-            }
+    //         .hljs-link, .hljs-regexp, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-symbol, .hljs-template-variable, .hljs-variable {
+    //             color: var(--color-accent);
+    //         }
 
-            .hljs-literal {
-                color: var(--color-mid);
-                font-weight: 700;
-            }
-        }
+    //         .hljs-literal {
+    //             color: var(--color-mid);
+    //             font-weight: 700;
+    //         }
+    //     }
         
-    }
+    // }
 
 }
 
