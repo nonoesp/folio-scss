@@ -1,0 +1,19 @@
+@mixin hide-when-dark() {
+    @if $use-dark-mode == true {
+        @media screen and (prefers-color-scheme: dark) {
+            & {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@mixin hide-when-light() {
+    @if $use-dark-mode == true {
+        @media screen and (prefers-color-scheme: light) {
+            & {
+                display: none !important;
+            }
+        }
+    }
+}

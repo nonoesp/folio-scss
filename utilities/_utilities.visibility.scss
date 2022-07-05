@@ -12,11 +12,15 @@
 .u-hidden-lap
 .u-hidden-portable
 .u-hidden-desk
+.u-hidden-dark
+.u-hidden-light
 
 .u-visible-palm
 .u-visible-lap
 .u-visible-portable
 .u-visible-desk
+.u-visible-dark
+.u-visible-light
 */
 
 .u-hidden {
@@ -51,4 +55,14 @@
 	.u-visible-lap {
 		display: none !important;
 	}
+}
+
+.u-hidden-light,
+.u-visible-dark {
+	@include hide-when-light();
+}
+
+.u-hidden-dark,
+.u-visible-light {
+	@include hide-when-dark();
 }
