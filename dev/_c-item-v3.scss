@@ -510,6 +510,16 @@ mark,
 //   }
 // }
 
+/* Invertable behavior */
+
+#{$article-tag} figure.invert img {
+  @include invert-when-dark(1);
+}
+
+#{$article-tag} figure.invertable img {
+  @include invert-when-dark(0.89);
+}
+
 /* Debug */
 
 @mixin debug() {
