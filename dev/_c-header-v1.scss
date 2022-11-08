@@ -38,6 +38,7 @@ $header-link-style: mono !default; // mono, accent
 
 #{$header-tag} > nav[role="navigation"] .item:hover,
 #{$header-tag} > nav[role="navigation"] .logo:hover svg,
+#{$header-tag} > nav[role="navigation"] .item.item--dropdown a:hover,
 #{$header-tag} > nav[role="navigation"] .item.item--dropdown a.dropdown__link:hover {
   @if $header-link-style == accent {
     fill: var(--color-accent);
