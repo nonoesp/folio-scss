@@ -15,6 +15,7 @@ $o-item-card-padding: 0.5rem;
   margin-left: - $o-item-card-padding !important;
   max-width: none !important;
 }
+
 #{$o-collection-tag} ul#{$o-item-wrap-tag} {
   max-width: none !important;
   display: flex;
@@ -37,12 +38,13 @@ $o-item-card-padding: 0.5rem;
 
     @media all and (max-width: 700px) {
       & {
-          width: 33.3333%;
+        width: 33.3333%;
       }
     }
+
     @media all and #{$media-palm} {
       & {
-          width: 50%;
+        width: 50%;
       }
     }
   }
@@ -56,7 +58,7 @@ $o-item-card-padding: 0.5rem;
 
   & li a:hover {
     filter: brightness(0.9) contrast(115%);
-  }  
+  }
 }
 
 #{$o-item-card-tag} {
@@ -91,7 +93,7 @@ $o-item-card-padding: 0.5rem;
 }
 
 .o-collection-v1 ul.o-item-card__wrap li .body a,
-#{$o-item-card-tag}#{$o-item-card-tag}--news .body > *,
+#{$o-item-card-tag}#{$o-item-card-tag}--news .body>*,
 #{$o-item-card-tag}#{$o-item-card-tag}--news .body li a {
   font-family: var(--font-serif);
   font-size: var(--font-s);
