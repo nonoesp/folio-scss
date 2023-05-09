@@ -1427,9 +1427,10 @@ $gwern-links-icons-path: "/folio/icons" !default;
 /*= Remove link icons from image links      =*/
 /*=-----------------------------------------=*/
 
-#{$gwern-links-parent-class} a[style*="background"]::after {
+#{$gwern-links-parent-class} a[style*="background"]::after,
+#{$gwern-links-parent-class} a[no-icon]::after {
     @include invert-when-dark;
 
-    content: "";
+    content: none;
     background-image: none;
 }
